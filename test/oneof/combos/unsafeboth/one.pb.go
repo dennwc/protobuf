@@ -11,8 +11,11 @@
 	It has these top-level messages:
 		Subby
 		AllTypesOneOf
+		AllTypesOneOfDirect
 		TwoOneofs
+		TwoOneofsDirect
 		CustomOneof
+		CustomOneofDirect
 */
 package one
 
@@ -549,6 +552,467 @@ func _AllTypesOneOf_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
+type AllTypesOneOfDirect struct {
+	// Types that are valid to be assigned to TestOneof:
+	//	AllTypesOneOfDirect_Field1
+	//	AllTypesOneOfDirect_Field2
+	//	AllTypesOneOfDirect_Field3
+	//	AllTypesOneOfDirect_Field4
+	//	AllTypesOneOfDirect_Field5
+	//	AllTypesOneOfDirect_Field6
+	//	AllTypesOneOfDirect_Field7
+	//	AllTypesOneOfDirect_Field8
+	//	AllTypesOneOfDirect_Field9
+	//	AllTypesOneOfDirect_Field10
+	//	AllTypesOneOfDirect_Field11
+	//	AllTypesOneOfDirect_Field12
+	//	AllTypesOneOfDirect_Field13
+	//	AllTypesOneOfDirect_Field14
+	//	AllTypesOneOfDirect_Field15
+	//	AllTypesOneOfDirect_SubMessage
+	TestOneof        isAllTypesOneOfDirect_TestOneof `protobuf_oneof:"test_oneof"`
+	XXX_unrecognized []byte                          `json:"-"`
+}
+
+func (m *AllTypesOneOfDirect) Reset()                    { *m = AllTypesOneOfDirect{} }
+func (*AllTypesOneOfDirect) ProtoMessage()               {}
+func (*AllTypesOneOfDirect) Descriptor() ([]byte, []int) { return fileDescriptorOne, []int{2} }
+
+type isAllTypesOneOfDirect_TestOneof interface {
+	isAllTypesOneOfDirect_TestOneof()
+	Equal(interface{}) bool
+	VerboseEqual(interface{}) error
+	MarshalTo([]byte) (int, error)
+	Size() int
+}
+
+type AllTypesOneOfDirect_Field1 float64
+type AllTypesOneOfDirect_Field2 float32
+type AllTypesOneOfDirect_Field3 int32
+type AllTypesOneOfDirect_Field4 int64
+type AllTypesOneOfDirect_Field5 uint32
+type AllTypesOneOfDirect_Field6 uint64
+type AllTypesOneOfDirect_Field7 int32
+type AllTypesOneOfDirect_Field8 int64
+type AllTypesOneOfDirect_Field9 uint32
+type AllTypesOneOfDirect_Field10 int32
+type AllTypesOneOfDirect_Field11 uint64
+type AllTypesOneOfDirect_Field12 int64
+type AllTypesOneOfDirect_Field13 bool
+type AllTypesOneOfDirect_Field14 string
+type AllTypesOneOfDirect_Field15 []byte
+type AllTypesOneOfDirect_SubMessage Subby
+
+func (AllTypesOneOfDirect_Field1) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field2) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field3) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field4) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field5) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field6) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field7) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field8) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field9) isAllTypesOneOfDirect_TestOneof()     {}
+func (AllTypesOneOfDirect_Field10) isAllTypesOneOfDirect_TestOneof()    {}
+func (AllTypesOneOfDirect_Field11) isAllTypesOneOfDirect_TestOneof()    {}
+func (AllTypesOneOfDirect_Field12) isAllTypesOneOfDirect_TestOneof()    {}
+func (AllTypesOneOfDirect_Field13) isAllTypesOneOfDirect_TestOneof()    {}
+func (AllTypesOneOfDirect_Field14) isAllTypesOneOfDirect_TestOneof()    {}
+func (AllTypesOneOfDirect_Field15) isAllTypesOneOfDirect_TestOneof()    {}
+func (AllTypesOneOfDirect_SubMessage) isAllTypesOneOfDirect_TestOneof() {}
+
+func (m *AllTypesOneOfDirect) GetTestOneof() isAllTypesOneOfDirect_TestOneof {
+	if m != nil {
+		return m.TestOneof
+	}
+	return nil
+}
+
+func (m *AllTypesOneOfDirect) GetField1() float64 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field1); ok {
+		return float64(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField2() float32 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field2); ok {
+		return float32(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField3() int32 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field3); ok {
+		return int32(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField4() int64 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field4); ok {
+		return int64(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField5() uint32 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field5); ok {
+		return uint32(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField6() uint64 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field6); ok {
+		return uint64(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField7() int32 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field7); ok {
+		return int32(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField8() int64 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field8); ok {
+		return int64(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField9() uint32 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field9); ok {
+		return uint32(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField10() int32 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field10); ok {
+		return int32(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField11() uint64 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field11); ok {
+		return uint64(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField12() int64 {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field12); ok {
+		return int64(x)
+	}
+	return 0
+}
+
+func (m *AllTypesOneOfDirect) GetField13() bool {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field13); ok {
+		return bool(x)
+	}
+	return false
+}
+
+func (m *AllTypesOneOfDirect) GetField14() string {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field14); ok {
+		return string(x)
+	}
+	return ""
+}
+
+func (m *AllTypesOneOfDirect) GetField15() []byte {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_Field15); ok {
+		return []byte(x)
+	}
+	return nil
+}
+
+func (m *AllTypesOneOfDirect) GetSubMessage() *Subby {
+	if x, ok := m.GetTestOneof().(AllTypesOneOfDirect_SubMessage); ok {
+		x2 := Subby(x)
+		return &x2
+	}
+	return nil
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*AllTypesOneOfDirect) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _AllTypesOneOfDirect_OneofMarshaler, _AllTypesOneOfDirect_OneofUnmarshaler, _AllTypesOneOfDirect_OneofSizer, []interface{}{
+		(*AllTypesOneOfDirect_Field1)(nil),
+		(*AllTypesOneOfDirect_Field2)(nil),
+		(*AllTypesOneOfDirect_Field3)(nil),
+		(*AllTypesOneOfDirect_Field4)(nil),
+		(*AllTypesOneOfDirect_Field5)(nil),
+		(*AllTypesOneOfDirect_Field6)(nil),
+		(*AllTypesOneOfDirect_Field7)(nil),
+		(*AllTypesOneOfDirect_Field8)(nil),
+		(*AllTypesOneOfDirect_Field9)(nil),
+		(*AllTypesOneOfDirect_Field10)(nil),
+		(*AllTypesOneOfDirect_Field11)(nil),
+		(*AllTypesOneOfDirect_Field12)(nil),
+		(*AllTypesOneOfDirect_Field13)(nil),
+		(*AllTypesOneOfDirect_Field14)(nil),
+		(*AllTypesOneOfDirect_Field15)(nil),
+		(*AllTypesOneOfDirect_SubMessage)(nil),
+	}
+}
+
+func _AllTypesOneOfDirect_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*AllTypesOneOfDirect)
+	// test_oneof
+	switch x := m.TestOneof.(type) {
+	case AllTypesOneOfDirect_Field1:
+		_ = b.EncodeVarint(1<<3 | proto.WireFixed64)
+		_ = b.EncodeFixed64(math.Float64bits(float64(x)))
+	case AllTypesOneOfDirect_Field2:
+		_ = b.EncodeVarint(2<<3 | proto.WireFixed32)
+		_ = b.EncodeFixed32(uint64(math.Float32bits(float32(x))))
+	case AllTypesOneOfDirect_Field3:
+		_ = b.EncodeVarint(3<<3 | proto.WireVarint)
+		_ = b.EncodeVarint(uint64(int32(x)))
+	case AllTypesOneOfDirect_Field4:
+		_ = b.EncodeVarint(4<<3 | proto.WireVarint)
+		_ = b.EncodeVarint(uint64(int64(x)))
+	case AllTypesOneOfDirect_Field5:
+		_ = b.EncodeVarint(5<<3 | proto.WireVarint)
+		_ = b.EncodeVarint(uint64(uint32(x)))
+	case AllTypesOneOfDirect_Field6:
+		_ = b.EncodeVarint(6<<3 | proto.WireVarint)
+		_ = b.EncodeVarint(uint64(uint64(x)))
+	case AllTypesOneOfDirect_Field7:
+		_ = b.EncodeVarint(7<<3 | proto.WireVarint)
+		_ = b.EncodeZigzag32(uint64(int32(x)))
+	case AllTypesOneOfDirect_Field8:
+		_ = b.EncodeVarint(8<<3 | proto.WireVarint)
+		_ = b.EncodeZigzag64(uint64(int64(x)))
+	case AllTypesOneOfDirect_Field9:
+		_ = b.EncodeVarint(9<<3 | proto.WireFixed32)
+		_ = b.EncodeFixed32(uint64(uint32(x)))
+	case AllTypesOneOfDirect_Field10:
+		_ = b.EncodeVarint(10<<3 | proto.WireFixed32)
+		_ = b.EncodeFixed32(uint64(int32(x)))
+	case AllTypesOneOfDirect_Field11:
+		_ = b.EncodeVarint(11<<3 | proto.WireFixed64)
+		_ = b.EncodeFixed64(uint64(uint64(x)))
+	case AllTypesOneOfDirect_Field12:
+		_ = b.EncodeVarint(12<<3 | proto.WireFixed64)
+		_ = b.EncodeFixed64(uint64(int64(x)))
+	case AllTypesOneOfDirect_Field13:
+		t := uint64(0)
+		if bool(x) {
+			t = 1
+		}
+		_ = b.EncodeVarint(13<<3 | proto.WireVarint)
+		_ = b.EncodeVarint(t)
+	case AllTypesOneOfDirect_Field14:
+		_ = b.EncodeVarint(14<<3 | proto.WireBytes)
+		_ = b.EncodeStringBytes(string(x))
+	case AllTypesOneOfDirect_Field15:
+		_ = b.EncodeVarint(15<<3 | proto.WireBytes)
+		_ = b.EncodeRawBytes([]byte(x))
+	case AllTypesOneOfDirect_SubMessage:
+		_ = b.EncodeVarint(16<<3 | proto.WireBytes)
+		x2 := Subby(x)
+		if err := b.EncodeMessage(&x2); err != nil {
+			return err
+		}
+	case nil:
+	default:
+		return fmt.Errorf("AllTypesOneOfDirect.TestOneof has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _AllTypesOneOfDirect_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*AllTypesOneOfDirect)
+	switch tag {
+	case 1: // test_oneof.Field1
+		if wire != proto.WireFixed64 {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeFixed64()
+		m.TestOneof = AllTypesOneOfDirect_Field1(math.Float64frombits(x))
+		return true, err
+	case 2: // test_oneof.Field2
+		if wire != proto.WireFixed32 {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeFixed32()
+		m.TestOneof = AllTypesOneOfDirect_Field2(math.Float32frombits(uint32(x)))
+		return true, err
+	case 3: // test_oneof.Field3
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.TestOneof = AllTypesOneOfDirect_Field3(int32(x))
+		return true, err
+	case 4: // test_oneof.Field4
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.TestOneof = AllTypesOneOfDirect_Field4(int64(x))
+		return true, err
+	case 5: // test_oneof.Field5
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.TestOneof = AllTypesOneOfDirect_Field5(uint32(x))
+		return true, err
+	case 6: // test_oneof.Field6
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.TestOneof = AllTypesOneOfDirect_Field6(x)
+		return true, err
+	case 7: // test_oneof.Field7
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeZigzag32()
+		m.TestOneof = AllTypesOneOfDirect_Field7(int32(x))
+		return true, err
+	case 8: // test_oneof.Field8
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeZigzag64()
+		m.TestOneof = AllTypesOneOfDirect_Field8(int64(x))
+		return true, err
+	case 9: // test_oneof.Field9
+		if wire != proto.WireFixed32 {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeFixed32()
+		m.TestOneof = AllTypesOneOfDirect_Field9(uint32(x))
+		return true, err
+	case 10: // test_oneof.Field10
+		if wire != proto.WireFixed32 {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeFixed32()
+		m.TestOneof = AllTypesOneOfDirect_Field10(int32(x))
+		return true, err
+	case 11: // test_oneof.Field11
+		if wire != proto.WireFixed64 {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeFixed64()
+		m.TestOneof = AllTypesOneOfDirect_Field11(x)
+		return true, err
+	case 12: // test_oneof.Field12
+		if wire != proto.WireFixed64 {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeFixed64()
+		m.TestOneof = AllTypesOneOfDirect_Field12(int64(x))
+		return true, err
+	case 13: // test_oneof.Field13
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.TestOneof = AllTypesOneOfDirect_Field13(x != 0)
+		return true, err
+	case 14: // test_oneof.Field14
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeStringBytes()
+		m.TestOneof = AllTypesOneOfDirect_Field14(x)
+		return true, err
+	case 15: // test_oneof.Field15
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeRawBytes(true)
+		m.TestOneof = AllTypesOneOfDirect_Field15(x)
+		return true, err
+	case 16: // test_oneof.sub_message
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		var msg Subby
+		err := b.DecodeMessage(&msg)
+		m.TestOneof = AllTypesOneOfDirect_SubMessage(msg)
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _AllTypesOneOfDirect_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*AllTypesOneOfDirect)
+	// test_oneof
+	switch x := m.TestOneof.(type) {
+	case AllTypesOneOfDirect_Field1:
+		n += proto.SizeVarint(1<<3 | proto.WireFixed64)
+		n += 8
+	case AllTypesOneOfDirect_Field2:
+		n += proto.SizeVarint(2<<3 | proto.WireFixed32)
+		n += 4
+	case AllTypesOneOfDirect_Field3:
+		n += proto.SizeVarint(3<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(int32(x)))
+	case AllTypesOneOfDirect_Field4:
+		n += proto.SizeVarint(4<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(int64(x)))
+	case AllTypesOneOfDirect_Field5:
+		n += proto.SizeVarint(5<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(uint32(x)))
+	case AllTypesOneOfDirect_Field6:
+		n += proto.SizeVarint(6<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(uint64(x)))
+	case AllTypesOneOfDirect_Field7:
+		n += proto.SizeVarint(7<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64((uint32(int32(x)) << 1) ^ uint32((int32(int32(x)) >> 31))))
+	case AllTypesOneOfDirect_Field8:
+		n += proto.SizeVarint(8<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(uint64(int64(x)<<1) ^ uint64((int64(int64(x)) >> 63))))
+	case AllTypesOneOfDirect_Field9:
+		n += proto.SizeVarint(9<<3 | proto.WireFixed32)
+		n += 4
+	case AllTypesOneOfDirect_Field10:
+		n += proto.SizeVarint(10<<3 | proto.WireFixed32)
+		n += 4
+	case AllTypesOneOfDirect_Field11:
+		n += proto.SizeVarint(11<<3 | proto.WireFixed64)
+		n += 8
+	case AllTypesOneOfDirect_Field12:
+		n += proto.SizeVarint(12<<3 | proto.WireFixed64)
+		n += 8
+	case AllTypesOneOfDirect_Field13:
+		n += proto.SizeVarint(13<<3 | proto.WireVarint)
+		n += 1
+	case AllTypesOneOfDirect_Field14:
+		n += proto.SizeVarint(14<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(len(string(x))))
+		n += len(string(x))
+	case AllTypesOneOfDirect_Field15:
+		n += proto.SizeVarint(15<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(len([]byte(x))))
+		n += len([]byte(x))
+	case AllTypesOneOfDirect_SubMessage:
+		x2 := Subby(x)
+		s := proto.Size(&x2)
+		n += proto.SizeVarint(16<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
+}
+
 type TwoOneofs struct {
 	// Types that are valid to be assigned to One:
 	//	*TwoOneofs_Field1
@@ -565,7 +1029,7 @@ type TwoOneofs struct {
 
 func (m *TwoOneofs) Reset()                    { *m = TwoOneofs{} }
 func (*TwoOneofs) ProtoMessage()               {}
-func (*TwoOneofs) Descriptor() ([]byte, []int) { return fileDescriptorOne, []int{2} }
+func (*TwoOneofs) Descriptor() ([]byte, []int) { return fileDescriptorOne, []int{3} }
 
 type isTwoOneofs_One interface {
 	isTwoOneofs_One()
@@ -802,6 +1266,250 @@ func _TwoOneofs_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
+type TwoOneofsDirect struct {
+	// Types that are valid to be assigned to One:
+	//	TwoOneofsDirect_Field1
+	//	TwoOneofsDirect_Field2
+	//	TwoOneofsDirect_Field3
+	One isTwoOneofsDirect_One `protobuf_oneof:"one"`
+	// Types that are valid to be assigned to Two:
+	//	TwoOneofsDirect_Field34
+	//	TwoOneofsDirect_Field35
+	//	TwoOneofsDirect_SubMessage2
+	Two              isTwoOneofsDirect_Two `protobuf_oneof:"two"`
+	XXX_unrecognized []byte                `json:"-"`
+}
+
+func (m *TwoOneofsDirect) Reset()                    { *m = TwoOneofsDirect{} }
+func (*TwoOneofsDirect) ProtoMessage()               {}
+func (*TwoOneofsDirect) Descriptor() ([]byte, []int) { return fileDescriptorOne, []int{4} }
+
+type isTwoOneofsDirect_One interface {
+	isTwoOneofsDirect_One()
+	Equal(interface{}) bool
+	VerboseEqual(interface{}) error
+	MarshalTo([]byte) (int, error)
+	Size() int
+}
+type isTwoOneofsDirect_Two interface {
+	isTwoOneofsDirect_Two()
+	Equal(interface{}) bool
+	VerboseEqual(interface{}) error
+	MarshalTo([]byte) (int, error)
+	Size() int
+}
+
+type TwoOneofsDirect_Field1 float64
+type TwoOneofsDirect_Field2 float32
+type TwoOneofsDirect_Field3 int32
+type TwoOneofsDirect_Field34 string
+type TwoOneofsDirect_Field35 []byte
+type TwoOneofsDirect_SubMessage2 Subby
+
+func (TwoOneofsDirect_Field1) isTwoOneofsDirect_One()      {}
+func (TwoOneofsDirect_Field2) isTwoOneofsDirect_One()      {}
+func (TwoOneofsDirect_Field3) isTwoOneofsDirect_One()      {}
+func (TwoOneofsDirect_Field34) isTwoOneofsDirect_Two()     {}
+func (TwoOneofsDirect_Field35) isTwoOneofsDirect_Two()     {}
+func (TwoOneofsDirect_SubMessage2) isTwoOneofsDirect_Two() {}
+
+func (m *TwoOneofsDirect) GetOne() isTwoOneofsDirect_One {
+	if m != nil {
+		return m.One
+	}
+	return nil
+}
+func (m *TwoOneofsDirect) GetTwo() isTwoOneofsDirect_Two {
+	if m != nil {
+		return m.Two
+	}
+	return nil
+}
+
+func (m *TwoOneofsDirect) GetField1() float64 {
+	if x, ok := m.GetOne().(TwoOneofsDirect_Field1); ok {
+		return float64(x)
+	}
+	return 0
+}
+
+func (m *TwoOneofsDirect) GetField2() float32 {
+	if x, ok := m.GetOne().(TwoOneofsDirect_Field2); ok {
+		return float32(x)
+	}
+	return 0
+}
+
+func (m *TwoOneofsDirect) GetField3() int32 {
+	if x, ok := m.GetOne().(TwoOneofsDirect_Field3); ok {
+		return int32(x)
+	}
+	return 0
+}
+
+func (m *TwoOneofsDirect) GetField34() string {
+	if x, ok := m.GetTwo().(TwoOneofsDirect_Field34); ok {
+		return string(x)
+	}
+	return ""
+}
+
+func (m *TwoOneofsDirect) GetField35() []byte {
+	if x, ok := m.GetTwo().(TwoOneofsDirect_Field35); ok {
+		return []byte(x)
+	}
+	return nil
+}
+
+func (m *TwoOneofsDirect) GetSubMessage2() *Subby {
+	if x, ok := m.GetTwo().(TwoOneofsDirect_SubMessage2); ok {
+		x2 := Subby(x)
+		return &x2
+	}
+	return nil
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*TwoOneofsDirect) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _TwoOneofsDirect_OneofMarshaler, _TwoOneofsDirect_OneofUnmarshaler, _TwoOneofsDirect_OneofSizer, []interface{}{
+		(*TwoOneofsDirect_Field1)(nil),
+		(*TwoOneofsDirect_Field2)(nil),
+		(*TwoOneofsDirect_Field3)(nil),
+		(*TwoOneofsDirect_Field34)(nil),
+		(*TwoOneofsDirect_Field35)(nil),
+		(*TwoOneofsDirect_SubMessage2)(nil),
+	}
+}
+
+func _TwoOneofsDirect_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*TwoOneofsDirect)
+	// one
+	switch x := m.One.(type) {
+	case TwoOneofsDirect_Field1:
+		_ = b.EncodeVarint(1<<3 | proto.WireFixed64)
+		_ = b.EncodeFixed64(math.Float64bits(float64(x)))
+	case TwoOneofsDirect_Field2:
+		_ = b.EncodeVarint(2<<3 | proto.WireFixed32)
+		_ = b.EncodeFixed32(uint64(math.Float32bits(float32(x))))
+	case TwoOneofsDirect_Field3:
+		_ = b.EncodeVarint(3<<3 | proto.WireVarint)
+		_ = b.EncodeVarint(uint64(int32(x)))
+	case nil:
+	default:
+		return fmt.Errorf("TwoOneofsDirect.One has unexpected type %T", x)
+	}
+	// two
+	switch x := m.Two.(type) {
+	case TwoOneofsDirect_Field34:
+		_ = b.EncodeVarint(34<<3 | proto.WireBytes)
+		_ = b.EncodeStringBytes(string(x))
+	case TwoOneofsDirect_Field35:
+		_ = b.EncodeVarint(35<<3 | proto.WireBytes)
+		_ = b.EncodeRawBytes([]byte(x))
+	case TwoOneofsDirect_SubMessage2:
+		_ = b.EncodeVarint(36<<3 | proto.WireBytes)
+		x2 := Subby(x)
+		if err := b.EncodeMessage(&x2); err != nil {
+			return err
+		}
+	case nil:
+	default:
+		return fmt.Errorf("TwoOneofsDirect.Two has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _TwoOneofsDirect_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*TwoOneofsDirect)
+	switch tag {
+	case 1: // one.Field1
+		if wire != proto.WireFixed64 {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeFixed64()
+		m.One = TwoOneofsDirect_Field1(math.Float64frombits(x))
+		return true, err
+	case 2: // one.Field2
+		if wire != proto.WireFixed32 {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeFixed32()
+		m.One = TwoOneofsDirect_Field2(math.Float32frombits(uint32(x)))
+		return true, err
+	case 3: // one.Field3
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.One = TwoOneofsDirect_Field3(int32(x))
+		return true, err
+	case 34: // two.Field34
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeStringBytes()
+		m.Two = TwoOneofsDirect_Field34(x)
+		return true, err
+	case 35: // two.Field35
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeRawBytes(true)
+		m.Two = TwoOneofsDirect_Field35(x)
+		return true, err
+	case 36: // two.sub_message2
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		var msg Subby
+		err := b.DecodeMessage(&msg)
+		m.Two = TwoOneofsDirect_SubMessage2(msg)
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _TwoOneofsDirect_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*TwoOneofsDirect)
+	// one
+	switch x := m.One.(type) {
+	case TwoOneofsDirect_Field1:
+		n += proto.SizeVarint(1<<3 | proto.WireFixed64)
+		n += 8
+	case TwoOneofsDirect_Field2:
+		n += proto.SizeVarint(2<<3 | proto.WireFixed32)
+		n += 4
+	case TwoOneofsDirect_Field3:
+		n += proto.SizeVarint(3<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(int32(x)))
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	// two
+	switch x := m.Two.(type) {
+	case TwoOneofsDirect_Field34:
+		n += proto.SizeVarint(34<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(len(string(x))))
+		n += len(string(x))
+	case TwoOneofsDirect_Field35:
+		n += proto.SizeVarint(35<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(len([]byte(x))))
+		n += len([]byte(x))
+	case TwoOneofsDirect_SubMessage2:
+		x2 := Subby(x)
+		s := proto.Size(&x2)
+		n += proto.SizeVarint(36<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
+}
+
 type CustomOneof struct {
 	// Types that are valid to be assigned to Custom:
 	//	*CustomOneof_Stringy
@@ -814,7 +1522,7 @@ type CustomOneof struct {
 
 func (m *CustomOneof) Reset()                    { *m = CustomOneof{} }
 func (*CustomOneof) ProtoMessage()               {}
-func (*CustomOneof) Descriptor() ([]byte, []int) { return fileDescriptorOne, []int{3} }
+func (*CustomOneof) Descriptor() ([]byte, []int) { return fileDescriptorOne, []int{5} }
 
 type isCustomOneof_Custom interface {
 	isCustomOneof_Custom()
@@ -974,11 +1682,178 @@ func _CustomOneof_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
+type CustomOneofDirect struct {
+	// Types that are valid to be assigned to Custom:
+	//	CustomOneofDirect_Stringy
+	//	CustomOneofDirect_CustomType
+	//	CustomOneofDirect_CastType
+	//	CustomOneofDirect_MyCustomName
+	Custom           isCustomOneofDirect_Custom `protobuf_oneof:"custom"`
+	XXX_unrecognized []byte                     `json:"-"`
+}
+
+func (m *CustomOneofDirect) Reset()                    { *m = CustomOneofDirect{} }
+func (*CustomOneofDirect) ProtoMessage()               {}
+func (*CustomOneofDirect) Descriptor() ([]byte, []int) { return fileDescriptorOne, []int{6} }
+
+type isCustomOneofDirect_Custom interface {
+	isCustomOneofDirect_Custom()
+	Equal(interface{}) bool
+	VerboseEqual(interface{}) error
+	MarshalTo([]byte) (int, error)
+	Size() int
+}
+
+type CustomOneofDirect_Stringy string
+type CustomOneofDirect_CustomType github_com_gogo_protobuf_test_custom.Uint128
+type CustomOneofDirect_CastType github_com_gogo_protobuf_test_casttype.MyUint64Type
+type CustomOneofDirect_MyCustomName int64
+
+func (CustomOneofDirect_Stringy) isCustomOneofDirect_Custom()      {}
+func (CustomOneofDirect_CustomType) isCustomOneofDirect_Custom()   {}
+func (CustomOneofDirect_CastType) isCustomOneofDirect_Custom()     {}
+func (CustomOneofDirect_MyCustomName) isCustomOneofDirect_Custom() {}
+
+func (m *CustomOneofDirect) GetCustom() isCustomOneofDirect_Custom {
+	if m != nil {
+		return m.Custom
+	}
+	return nil
+}
+
+func (m *CustomOneofDirect) GetStringy() string {
+	if x, ok := m.GetCustom().(CustomOneofDirect_Stringy); ok {
+		return string(x)
+	}
+	return ""
+}
+
+func (m *CustomOneofDirect) GetCastType() github_com_gogo_protobuf_test_casttype.MyUint64Type {
+	if x, ok := m.GetCustom().(CustomOneofDirect_CastType); ok {
+		return github_com_gogo_protobuf_test_casttype.MyUint64Type(x)
+	}
+	return 0
+}
+
+func (m *CustomOneofDirect) GetMyCustomName() int64 {
+	if x, ok := m.GetCustom().(CustomOneofDirect_MyCustomName); ok {
+		return int64(x)
+	}
+	return 0
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*CustomOneofDirect) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _CustomOneofDirect_OneofMarshaler, _CustomOneofDirect_OneofUnmarshaler, _CustomOneofDirect_OneofSizer, []interface{}{
+		(*CustomOneofDirect_Stringy)(nil),
+		(*CustomOneofDirect_CustomType)(nil),
+		(*CustomOneofDirect_CastType)(nil),
+		(*CustomOneofDirect_MyCustomName)(nil),
+	}
+}
+
+func _CustomOneofDirect_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*CustomOneofDirect)
+	// custom
+	switch x := m.Custom.(type) {
+	case CustomOneofDirect_Stringy:
+		_ = b.EncodeVarint(34<<3 | proto.WireBytes)
+		_ = b.EncodeStringBytes(string(x))
+	case CustomOneofDirect_CustomType:
+		_ = b.EncodeVarint(35<<3 | proto.WireBytes)
+		data, err := github_com_gogo_protobuf_test_custom.Uint128(x).Marshal()
+		if err != nil {
+			return err
+		}
+		_ = b.EncodeRawBytes(data)
+	case CustomOneofDirect_CastType:
+		_ = b.EncodeVarint(36<<3 | proto.WireVarint)
+		_ = b.EncodeVarint(uint64(github_com_gogo_protobuf_test_casttype.MyUint64Type(x)))
+	case CustomOneofDirect_MyCustomName:
+		_ = b.EncodeVarint(37<<3 | proto.WireVarint)
+		_ = b.EncodeVarint(uint64(int64(x)))
+	case nil:
+	default:
+		return fmt.Errorf("CustomOneofDirect.Custom has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _CustomOneofDirect_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*CustomOneofDirect)
+	switch tag {
+	case 34: // custom.Stringy
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeStringBytes()
+		m.Custom = CustomOneofDirect_Stringy(x)
+		return true, err
+	case 35: // custom.CustomType
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeRawBytes(true)
+		if err != nil {
+			return true, err
+		}
+		var cc github_com_gogo_protobuf_test_custom.Uint128
+		c := &cc
+		err = c.Unmarshal(x)
+		m.Custom = CustomOneofDirect_CustomType(*c)
+		return true, err
+	case 36: // custom.CastType
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.Custom = CustomOneofDirect_CastType(github_com_gogo_protobuf_test_casttype.MyUint64Type(x))
+		return true, err
+	case 37: // custom.CustomName
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.Custom = CustomOneofDirect_MyCustomName(int64(x))
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _CustomOneofDirect_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*CustomOneofDirect)
+	// custom
+	switch x := m.Custom.(type) {
+	case CustomOneofDirect_Stringy:
+		n += proto.SizeVarint(34<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(len(string(x))))
+		n += len(string(x))
+	case CustomOneofDirect_CustomType:
+		n += proto.SizeVarint(35<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(github_com_gogo_protobuf_test_custom.Uint128(x).Size()))
+		n += github_com_gogo_protobuf_test_custom.Uint128(x).Size()
+	case CustomOneofDirect_CastType:
+		n += proto.SizeVarint(36<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(github_com_gogo_protobuf_test_casttype.MyUint64Type(x)))
+	case CustomOneofDirect_MyCustomName:
+		n += proto.SizeVarint(37<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(int64(x)))
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
+}
+
 func init() {
 	proto.RegisterType((*Subby)(nil), "one.Subby")
 	proto.RegisterType((*AllTypesOneOf)(nil), "one.AllTypesOneOf")
+	proto.RegisterType((*AllTypesOneOfDirect)(nil), "one.AllTypesOneOfDirect")
 	proto.RegisterType((*TwoOneofs)(nil), "one.TwoOneofs")
+	proto.RegisterType((*TwoOneofsDirect)(nil), "one.TwoOneofsDirect")
 	proto.RegisterType((*CustomOneof)(nil), "one.CustomOneof")
+	proto.RegisterType((*CustomOneofDirect)(nil), "one.CustomOneofDirect")
 }
 func (this *Subby) Description() (desc *github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet) {
 	return OneDescription()
@@ -986,249 +1861,264 @@ func (this *Subby) Description() (desc *github_com_gogo_protobuf_protoc_gen_gogo
 func (this *AllTypesOneOf) Description() (desc *github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet) {
 	return OneDescription()
 }
+func (this *AllTypesOneOfDirect) Description() (desc *github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet) {
+	return OneDescription()
+}
 func (this *TwoOneofs) Description() (desc *github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet) {
+	return OneDescription()
+}
+func (this *TwoOneofsDirect) Description() (desc *github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet) {
 	return OneDescription()
 }
 func (this *CustomOneof) Description() (desc *github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet) {
 	return OneDescription()
 }
+func (this *CustomOneofDirect) Description() (desc *github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet) {
+	return OneDescription()
+}
 func OneDescription() (desc *github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet) {
 	d := &github_com_gogo_protobuf_protoc_gen_gogo_descriptor.FileDescriptorSet{}
 	var gzipped = []byte{
-		// 3727 bytes of a gzipped FileDescriptorSet
-		0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xcc, 0x5a, 0x6b, 0x6c, 0x23, 0xe5,
-		0xd5, 0xc6, 0xf1, 0x25, 0xf6, 0xb1, 0xe3, 0x38, 0x93, 0xb0, 0xeb, 0x0d, 0xb0, 0x61, 0xbd, 0x5c,
-		0x96, 0x05, 0x92, 0xdd, 0x64, 0xb3, 0x17, 0xf3, 0x7d, 0xa0, 0x38, 0xf1, 0x86, 0xac, 0x92, 0x38,
-		0xdf, 0x24, 0x86, 0x85, 0xef, 0xc7, 0x68, 0x62, 0x4f, 0x1c, 0xef, 0xda, 0x33, 0xfe, 0x3c, 0xe3,
-		0xdd, 0x0d, 0xbf, 0xf8, 0x44, 0x2f, 0x42, 0x55, 0x6f, 0xb4, 0x52, 0xb9, 0xb7, 0x20, 0xb5, 0x50,
-		0x7a, 0x83, 0xde, 0x54, 0xf5, 0x57, 0xa5, 0x8a, 0x96, 0x5f, 0x15, 0xed, 0xaf, 0xaa, 0xaa, 0x56,
-		0x40, 0x91, 0x4a, 0x5b, 0xda, 0x52, 0x69, 0xa5, 0xa2, 0xee, 0x9f, 0x9e, 0xf7, 0x36, 0x17, 0xdb,
-		0xc9, 0x38, 0xa8, 0x94, 0x46, 0xb2, 0xe2, 0x39, 0xe7, 0x3c, 0xcf, 0xbc, 0xef, 0x79, 0xcf, 0x7b,
-		0xce, 0x99, 0x77, 0x0c, 0x3f, 0x3d, 0x0a, 0x37, 0x56, 0x0c, 0xa3, 0x52, 0xd3, 0x26, 0x1a, 0x4d,
-		0xc3, 0x32, 0xd6, 0x5b, 0x1b, 0x13, 0x65, 0xcd, 0x2c, 0x35, 0xab, 0x0d, 0xcb, 0x68, 0x8e, 0x53,
-		0x99, 0x34, 0xc8, 0x2c, 0xc6, 0x85, 0x45, 0x66, 0x09, 0x86, 0x4e, 0x57, 0x6b, 0xda, 0x9c, 0x6d,
-		0xb8, 0xaa, 0x59, 0xd2, 0x49, 0x08, 0x6d, 0xa0, 0x30, 0x1d, 0xb8, 0x31, 0x78, 0x28, 0x3e, 0x79,
-		0xd3, 0x78, 0x1b, 0x68, 0xdc, 0x8b, 0x58, 0x21, 0x62, 0x99, 0x22, 0x32, 0x6f, 0x87, 0x60, 0xb8,
-		0x8b, 0x56, 0x92, 0x20, 0xa4, 0xab, 0x75, 0xc2, 0x18, 0x38, 0x14, 0x93, 0xe9, 0x77, 0x29, 0x0d,
-		0xfd, 0x0d, 0xb5, 0x74, 0x5e, 0xad, 0x68, 0xe9, 0x3e, 0x2a, 0x16, 0x97, 0xd2, 0x7e, 0x80, 0xb2,
-		0xd6, 0xd0, 0xf4, 0xb2, 0xa6, 0x97, 0xb6, 0xd2, 0x41, 0x1c, 0x45, 0x4c, 0x76, 0x49, 0xa4, 0xdb,
-		0x61, 0xa8, 0xd1, 0x5a, 0xaf, 0x55, 0x4b, 0x8a, 0xcb, 0x0c, 0xd0, 0x2c, 0x2c, 0xa7, 0x98, 0x62,
-		0xce, 0x31, 0xbe, 0x15, 0x06, 0x2f, 0x6a, 0xea, 0x79, 0xb7, 0x69, 0x9c, 0x9a, 0x26, 0x89, 0xd8,
-		0x65, 0x38, 0x0b, 0x89, 0xba, 0x66, 0x9a, 0x38, 0x00, 0xc5, 0xda, 0x6a, 0x68, 0xe9, 0x10, 0x9d,
-		0xfd, 0x8d, 0x1d, 0xb3, 0x6f, 0x9f, 0x79, 0x9c, 0xa3, 0xd6, 0x10, 0x24, 0xcd, 0x40, 0x4c, 0xd3,
-		0x5b, 0x75, 0xc6, 0x10, 0xde, 0xc6, 0x7f, 0x79, 0xb4, 0x68, 0x67, 0x89, 0x12, 0x18, 0xa7, 0xe8,
-		0x37, 0xb5, 0xe6, 0x85, 0x6a, 0x49, 0x4b, 0x47, 0x28, 0xc1, 0xad, 0x1d, 0x04, 0xab, 0x4c, 0xdf,
-		0xce, 0x21, 0x70, 0x38, 0x95, 0x98, 0x76, 0xc9, 0xd2, 0x74, 0xb3, 0x6a, 0xe8, 0xe9, 0x7e, 0x4a,
-		0x72, 0x73, 0x97, 0x55, 0xd4, 0x6a, 0xe5, 0x76, 0x0a, 0x07, 0x27, 0x1d, 0x87, 0x7e, 0xa3, 0x61,
-		0xe1, 0x37, 0x33, 0x1d, 0xc5, 0xf5, 0x89, 0x4f, 0x5e, 0xdf, 0x35, 0x10, 0x0a, 0xcc, 0x46, 0x16,
-		0xc6, 0xd2, 0x02, 0xa4, 0x4c, 0xa3, 0xd5, 0x2c, 0x69, 0x4a, 0xc9, 0x28, 0x6b, 0x4a, 0x55, 0xdf,
-		0x30, 0xd2, 0x31, 0x4a, 0x30, 0xd6, 0x39, 0x11, 0x6a, 0x38, 0x8b, 0x76, 0x0b, 0x68, 0x26, 0x27,
-		0x4d, 0xcf, 0xb5, 0xb4, 0x07, 0x22, 0xe6, 0x96, 0x6e, 0xa9, 0x97, 0xd2, 0x09, 0x1a, 0x21, 0xfc,
-		0x2a, 0xf3, 0xf7, 0x30, 0x0c, 0xf6, 0x12, 0x62, 0x77, 0x41, 0x78, 0x83, 0xcc, 0x12, 0x03, 0x6c,
-		0x17, 0x3e, 0x60, 0x18, 0xaf, 0x13, 0x23, 0x1f, 0xd0, 0x89, 0x33, 0x10, 0xd7, 0x35, 0xd3, 0xd2,
-		0xca, 0x2c, 0x22, 0x82, 0x3d, 0xc6, 0x14, 0x30, 0x50, 0x67, 0x48, 0x85, 0x3e, 0x50, 0x48, 0x9d,
-		0x85, 0x41, 0x7b, 0x48, 0x4a, 0x53, 0xd5, 0x2b, 0x22, 0x36, 0x27, 0xfc, 0x46, 0x32, 0x9e, 0x17,
-		0x38, 0x99, 0xc0, 0xe4, 0xa4, 0xe6, 0xb9, 0x96, 0xe6, 0x00, 0x0c, 0x5d, 0x33, 0x36, 0x70, 0x7b,
-		0x95, 0x6a, 0x18, 0x27, 0xdd, 0xbd, 0x54, 0x20, 0x26, 0x1d, 0x5e, 0x32, 0x98, 0xb4, 0x54, 0x93,
-		0x4e, 0x39, 0xa1, 0xd6, 0xbf, 0x4d, 0xa4, 0x2c, 0xb1, 0x4d, 0xd6, 0x11, 0x6d, 0x45, 0x48, 0x36,
-		0x35, 0x12, 0xf7, 0xe8, 0x62, 0x36, 0xb3, 0x18, 0x1d, 0xc4, 0xb8, 0xef, 0xcc, 0x64, 0x0e, 0x63,
-		0x13, 0x1b, 0x68, 0xba, 0x2f, 0xa5, 0x83, 0x60, 0x0b, 0x14, 0x1a, 0x56, 0x40, 0xb3, 0x50, 0x42,
-		0x08, 0x97, 0x51, 0x36, 0x7a, 0x12, 0x92, 0x5e, 0xf7, 0x48, 0x23, 0x10, 0x36, 0x2d, 0xb5, 0x69,
-		0xd1, 0x28, 0x0c, 0xcb, 0xec, 0x42, 0x4a, 0x41, 0x10, 0x93, 0x0c, 0xcd, 0x72, 0x61, 0x99, 0x7c,
-		0x1d, 0x3d, 0x01, 0x03, 0x9e, 0xdb, 0xf7, 0x0a, 0xcc, 0x3c, 0x1e, 0x81, 0x91, 0x6e, 0x31, 0xd7,
-		0x35, 0xfc, 0x71, 0xfb, 0x60, 0x04, 0xac, 0x6b, 0x4d, 0x8c, 0x3b, 0xc2, 0xc0, 0xaf, 0x30, 0xa2,
-		0xc2, 0x35, 0x75, 0x5d, 0xab, 0x61, 0x34, 0x05, 0x0e, 0x25, 0x27, 0x6f, 0xef, 0x29, 0xaa, 0xc7,
-		0x17, 0x09, 0x44, 0x66, 0x48, 0xe9, 0x6e, 0x08, 0xf1, 0x14, 0x47, 0x18, 0x0e, 0xf7, 0xc6, 0x40,
-		0x62, 0x51, 0xa6, 0x38, 0xe9, 0x3a, 0x88, 0x91, 0xff, 0xcc, 0xb7, 0x11, 0x3a, 0xe6, 0x28, 0x11,
-		0x10, 0xbf, 0x4a, 0xa3, 0x10, 0xa5, 0x61, 0x56, 0xd6, 0x44, 0x69, 0xb0, 0xaf, 0xc9, 0xc2, 0x94,
-		0xb5, 0x0d, 0xb5, 0x55, 0xb3, 0x94, 0x0b, 0x6a, 0xad, 0xa5, 0xd1, 0x80, 0xc1, 0x85, 0xe1, 0xc2,
-		0xfb, 0x88, 0x4c, 0x1a, 0x83, 0x38, 0x8b, 0xca, 0x2a, 0x62, 0x2e, 0xd1, 0xec, 0x13, 0x96, 0x59,
-		0xa0, 0x2e, 0x10, 0x09, 0xb9, 0xfd, 0x39, 0x13, 0xf7, 0x02, 0x5f, 0x5a, 0x7a, 0x0b, 0x22, 0xa0,
-		0xb7, 0x3f, 0xd1, 0x9e, 0xf8, 0x6e, 0xe8, 0x3e, 0xbd, 0xf6, 0x58, 0xcc, 0xfc, 0xb0, 0x0f, 0x42,
-		0x74, 0xbf, 0x0d, 0x42, 0x7c, 0xed, 0x81, 0x95, 0xbc, 0x32, 0x57, 0x28, 0xe6, 0x16, 0xf3, 0xa9,
-		0x80, 0x94, 0x04, 0xa0, 0x82, 0xd3, 0x8b, 0x85, 0x99, 0xb5, 0x54, 0x9f, 0x7d, 0xbd, 0xb0, 0xbc,
-		0x76, 0xfc, 0x58, 0x2a, 0x68, 0x03, 0x8a, 0x4c, 0x10, 0x72, 0x1b, 0x4c, 0x4d, 0xa6, 0xc2, 0x18,
-		0x09, 0x09, 0x46, 0xb0, 0x70, 0x36, 0x3f, 0x87, 0x16, 0x11, 0xaf, 0x04, 0x6d, 0xfa, 0xa5, 0x01,
-		0x88, 0x51, 0x49, 0xae, 0x50, 0x58, 0x4c, 0x45, 0x6d, 0xce, 0xd5, 0x35, 0x79, 0x61, 0x79, 0x3e,
-		0x15, 0xb3, 0x39, 0xe7, 0xe5, 0x42, 0x71, 0x25, 0x05, 0x36, 0xc3, 0x52, 0x7e, 0x75, 0x75, 0x66,
-		0x3e, 0x9f, 0x8a, 0xdb, 0x16, 0xb9, 0x07, 0xd6, 0xf2, 0xab, 0xa9, 0x84, 0x67, 0x58, 0x78, 0x8b,
-		0x01, 0xfb, 0x16, 0xf9, 0xe5, 0xe2, 0x52, 0x2a, 0x29, 0x0d, 0xc1, 0x00, 0xbb, 0x85, 0x18, 0xc4,
-		0x60, 0x9b, 0x08, 0x47, 0x9a, 0x72, 0x06, 0xc2, 0x58, 0x86, 0x3c, 0x02, 0xb4, 0x90, 0x32, 0xb3,
-		0x10, 0xa6, 0xd1, 0x85, 0x51, 0x9c, 0x5c, 0x9c, 0xc9, 0xe5, 0x17, 0x95, 0xc2, 0xca, 0xda, 0x42,
-		0x61, 0x79, 0x66, 0x11, 0x7d, 0x67, 0xcb, 0xe4, 0xfc, 0xff, 0x14, 0x17, 0xe4, 0xfc, 0x1c, 0xfa,
-		0xcf, 0x25, 0x5b, 0xc9, 0xcf, 0xac, 0xa1, 0x2c, 0x98, 0x39, 0x0c, 0x23, 0xdd, 0xf2, 0x4c, 0xb7,
-		0x9d, 0x91, 0x79, 0x3e, 0x00, 0xc3, 0x5d, 0x52, 0x66, 0xd7, 0x5d, 0x74, 0x0f, 0x84, 0x59, 0xa4,
-		0xb1, 0x22, 0x72, 0x5b, 0xd7, 0xdc, 0x4b, 0xe3, 0xae, 0xa3, 0x90, 0x50, 0x9c, 0xbb, 0x90, 0x06,
-		0xb7, 0x29, 0xa4, 0x84, 0xa2, 0x23, 0x9c, 0x1e, 0x09, 0x40, 0x7a, 0x3b, 0x6e, 0x9f, 0xfd, 0xde,
-		0xe7, 0xd9, 0xef, 0x77, 0xb5, 0x0f, 0xe0, 0xc0, 0xf6, 0x73, 0xe8, 0x18, 0xc5, 0x0b, 0x01, 0xd8,
-		0xd3, 0xbd, 0xdf, 0xe8, 0x3a, 0x86, 0xbb, 0x21, 0x52, 0xd7, 0xac, 0x4d, 0x43, 0xd4, 0xdc, 0x5b,
-		0xba, 0x64, 0x72, 0xa2, 0x6e, 0xf7, 0x15, 0x47, 0xb9, 0x4b, 0x41, 0x70, 0xbb, 0xa6, 0x81, 0x8d,
-		0xa6, 0x63, 0xa4, 0x8f, 0xf6, 0xc1, 0xb5, 0x5d, 0xc9, 0xbb, 0x0e, 0xf4, 0x06, 0x80, 0xaa, 0xde,
-		0x68, 0x59, 0xac, 0xae, 0xb2, 0x34, 0x13, 0xa3, 0x12, 0xba, 0x85, 0x49, 0x0a, 0x69, 0x59, 0xb6,
-		0x3e, 0x48, 0xf5, 0xc0, 0x44, 0xd4, 0xe0, 0xa4, 0x33, 0xd0, 0x10, 0x1d, 0xe8, 0xfe, 0x6d, 0x66,
-		0xda, 0x51, 0xb2, 0x8e, 0x40, 0xaa, 0x54, 0xab, 0x6a, 0xba, 0xa5, 0x98, 0x56, 0x53, 0x53, 0xeb,
-		0x55, 0xbd, 0x42, 0xf3, 0x68, 0x34, 0x1b, 0xde, 0x50, 0x6b, 0xa6, 0x26, 0x0f, 0x32, 0xf5, 0xaa,
-		0xd0, 0x12, 0x04, 0x2d, 0x16, 0x4d, 0x17, 0x22, 0xe2, 0x41, 0x30, 0xb5, 0x8d, 0xc8, 0xfc, 0xaa,
-		0x1f, 0xe2, 0xae, 0xee, 0x4c, 0x3a, 0x00, 0x89, 0x73, 0xea, 0x05, 0x55, 0x11, 0x1d, 0x37, 0xf3,
-		0x44, 0x9c, 0xc8, 0x56, 0x78, 0xd7, 0x7d, 0x04, 0x46, 0xa8, 0x09, 0xce, 0x11, 0x6f, 0x54, 0xaa,
-		0xa9, 0xa6, 0x49, 0x9d, 0x16, 0xa5, 0xa6, 0x12, 0xd1, 0x15, 0x88, 0x6a, 0x56, 0x68, 0xa4, 0x69,
-		0x18, 0xa6, 0x88, 0x3a, 0x26, 0xde, 0x6a, 0xa3, 0xa6, 0x29, 0xe4, 0x19, 0xc0, 0xa4, 0xf9, 0xd4,
-		0x1e, 0xd9, 0x10, 0xb1, 0x58, 0xe2, 0x06, 0x64, 0x44, 0xa6, 0x34, 0x0f, 0x37, 0x50, 0x58, 0x45,
-		0xd3, 0xb5, 0xa6, 0x6a, 0x69, 0x8a, 0xf6, 0x7f, 0x2d, 0xb4, 0x55, 0x54, 0xbd, 0xac, 0x6c, 0xaa,
-		0xe6, 0x66, 0x7a, 0xc4, 0x4d, 0xb0, 0x8f, 0xd8, 0xce, 0x73, 0xd3, 0x3c, 0xb5, 0x9c, 0xd1, 0xcb,
-		0xf7, 0xa2, 0x9d, 0x94, 0x85, 0x3d, 0x94, 0x08, 0x9d, 0x82, 0x73, 0x56, 0x4a, 0x9b, 0x5a, 0xe9,
-		0xbc, 0xd2, 0xb2, 0x36, 0x4e, 0xa6, 0xaf, 0x73, 0x33, 0xd0, 0x41, 0xae, 0x52, 0x9b, 0x59, 0x62,
-		0x52, 0x44, 0x0b, 0x69, 0x15, 0x12, 0x64, 0x3d, 0xea, 0xd5, 0x87, 0x70, 0xd8, 0x46, 0x93, 0xd6,
-		0x88, 0x64, 0x97, 0xcd, 0xed, 0x72, 0xe2, 0x78, 0x81, 0x03, 0x96, 0xb0, 0x3f, 0xcd, 0x86, 0x57,
-		0x57, 0xf2, 0xf9, 0x39, 0x39, 0x2e, 0x58, 0x4e, 0x1b, 0x4d, 0x12, 0x53, 0x15, 0xc3, 0xf6, 0x71,
-		0x9c, 0xc5, 0x54, 0xc5, 0x10, 0x1e, 0x46, 0x7f, 0x95, 0x4a, 0x6c, 0xda, 0xf8, 0xec, 0xc2, 0x9b,
-		0x75, 0x33, 0x9d, 0xf2, 0xf8, 0xab, 0x54, 0x9a, 0x67, 0x06, 0x3c, 0xcc, 0x4d, 0xdc, 0x12, 0xd7,
-		0x3a, 0xfe, 0x72, 0x03, 0x87, 0x3a, 0x66, 0xd9, 0x0e, 0xc5, 0x3b, 0x36, 0xb6, 0x3a, 0x81, 0x92,
-		0xe7, 0x8e, 0x8d, 0xad, 0x76, 0xd8, 0xcd, 0xf4, 0x01, 0xac, 0xa9, 0x95, 0xd0, 0xe5, 0xe5, 0xf4,
-		0x5e, 0xb7, 0xb5, 0x4b, 0x21, 0x4d, 0x60, 0x20, 0x97, 0x14, 0x4d, 0x57, 0xd7, 0x71, 0xed, 0xd5,
-		0x26, 0x7e, 0x31, 0xd3, 0x63, 0x6e, 0xe3, 0x64, 0xa9, 0x94, 0xa7, 0xda, 0x19, 0xaa, 0x94, 0x0e,
-		0xc3, 0x90, 0xb1, 0x7e, 0xae, 0xc4, 0x82, 0x4b, 0x41, 0x9e, 0x8d, 0xea, 0xa5, 0xf4, 0x4d, 0xd4,
-		0x4d, 0x83, 0x44, 0x41, 0x43, 0x6b, 0x85, 0x8a, 0xa5, 0xdb, 0x90, 0xdc, 0xdc, 0x54, 0x9b, 0x0d,
-		0x5a, 0xa4, 0x4d, 0x74, 0xaa, 0x96, 0xbe, 0x99, 0x99, 0x32, 0xf9, 0xb2, 0x10, 0x4b, 0x79, 0x18,
-		0x23, 0x93, 0xd7, 0x55, 0xdd, 0x50, 0x5a, 0xa6, 0xa6, 0x38, 0x43, 0xb4, 0xd7, 0xe2, 0x16, 0x32,
-		0x2c, 0xf9, 0x7a, 0x61, 0x56, 0x34, 0x31, 0x99, 0x09, 0x23, 0xb1, 0x3c, 0x67, 0x61, 0xa4, 0xa5,
-		0x57, 0x75, 0x0c, 0x71, 0xd4, 0x10, 0x30, 0xdb, 0xb0, 0xe9, 0xdf, 0xf7, 0x6f, 0xd3, 0x74, 0x17,
-		0xdd, 0xd6, 0x2c, 0x48, 0xe4, 0xe1, 0x56, 0xa7, 0x30, 0x93, 0x85, 0x84, 0x3b, 0x76, 0xa4, 0x18,
-		0xb0, 0xe8, 0xc1, 0xea, 0x86, 0x15, 0x75, 0xb6, 0x30, 0x47, 0x6a, 0xe1, 0x83, 0x79, 0x2c, 0x6c,
-		0x58, 0x93, 0x17, 0x17, 0xd6, 0xf2, 0x8a, 0x5c, 0x5c, 0x5e, 0x5b, 0x58, 0xca, 0xa7, 0x82, 0x87,
-		0x63, 0xd1, 0x77, 0xfa, 0x53, 0x0f, 0xe3, 0x5f, 0x5f, 0xe6, 0xd5, 0x3e, 0x48, 0x7a, 0xfb, 0x60,
-		0xe9, 0xbf, 0x60, 0xaf, 0x78, 0x68, 0x35, 0x35, 0x4b, 0xb9, 0x58, 0x6d, 0xd2, 0x70, 0xae, 0xab,
-		0xac, 0x93, 0xb4, 0x57, 0x62, 0x84, 0x5b, 0xe1, 0xe3, 0xfd, 0xfd, 0x68, 0x73, 0x9a, 0x9a, 0x48,
-		0x8b, 0x30, 0x86, 0x2e, 0xc3, 0x5e, 0x53, 0x2f, 0xab, 0xcd, 0xb2, 0xe2, 0x1c, 0x17, 0x28, 0x6a,
-		0x09, 0xe3, 0xc0, 0x34, 0x58, 0x25, 0xb1, 0x59, 0xae, 0xd7, 0x8d, 0x55, 0x6e, 0xec, 0xa4, 0xd8,
-		0x19, 0x6e, 0xda, 0x16, 0x35, 0xc1, 0xed, 0xa2, 0x06, 0x7b, 0xaf, 0xba, 0xda, 0xc0, 0xb0, 0xb1,
-		0x9a, 0x5b, 0xb4, 0x7b, 0x8b, 0xca, 0x51, 0x14, 0xe4, 0xc9, 0xf5, 0x87, 0xb7, 0x06, 0x6e, 0x3f,
-		0xfe, 0x36, 0x08, 0x09, 0x77, 0x07, 0x47, 0x1a, 0xe2, 0x12, 0x4d, 0xf3, 0x01, 0x9a, 0x05, 0x0e,
-		0xee, 0xd8, 0xef, 0x8d, 0xcf, 0x92, 0xfc, 0x9f, 0x8d, 0xb0, 0xbe, 0x4a, 0x66, 0x48, 0x52, 0x7b,
-		0x49, 0xac, 0x69, 0xac, 0x5b, 0x8f, 0xca, 0xfc, 0x0a, 0x93, 0x5d, 0xe4, 0x9c, 0x49, 0xb9, 0x23,
-		0x94, 0xfb, 0xa6, 0x9d, 0xb9, 0xcf, 0xac, 0x52, 0xf2, 0xd8, 0x99, 0x55, 0x65, 0xb9, 0x20, 0x2f,
-		0xcd, 0x2c, 0xca, 0x1c, 0x2e, 0xed, 0x83, 0x50, 0x4d, 0x7d, 0x68, 0xcb, 0x5b, 0x29, 0xa8, 0xa8,
-		0x57, 0xc7, 0x23, 0x03, 0x39, 0xf2, 0xf0, 0xe6, 0x67, 0x2a, 0xfa, 0x10, 0x43, 0x7f, 0x02, 0xc2,
-		0xd4, 0x5f, 0x12, 0x00, 0xf7, 0x58, 0xea, 0x1a, 0x29, 0x0a, 0xa1, 0xd9, 0x82, 0x4c, 0xc2, 0x1f,
-		0xe3, 0x9d, 0x49, 0x95, 0x95, 0x85, 0xfc, 0x2c, 0xee, 0x80, 0xcc, 0x34, 0x44, 0x98, 0x13, 0xc8,
-		0xd6, 0xb0, 0xdd, 0x80, 0x20, 0x76, 0xc9, 0x39, 0x02, 0x42, 0x5b, 0x5c, 0xca, 0xe5, 0xe5, 0x54,
-		0x9f, 0x7b, 0x79, 0x7f, 0x1c, 0x80, 0xb8, 0xab, 0xa1, 0x22, 0xa5, 0x5c, 0xad, 0xd5, 0x8c, 0x8b,
-		0x8a, 0x5a, 0xab, 0x62, 0x86, 0x62, 0xeb, 0x03, 0x54, 0x34, 0x43, 0x24, 0xbd, 0xfa, 0xef, 0xdf,
-		0x12, 0x9b, 0xcf, 0x06, 0x20, 0xd5, 0xde, 0x8c, 0xb5, 0x0d, 0x30, 0xf0, 0x91, 0x0e, 0xf0, 0xe9,
-		0x00, 0x24, 0xbd, 0x1d, 0x58, 0xdb, 0xf0, 0x0e, 0x7c, 0xa4, 0xc3, 0x7b, 0x2a, 0x00, 0x03, 0x9e,
-		0xbe, 0xeb, 0x3f, 0x6a, 0x74, 0x4f, 0x06, 0x61, 0xb8, 0x0b, 0x0e, 0x13, 0x10, 0x6b, 0x50, 0x59,
-		0xcf, 0x7c, 0x67, 0x2f, 0xf7, 0x1a, 0x27, 0xf5, 0x6f, 0x45, 0x6d, 0x5a, 0xbc, 0x9f, 0xc5, 0x7a,
-		0x59, 0x2d, 0x63, 0x52, 0xad, 0x6e, 0x54, 0xb1, 0x7d, 0x63, 0x4f, 0x2c, 0xac, 0x6b, 0x1d, 0x74,
-		0xe4, 0xec, 0xf1, 0xf8, 0x0e, 0x90, 0x1a, 0x86, 0x59, 0xb5, 0xaa, 0x17, 0xc8, 0xf1, 0x9c, 0x78,
-		0x90, 0x26, 0x5d, 0x6c, 0x48, 0x4e, 0x09, 0xcd, 0x82, 0x6e, 0xd9, 0xd6, 0xba, 0x56, 0x51, 0xdb,
-		0xac, 0x49, 0x1a, 0x0a, 0xca, 0x29, 0xa1, 0xb1, 0xad, 0xb1, 0xd1, 0x2c, 0x1b, 0x2d, 0xd2, 0x10,
-		0x30, 0x3b, 0x92, 0xf5, 0x02, 0x72, 0x9c, 0xc9, 0x6c, 0x13, 0xde, 0xb1, 0x39, 0x4f, 0xf0, 0x09,
-		0x39, 0xce, 0x64, 0xcc, 0xe4, 0x56, 0x18, 0x54, 0x2b, 0x95, 0x26, 0x21, 0x17, 0x44, 0xac, 0x0d,
-		0x4d, 0xda, 0x62, 0x6a, 0x38, 0x7a, 0x06, 0xa2, 0xc2, 0x0f, 0xa4, 0xb0, 0x10, 0x4f, 0x60, 0xcd,
-		0xa7, 0xe7, 0x28, 0x7d, 0xe4, 0xa1, 0x5e, 0x17, 0x4a, 0xbc, 0x69, 0xd5, 0x54, 0x9c, 0x03, 0xbd,
-		0x3e, 0xd4, 0x47, 0xe5, 0x78, 0xd5, 0xb4, 0x4f, 0x70, 0x32, 0x2f, 0x60, 0x79, 0xf5, 0x1e, 0x48,
-		0x4a, 0x73, 0x10, 0xad, 0x19, 0x18, 0x1f, 0x04, 0xc1, 0x4e, 0xc3, 0x0f, 0xf9, 0x9c, 0x61, 0x8e,
-		0x2f, 0x72, 0x7b, 0xd9, 0x46, 0x8e, 0xfe, 0x22, 0x00, 0x51, 0x21, 0xc6, 0x42, 0x11, 0x6a, 0xa8,
-		0xd6, 0x26, 0xa5, 0x0b, 0xe7, 0xfa, 0x52, 0x01, 0x99, 0x5e, 0x13, 0x39, 0x76, 0x33, 0x3a, 0x0d,
-		0x01, 0x2e, 0x27, 0xd7, 0x64, 0x5d, 0x6b, 0x9a, 0x5a, 0xa6, 0x0d, 0xae, 0x51, 0xaf, 0xe3, 0x4a,
-		0x9a, 0x62, 0x5d, 0xb9, 0x7c, 0x96, 0x8b, 0xc9, 0xb9, 0xb8, 0xd5, 0x54, 0xab, 0x35, 0x8f, 0x6d,
-		0x88, 0xda, 0xa6, 0x84, 0xc2, 0x36, 0xce, 0xc2, 0x3e, 0xc1, 0x5b, 0xd6, 0x2c, 0x15, 0x9b, 0xe7,
-		0xb2, 0x03, 0x8a, 0xd0, 0xd3, 0xae, 0xbd, 0xdc, 0x60, 0x8e, 0xeb, 0x05, 0x36, 0x77, 0x16, 0x1b,
-		0x59, 0xa3, 0xde, 0xee, 0x89, 0x5c, 0xaa, 0xed, 0xb9, 0xcb, 0xbc, 0x37, 0xf0, 0x20, 0x38, 0x4d,
-		0xc5, 0xf3, 0x7d, 0xc1, 0xf9, 0x95, 0xdc, 0x4b, 0x7d, 0xa3, 0xf3, 0x0c, 0xb7, 0x22, 0x3c, 0x28,
-		0x6b, 0x1b, 0x35, 0xad, 0x44, 0xbc, 0x03, 0xcf, 0x1d, 0x84, 0x3b, 0x2b, 0x55, 0x6b, 0xb3, 0xb5,
-		0x3e, 0x8e, 0x77, 0x98, 0xa8, 0x18, 0x15, 0xc3, 0x79, 0x9d, 0x41, 0xae, 0xe8, 0x05, 0xfd, 0xc6,
-		0x5f, 0x69, 0xc4, 0x6c, 0xe9, 0xa8, 0xef, 0xfb, 0x8f, 0xec, 0x32, 0x0c, 0x73, 0x63, 0x85, 0x9e,
-		0xa9, 0xb2, 0x16, 0x54, 0xda, 0xf1, 0x81, 0x3c, 0xfd, 0xca, 0xdb, 0xb4, 0x24, 0xc8, 0x43, 0x1c,
-		0x4a, 0x74, 0xac, 0x49, 0xcd, 0xca, 0x70, 0xad, 0x87, 0x8f, 0xc5, 0x30, 0x3e, 0x72, 0xef, 0xcc,
-		0xf8, 0x2a, 0x67, 0x1c, 0x76, 0x31, 0xae, 0x72, 0x68, 0x76, 0x16, 0x06, 0x76, 0xc3, 0xf5, 0x33,
-		0xce, 0x95, 0xd0, 0xdc, 0x24, 0xf3, 0x30, 0x48, 0x49, 0x4a, 0x2d, 0xd3, 0x32, 0xea, 0x34, 0x41,
-		0xec, 0x4c, 0xf3, 0xf3, 0xb7, 0x59, 0x50, 0x25, 0x09, 0x6c, 0xd6, 0x46, 0x65, 0xef, 0x83, 0x11,
-		0x22, 0xa1, 0x7b, 0xd0, 0xcd, 0xe6, 0x7f, 0x84, 0x90, 0xfe, 0xe5, 0x23, 0x2c, 0xf6, 0x86, 0x6d,
-		0x02, 0x17, 0xaf, 0x6b, 0x25, 0x2a, 0x9a, 0x85, 0xb9, 0x0d, 0x9f, 0xff, 0x6a, 0x35, 0x69, 0xc7,
-		0x77, 0x0c, 0xe9, 0x27, 0xde, 0xf5, 0xae, 0xc4, 0x3c, 0x43, 0xce, 0xd4, 0x6a, 0xd9, 0x22, 0xec,
-		0xed, 0xb2, 0xb2, 0x3d, 0x70, 0x3e, 0xc9, 0x39, 0x47, 0x3a, 0x56, 0x97, 0xd0, 0xae, 0x80, 0x90,
-		0xdb, 0xeb, 0xd1, 0x03, 0xe7, 0x53, 0x9c, 0x53, 0xe2, 0x58, 0xb1, 0x2c, 0x84, 0xf1, 0x0c, 0x0c,
-		0xe1, 0x93, 0xfa, 0xba, 0x61, 0xf2, 0xe7, 0xde, 0x1e, 0xe8, 0x9e, 0xe6, 0x74, 0x83, 0x1c, 0x48,
-		0x9f, 0x82, 0x09, 0xd7, 0x29, 0x88, 0x6e, 0xe0, 0x03, 0x50, 0x0f, 0x14, 0xcf, 0x70, 0x8a, 0x7e,
-		0x62, 0x4f, 0xa0, 0x33, 0x90, 0xa8, 0x18, 0x3c, 0x0d, 0xfb, 0xc3, 0x9f, 0xe5, 0xf0, 0xb8, 0xc0,
-		0x70, 0x8a, 0x86, 0xd1, 0x68, 0xd5, 0x48, 0x8e, 0xf6, 0xa7, 0xf8, 0xb2, 0xa0, 0x10, 0x18, 0x4e,
-		0xb1, 0x0b, 0xb7, 0x7e, 0x45, 0x50, 0x98, 0x2e, 0x7f, 0xde, 0x43, 0xce, 0x7a, 0x6b, 0x5b, 0x86,
-		0xde, 0xcb, 0x20, 0x9e, 0xe3, 0x0c, 0xc0, 0x21, 0x84, 0xe0, 0x2e, 0x88, 0xf5, 0xba, 0x10, 0x5f,
-		0xe5, 0xf0, 0xa8, 0x26, 0x56, 0x00, 0xf7, 0x99, 0x48, 0x32, 0xe4, 0xdd, 0x8a, 0x3f, 0xc5, 0xd7,
-		0x38, 0x45, 0xd2, 0x05, 0xe3, 0xd3, 0xb0, 0x34, 0xd3, 0xc2, 0x47, 0xf5, 0x1e, 0x48, 0x5e, 0x10,
-		0xd3, 0xe0, 0x10, 0xee, 0xca, 0x75, 0x4d, 0x2f, 0x6d, 0xf6, 0xc6, 0xf0, 0xa2, 0x70, 0xa5, 0xc0,
-		0x10, 0x0a, 0xcc, 0x3c, 0x75, 0xb5, 0x89, 0x0f, 0xd7, 0xb5, 0x9e, 0x96, 0xe3, 0xeb, 0x9c, 0x23,
-		0x61, 0x83, 0xb8, 0x47, 0x5a, 0xfa, 0x6e, 0x68, 0x5e, 0x12, 0x1e, 0x71, 0xc1, 0xf8, 0xd6, 0xc3,
-		0x27, 0x53, 0xd2, 0x49, 0xec, 0x86, 0xed, 0x1b, 0x62, 0xeb, 0x31, 0xec, 0x92, 0x9b, 0x11, 0x57,
-		0xda, 0xc4, 0x47, 0xf0, 0x5e, 0x68, 0xbe, 0x29, 0x56, 0x9a, 0x02, 0x08, 0xf8, 0x01, 0xd8, 0xd7,
-		0x35, 0xd5, 0xf7, 0x40, 0xf6, 0x2d, 0x4e, 0xb6, 0xa7, 0x4b, 0xba, 0xe7, 0x29, 0x61, 0xb7, 0x94,
-		0xdf, 0x16, 0x29, 0x41, 0x6b, 0xe3, 0x5a, 0x21, 0x6d, 0xac, 0xa9, 0x6e, 0xec, 0xce, 0x6b, 0xdf,
-		0x11, 0x5e, 0x63, 0x58, 0x8f, 0xd7, 0xd6, 0x60, 0x0f, 0x67, 0xdc, 0xdd, 0xba, 0xbe, 0x2c, 0x12,
-		0x2b, 0x43, 0x17, 0xbd, 0xab, 0xfb, 0xbf, 0x30, 0x6a, 0xbb, 0x53, 0x74, 0x60, 0xa6, 0x42, 0x0e,
-		0x06, 0xfc, 0x99, 0x5f, 0xe1, 0xcc, 0x22, 0xe3, 0xdb, 0x2d, 0x9c, 0xb9, 0xa4, 0x36, 0x08, 0xf9,
-		0x59, 0x48, 0x0b, 0xf2, 0x96, 0x8e, 0x0d, 0xbe, 0x51, 0xd1, 0x71, 0x19, 0xcb, 0x3d, 0x50, 0x7f,
-		0xb7, 0x6d, 0xa9, 0x8a, 0x2e, 0x38, 0x61, 0x5e, 0x80, 0x94, 0xdd, 0x6f, 0x28, 0xd5, 0x7a, 0xc3,
-		0xc0, 0xd6, 0x72, 0x67, 0xc6, 0xef, 0x89, 0x95, 0xb2, 0x71, 0x0b, 0x14, 0x96, 0xcd, 0x43, 0x92,
-		0x5e, 0xf6, 0x1a, 0x92, 0xdf, 0xe7, 0x44, 0x03, 0x0e, 0x8a, 0x27, 0x0e, 0xec, 0x94, 0xb0, 0xe7,
-		0xed, 0x25, 0xff, 0xfd, 0x40, 0x24, 0x0e, 0x0e, 0x61, 0xd1, 0x37, 0xd8, 0x56, 0x89, 0x25, 0xbf,
-		0xd7, 0xaf, 0xe9, 0xff, 0xbf, 0xc2, 0xf7, 0xac, 0xb7, 0x10, 0x67, 0x17, 0x89, 0x7b, 0xbc, 0xe5,
-		0xd2, 0x9f, 0xec, 0x91, 0x2b, 0xb6, 0x87, 0x3c, 0xd5, 0x32, 0x7b, 0x1a, 0x06, 0x3c, 0xa5, 0xd2,
-		0x9f, 0xea, 0x63, 0x9c, 0x2a, 0xe1, 0xae, 0x94, 0xd9, 0x69, 0x08, 0x91, 0xb2, 0xe7, 0x0f, 0xff,
-		0x38, 0x87, 0x53, 0xf3, 0xec, 0x7f, 0x43, 0x54, 0x94, 0x3b, 0x7f, 0xe8, 0x27, 0x38, 0xd4, 0x86,
-		0x10, 0xb8, 0x28, 0x75, 0xfe, 0xf0, 0x4f, 0x0a, 0xb8, 0x80, 0x10, 0x78, 0xef, 0x2e, 0xfc, 0xc9,
-		0xa7, 0x42, 0x3c, 0x5d, 0x09, 0xdf, 0x91, 0x77, 0x3e, 0xac, 0xc6, 0xf9, 0xa3, 0x1f, 0xe5, 0x37,
-		0x17, 0x88, 0xec, 0x09, 0x08, 0xf7, 0xe8, 0xf0, 0x4f, 0x73, 0x28, 0xb3, 0xc7, 0x0a, 0x12, 0x77,
-		0xd5, 0x35, 0x7f, 0xf8, 0x67, 0x38, 0xdc, 0x8d, 0x22, 0x43, 0xe7, 0x75, 0xcd, 0x9f, 0xe0, 0xb3,
-		0x62, 0xe8, 0x1c, 0x41, 0xdc, 0x26, 0x4a, 0x9a, 0x3f, 0xfa, 0x73, 0xc2, 0xeb, 0x02, 0x82, 0xbb,
-		0x29, 0x66, 0xa7, 0x29, 0x7f, 0xfc, 0xe7, 0x39, 0xde, 0xc1, 0x10, 0x0f, 0xb8, 0xd2, 0xa4, 0x3f,
-		0xc5, 0x63, 0xc2, 0x03, 0x2e, 0x14, 0xd9, 0x46, 0xed, 0xa5, 0xcf, 0x9f, 0xe9, 0x0b, 0x62, 0x1b,
-		0xb5, 0x55, 0x3e, 0xb2, 0x9a, 0x34, 0x5b, 0xf8, 0x53, 0x7c, 0x51, 0xac, 0x26, 0xb5, 0x27, 0xc3,
-		0x68, 0xaf, 0x25, 0xfe, 0x1c, 0x5f, 0x12, 0xc3, 0x68, 0x2b, 0x25, 0x58, 0x99, 0xa4, 0xce, 0x3a,
-		0xe2, 0xcf, 0xf7, 0x38, 0xe7, 0x1b, 0xea, 0x28, 0x23, 0xd9, 0xfb, 0x61, 0x4f, 0xf7, 0x1a, 0xe2,
-		0xcf, 0xfa, 0xc4, 0x95, 0xb6, 0xae, 0xdf, 0x5d, 0x42, 0xb0, 0xe4, 0x8d, 0x74, 0xab, 0x1f, 0xfe,
-		0xb4, 0x4f, 0x5e, 0xf1, 0x3e, 0xd8, 0xb9, 0xcb, 0x07, 0x76, 0x68, 0xe0, 0xa4, 0x6e, 0x7f, 0xae,
-		0xa7, 0x39, 0x97, 0x0b, 0x44, 0xb6, 0x06, 0xcf, 0xdc, 0xfe, 0xf8, 0x67, 0xc4, 0xd6, 0xe0, 0x08,
-		0x04, 0x47, 0xf5, 0x56, 0xad, 0x46, 0x82, 0x43, 0xda, 0xf9, 0x27, 0x0d, 0xe9, 0x3f, 0x5c, 0xe5,
-		0x1b, 0x43, 0x00, 0x30, 0x87, 0x86, 0xb5, 0xfa, 0x3a, 0xfa, 0xc0, 0x07, 0xf9, 0xc7, 0xab, 0x22,
-		0x21, 0x10, 0x6b, 0xdc, 0x4f, 0xc0, 0x1e, 0x1a, 0xe9, 0x19, 0xb6, 0x0f, 0xf6, 0x4f, 0x57, 0xf9,
-		0x6b, 0x56, 0x07, 0xe2, 0x10, 0xb0, 0x97, 0xb6, 0x3b, 0x13, 0xbc, 0xeb, 0x25, 0xa0, 0x0f, 0x9a,
-		0xa7, 0xa0, 0x9f, 0xfc, 0xb2, 0xc3, 0x52, 0x2b, 0x7e, 0xe8, 0x3f, 0x73, 0xb4, 0xb0, 0x27, 0x0e,
-		0xab, 0x1b, 0x4d, 0x0d, 0xbf, 0x9a, 0x7e, 0xd8, 0xbf, 0x70, 0xac, 0x0d, 0x20, 0xe0, 0x92, 0x6a,
-		0x5a, 0xbd, 0xcc, 0xfb, 0xaf, 0x02, 0x2c, 0x00, 0x64, 0xd0, 0xe4, 0xfb, 0x79, 0x6d, 0xcb, 0x0f,
-		0xfb, 0x9e, 0x18, 0x34, 0xb7, 0xc7, 0x04, 0x18, 0x23, 0x5f, 0xd9, 0x4f, 0x0f, 0x7c, 0xc0, 0x7f,
-		0xe3, 0x60, 0x07, 0x91, 0x3b, 0xd0, 0xfd, 0x68, 0x07, 0xe6, 0x8d, 0x79, 0x83, 0x1d, 0xea, 0xc0,
-		0xd5, 0x28, 0x5c, 0x87, 0x36, 0x58, 0x5f, 0x27, 0xd8, 0x9e, 0x5c, 0x37, 0xac, 0xcd, 0x09, 0xac,
-		0x1b, 0xfc, 0x44, 0x26, 0x88, 0x5f, 0x47, 0x77, 0x77, 0x8a, 0x93, 0xd9, 0x07, 0xe1, 0xd5, 0xd6,
-		0xfa, 0xfa, 0x16, 0xf9, 0xc9, 0x93, 0xd9, 0x5a, 0xe7, 0xef, 0xa7, 0xc9, 0xd7, 0xcc, 0xe5, 0x20,
-		0x0c, 0x60, 0x9f, 0x42, 0x5e, 0x09, 0x98, 0x05, 0x5d, 0x2b, 0x6c, 0x48, 0x69, 0x88, 0xd0, 0x69,
-		0x1c, 0xa5, 0x66, 0x81, 0x7b, 0xaf, 0x91, 0x23, 0xf4, 0x27, 0x7b, 0x47, 0x6d, 0xcd, 0x24, 0x3d,
-		0xe5, 0xef, 0xb3, 0x35, 0x93, 0xb6, 0x66, 0x8a, 0xfd, 0x16, 0xca, 0xd6, 0x4c, 0xd9, 0x9a, 0x63,
-		0xf4, 0xa8, 0x2c, 0x68, 0x6b, 0x8e, 0xd9, 0x9a, 0x69, 0x7a, 0xda, 0x39, 0x60, 0x6b, 0xa6, 0x6d,
-		0xcd, 0x71, 0x7a, 0xbe, 0x19, 0xb2, 0x35, 0xc7, 0x6d, 0xcd, 0x09, 0x7a, 0xac, 0x39, 0x64, 0x6b,
-		0x4e, 0xd8, 0x9a, 0x93, 0xf4, 0x28, 0x53, 0xb2, 0x35, 0x27, 0x6d, 0xcd, 0x29, 0xfa, 0x16, 0xba,
-		0xdf, 0xd6, 0x9c, 0x92, 0x46, 0xa1, 0x9f, 0xcd, 0xf4, 0x08, 0x7d, 0x6b, 0x33, 0x88, 0xaa, 0x7e,
-		0x36, 0xd5, 0x23, 0x8e, 0xee, 0x28, 0x7d, 0xd3, 0x1c, 0x71, 0x74, 0x47, 0x1d, 0xdd, 0x24, 0xfd,
-		0xe5, 0x64, 0xca, 0xd1, 0x4d, 0x3a, 0xba, 0xa9, 0xf4, 0x00, 0xd9, 0xaa, 0x8e, 0x6e, 0xca, 0xd1,
-		0x1d, 0x4b, 0x27, 0xc9, 0x0a, 0x38, 0xba, 0x63, 0x8e, 0x6e, 0x3a, 0x3d, 0x48, 0x4e, 0x6c, 0x1d,
-		0xdd, 0xb4, 0x74, 0x27, 0xc4, 0x71, 0xa9, 0x14, 0xfe, 0x92, 0x91, 0xbe, 0xd1, 0x8e, 0x4f, 0xc2,
-		0x38, 0x89, 0x09, 0xba, 0xac, 0x68, 0x0b, 0x68, 0xc0, 0x33, 0x54, 0x2e, 0x01, 0xf4, 0xc9, 0x55,
-		0xa1, 0xbf, 0xc8, 0xca, 0xbc, 0x1e, 0x80, 0xd8, 0xda, 0x45, 0x83, 0xfe, 0x78, 0xc7, 0xfc, 0x17,
-		0x2f, 0xae, 0x18, 0xf4, 0xd4, 0xb1, 0x74, 0x86, 0x4e, 0x28, 0xc0, 0x07, 0x3d, 0xe5, 0x4c, 0x68,
-		0x6a, 0x3a, 0x7d, 0x90, 0x4e, 0xc8, 0xd6, 0x4d, 0x4b, 0x13, 0x90, 0x70, 0x4d, 0x68, 0x92, 0xbe,
-		0xa4, 0xf6, 0xce, 0x28, 0x20, 0xc7, 0x9d, 0x19, 0x4d, 0xe6, 0xc2, 0x40, 0xc2, 0x9e, 0xfc, 0xb3,
-		0x2e, 0x1a, 0x99, 0xc7, 0xfa, 0x20, 0xce, 0x0e, 0xbb, 0xe8, 0xac, 0xc8, 0xad, 0x58, 0x57, 0xbb,
-		0xc5, 0x87, 0x81, 0xbe, 0x63, 0xad, 0xda, 0x96, 0x24, 0x03, 0x30, 0x53, 0x12, 0xe1, 0x6c, 0x24,
-		0xb9, 0x23, 0xbf, 0xb9, 0x3c, 0x76, 0xc7, 0xb6, 0x3b, 0x88, 0xf8, 0x6e, 0x82, 0xa5, 0xb8, 0xf1,
-		0x62, 0x55, 0xb7, 0x8e, 0x4e, 0x9e, 0x24, 0x0e, 0x2e, 0xd9, 0x2c, 0x52, 0x11, 0xa2, 0xb3, 0xb8,
-		0xa5, 0x29, 0x23, 0x19, 0x7a, 0x28, 0x77, 0xe2, 0x1f, 0x97, 0xc7, 0xa6, 0x7c, 0x18, 0x79, 0xf6,
-		0x19, 0x5f, 0xda, 0x22, 0xac, 0xc7, 0x8f, 0x11, 0x38, 0x12, 0xd3, 0xb4, 0x44, 0x69, 0x27, 0xc5,
-		0x50, 0xc9, 0x99, 0x3b, 0x7d, 0x1b, 0x1f, 0xcc, 0xa5, 0xde, 0xba, 0x3c, 0x96, 0x58, 0xda, 0x72,
-		0xe4, 0xce, 0x50, 0xc8, 0x55, 0x2e, 0x0a, 0x11, 0x76, 0x95, 0x9b, 0x7b, 0xed, 0xcd, 0xfd, 0xd7,
-		0xbc, 0x8e, 0x9f, 0x5f, 0xe3, 0xe7, 0x8d, 0x37, 0xf7, 0x07, 0xde, 0xc3, 0xcf, 0xfb, 0xf8, 0x79,
-		0xf8, 0xad, 0xfd, 0x81, 0x17, 0xf1, 0xf3, 0x32, 0x7e, 0x7e, 0x84, 0x9f, 0xd7, 0xde, 0x42, 0x3b,
-		0xfc, 0xbc, 0x81, 0xdf, 0xdf, 0xc1, 0xff, 0xef, 0xe1, 0xff, 0xf7, 0xf1, 0xf3, 0xf0, 0xef, 0xf6,
-		0x07, 0xfe, 0x19, 0x00, 0x00, 0xff, 0xff, 0x23, 0x0a, 0x13, 0xbd, 0xe8, 0x2e, 0x00, 0x00,
+		// 3824 bytes of a gzipped FileDescriptorSet
+		0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xec, 0x5a, 0x5b, 0x6c, 0x1b, 0x67,
+		0x76, 0x0e, 0xaf, 0x22, 0x0f, 0x29, 0x92, 0x1a, 0x29, 0x36, 0xad, 0x24, 0x56, 0xcc, 0x38, 0x89,
+		0xe3, 0x24, 0x92, 0x2d, 0x59, 0xbe, 0x30, 0x6d, 0x02, 0x51, 0xa2, 0x65, 0x19, 0xba, 0x75, 0x24,
+		0x26, 0x4e, 0xfa, 0x30, 0x18, 0x91, 0x23, 0x8a, 0x36, 0x39, 0xc3, 0x72, 0x86, 0xb6, 0x95, 0xa7,
+		0x14, 0xe9, 0x05, 0x41, 0xd1, 0x5b, 0x5a, 0xa0, 0xb9, 0xba, 0x4d, 0x80, 0x36, 0x69, 0x7a, 0x4b,
+		0x7a, 0x09, 0x8a, 0x3e, 0x15, 0x28, 0xd2, 0xe6, 0xa9, 0x48, 0xfb, 0x54, 0x14, 0x81, 0x91, 0x64,
+		0x03, 0x6c, 0x36, 0x9b, 0xdd, 0xf5, 0x02, 0x06, 0x36, 0xd8, 0xbc, 0xec, 0xf9, 0x6f, 0x73, 0x21,
+		0x29, 0x0d, 0x15, 0x6c, 0x92, 0x5d, 0xec, 0x0a, 0x20, 0xc4, 0x39, 0xe7, 0x7c, 0xdf, 0xfc, 0xff,
+		0xf9, 0xcf, 0x7f, 0xce, 0xf9, 0x67, 0x08, 0xff, 0x71, 0x1c, 0xee, 0xac, 0x1a, 0x46, 0xb5, 0xae,
+		0x4d, 0x34, 0x5b, 0x86, 0x65, 0x6c, 0xb4, 0x37, 0x27, 0x2a, 0x9a, 0x59, 0x6e, 0xd5, 0x9a, 0x96,
+		0xd1, 0x1a, 0xa7, 0x32, 0x29, 0xcd, 0x2c, 0xc6, 0x85, 0x45, 0x6e, 0x09, 0x86, 0xce, 0xd6, 0xea,
+		0xda, 0x9c, 0x6d, 0xb8, 0xa6, 0x59, 0xd2, 0x69, 0x08, 0x6f, 0xa2, 0x30, 0x1b, 0xb8, 0x33, 0x74,
+		0x24, 0x31, 0x79, 0x78, 0xbc, 0x03, 0x34, 0xee, 0x45, 0xac, 0x12, 0xb1, 0x4c, 0x11, 0xb9, 0x8f,
+		0xc3, 0x30, 0xdc, 0x43, 0x2b, 0x49, 0x10, 0xd6, 0xd5, 0x06, 0x61, 0x0c, 0x1c, 0x89, 0xcb, 0xf4,
+		0xbb, 0x94, 0x85, 0x81, 0xa6, 0x5a, 0xbe, 0xa4, 0x56, 0xb5, 0x6c, 0x90, 0x8a, 0xc5, 0xa5, 0x74,
+		0x10, 0xa0, 0xa2, 0x35, 0x35, 0xbd, 0xa2, 0xe9, 0xe5, 0xed, 0x6c, 0x08, 0x47, 0x11, 0x97, 0x5d,
+		0x12, 0xe9, 0x7e, 0x18, 0x6a, 0xb6, 0x37, 0xea, 0xb5, 0xb2, 0xe2, 0x32, 0x03, 0x34, 0x8b, 0xc8,
+		0x19, 0xa6, 0x98, 0x73, 0x8c, 0xef, 0x85, 0xf4, 0x15, 0x4d, 0xbd, 0xe4, 0x36, 0x4d, 0x50, 0xd3,
+		0x14, 0x11, 0xbb, 0x0c, 0x67, 0x21, 0xd9, 0xd0, 0x4c, 0x13, 0x07, 0xa0, 0x58, 0xdb, 0x4d, 0x2d,
+		0x1b, 0xa6, 0xb3, 0xbf, 0xb3, 0x6b, 0xf6, 0x9d, 0x33, 0x4f, 0x70, 0xd4, 0x3a, 0x82, 0xa4, 0x19,
+		0x88, 0x6b, 0x7a, 0xbb, 0xc1, 0x18, 0x22, 0x3b, 0xf8, 0xaf, 0x88, 0x16, 0x9d, 0x2c, 0x31, 0x02,
+		0xe3, 0x14, 0x03, 0xa6, 0xd6, 0xba, 0x5c, 0x2b, 0x6b, 0xd9, 0x28, 0x25, 0xb8, 0xb7, 0x8b, 0x60,
+		0x8d, 0xe9, 0x3b, 0x39, 0x04, 0x0e, 0xa7, 0x12, 0xd7, 0xae, 0x5a, 0x9a, 0x6e, 0xd6, 0x0c, 0x3d,
+		0x3b, 0x40, 0x49, 0xee, 0xee, 0xb1, 0x8a, 0x5a, 0xbd, 0xd2, 0x49, 0xe1, 0xe0, 0xa4, 0x93, 0x30,
+		0x60, 0x34, 0x2d, 0xfc, 0x66, 0x66, 0x63, 0xb8, 0x3e, 0x89, 0xc9, 0xdb, 0x7b, 0x06, 0xc2, 0x0a,
+		0xb3, 0x91, 0x85, 0xb1, 0xb4, 0x00, 0x19, 0xd3, 0x68, 0xb7, 0xca, 0x9a, 0x52, 0x36, 0x2a, 0x9a,
+		0x52, 0xd3, 0x37, 0x8d, 0x6c, 0x9c, 0x12, 0x8c, 0x75, 0x4f, 0x84, 0x1a, 0xce, 0xa2, 0xdd, 0x02,
+		0x9a, 0xc9, 0x29, 0xd3, 0x73, 0x2d, 0xed, 0x83, 0xa8, 0xb9, 0xad, 0x5b, 0xea, 0xd5, 0x6c, 0x92,
+		0x46, 0x08, 0xbf, 0xca, 0xfd, 0x28, 0x02, 0xe9, 0x7e, 0x42, 0xec, 0x21, 0x88, 0x6c, 0x92, 0x59,
+		0x62, 0x80, 0xed, 0xc1, 0x07, 0x0c, 0xe3, 0x75, 0x62, 0xf4, 0x4b, 0x3a, 0x71, 0x06, 0x12, 0xba,
+		0x66, 0x5a, 0x5a, 0x85, 0x45, 0x44, 0xa8, 0xcf, 0x98, 0x02, 0x06, 0xea, 0x0e, 0xa9, 0xf0, 0x97,
+		0x0a, 0xa9, 0x0b, 0x90, 0xb6, 0x87, 0xa4, 0xb4, 0x54, 0xbd, 0x2a, 0x62, 0x73, 0xc2, 0x6f, 0x24,
+		0xe3, 0x45, 0x81, 0x93, 0x09, 0x4c, 0x4e, 0x69, 0x9e, 0x6b, 0x69, 0x0e, 0xc0, 0xd0, 0x35, 0x63,
+		0x13, 0xb7, 0x57, 0xb9, 0x8e, 0x71, 0xd2, 0xdb, 0x4b, 0x2b, 0xc4, 0xa4, 0xcb, 0x4b, 0x06, 0x93,
+		0x96, 0xeb, 0xd2, 0x19, 0x27, 0xd4, 0x06, 0x76, 0x88, 0x94, 0x25, 0xb6, 0xc9, 0xba, 0xa2, 0xad,
+		0x04, 0xa9, 0x96, 0x46, 0xe2, 0x1e, 0x5d, 0xcc, 0x66, 0x16, 0xa7, 0x83, 0x18, 0xf7, 0x9d, 0x99,
+		0xcc, 0x61, 0x6c, 0x62, 0x83, 0x2d, 0xf7, 0xa5, 0x74, 0x17, 0xd8, 0x02, 0x85, 0x86, 0x15, 0xd0,
+		0x2c, 0x94, 0x14, 0xc2, 0x65, 0x94, 0x8d, 0x9e, 0x86, 0x94, 0xd7, 0x3d, 0xd2, 0x08, 0x44, 0x4c,
+		0x4b, 0x6d, 0x59, 0x34, 0x0a, 0x23, 0x32, 0xbb, 0x90, 0x32, 0x10, 0xc2, 0x24, 0x43, 0xb3, 0x5c,
+		0x44, 0x26, 0x5f, 0x47, 0x4f, 0xc1, 0xa0, 0xe7, 0xf6, 0xfd, 0x02, 0x73, 0xcf, 0x45, 0x61, 0xa4,
+		0x57, 0xcc, 0xf5, 0x0c, 0x7f, 0xdc, 0x3e, 0x18, 0x01, 0x1b, 0x5a, 0x0b, 0xe3, 0x8e, 0x30, 0xf0,
+		0x2b, 0x8c, 0xa8, 0x48, 0x5d, 0xdd, 0xd0, 0xea, 0x18, 0x4d, 0x81, 0x23, 0xa9, 0xc9, 0xfb, 0xfb,
+		0x8a, 0xea, 0xf1, 0x45, 0x02, 0x91, 0x19, 0x52, 0x7a, 0x18, 0xc2, 0x3c, 0xc5, 0x11, 0x86, 0xa3,
+		0xfd, 0x31, 0x90, 0x58, 0x94, 0x29, 0x4e, 0xba, 0x0d, 0xe2, 0xe4, 0x3f, 0xf3, 0x6d, 0x94, 0x8e,
+		0x39, 0x46, 0x04, 0xc4, 0xaf, 0xd2, 0x28, 0xc4, 0x68, 0x98, 0x55, 0x34, 0x51, 0x1a, 0xec, 0x6b,
+		0xb2, 0x30, 0x15, 0x6d, 0x53, 0x6d, 0xd7, 0x2d, 0xe5, 0xb2, 0x5a, 0x6f, 0x6b, 0x34, 0x60, 0x70,
+		0x61, 0xb8, 0xf0, 0x51, 0x22, 0x93, 0xc6, 0x20, 0xc1, 0xa2, 0xb2, 0x86, 0x98, 0xab, 0x34, 0xfb,
+		0x44, 0x64, 0x16, 0xa8, 0x0b, 0x44, 0x42, 0x6e, 0x7f, 0xd1, 0xc4, 0xbd, 0xc0, 0x97, 0x96, 0xde,
+		0x82, 0x08, 0xe8, 0xed, 0x4f, 0x75, 0x26, 0xbe, 0x3b, 0x7a, 0x4f, 0xaf, 0x33, 0x16, 0x73, 0x6f,
+		0x07, 0x21, 0x4c, 0xf7, 0x5b, 0x1a, 0x12, 0xeb, 0x8f, 0xaf, 0x16, 0x95, 0xb9, 0x95, 0x52, 0x61,
+		0xb1, 0x98, 0x09, 0x48, 0x29, 0x00, 0x2a, 0x38, 0xbb, 0xb8, 0x32, 0xb3, 0x9e, 0x09, 0xda, 0xd7,
+		0x0b, 0xcb, 0xeb, 0x27, 0x4f, 0x64, 0x42, 0x36, 0xa0, 0xc4, 0x04, 0x61, 0xb7, 0xc1, 0xd4, 0x64,
+		0x26, 0x82, 0x91, 0x90, 0x64, 0x04, 0x0b, 0x17, 0x8a, 0x73, 0x68, 0x11, 0xf5, 0x4a, 0xd0, 0x66,
+		0x40, 0x1a, 0x84, 0x38, 0x95, 0x14, 0x56, 0x56, 0x16, 0x33, 0x31, 0x9b, 0x73, 0x6d, 0x5d, 0x5e,
+		0x58, 0x9e, 0xcf, 0xc4, 0x6d, 0xce, 0x79, 0x79, 0xa5, 0xb4, 0x9a, 0x01, 0x9b, 0x61, 0xa9, 0xb8,
+		0xb6, 0x36, 0x33, 0x5f, 0xcc, 0x24, 0x6c, 0x8b, 0xc2, 0xe3, 0xeb, 0xc5, 0xb5, 0x4c, 0xd2, 0x33,
+		0x2c, 0xbc, 0xc5, 0xa0, 0x7d, 0x8b, 0xe2, 0x72, 0x69, 0x29, 0x93, 0x92, 0x86, 0x60, 0x90, 0xdd,
+		0x42, 0x0c, 0x22, 0xdd, 0x21, 0xc2, 0x91, 0x66, 0x9c, 0x81, 0x30, 0x96, 0x21, 0x8f, 0x00, 0x2d,
+		0xa4, 0xdc, 0x2c, 0x44, 0x68, 0x74, 0x61, 0x14, 0xa7, 0x16, 0x67, 0x0a, 0xc5, 0x45, 0x65, 0x65,
+		0x75, 0x7d, 0x61, 0x65, 0x79, 0x66, 0x11, 0x7d, 0x67, 0xcb, 0xe4, 0xe2, 0xaf, 0x95, 0x16, 0xe4,
+		0xe2, 0x1c, 0xfa, 0xcf, 0x25, 0x5b, 0x2d, 0xce, 0xac, 0xa3, 0x2c, 0x94, 0x3b, 0x0a, 0x23, 0xbd,
+		0xf2, 0x4c, 0xaf, 0x9d, 0x91, 0x7b, 0x35, 0x00, 0xc3, 0x3d, 0x52, 0x66, 0xcf, 0x5d, 0xf4, 0x08,
+		0x44, 0x58, 0xa4, 0xb1, 0x22, 0x72, 0x5f, 0xcf, 0xdc, 0x4b, 0xe3, 0xae, 0xab, 0x90, 0x50, 0x9c,
+		0xbb, 0x90, 0x86, 0x76, 0x28, 0xa4, 0x84, 0xa2, 0x2b, 0x9c, 0x9e, 0x0e, 0x40, 0x76, 0x27, 0x6e,
+		0x9f, 0xfd, 0x1e, 0xf4, 0xec, 0xf7, 0x87, 0x3a, 0x07, 0x70, 0x68, 0xe7, 0x39, 0x74, 0x8d, 0xe2,
+		0xb5, 0x00, 0xec, 0xeb, 0xdd, 0x6f, 0xf4, 0x1c, 0xc3, 0xc3, 0x10, 0x6d, 0x68, 0xd6, 0x96, 0x21,
+		0x6a, 0xee, 0x3d, 0x3d, 0x32, 0x39, 0x51, 0x77, 0xfa, 0x8a, 0xa3, 0xdc, 0xa5, 0x20, 0xb4, 0x53,
+		0xd3, 0xc0, 0x46, 0xd3, 0x35, 0xd2, 0x67, 0x82, 0x70, 0x6b, 0x4f, 0xf2, 0x9e, 0x03, 0xbd, 0x03,
+		0xa0, 0xa6, 0x37, 0xdb, 0x16, 0xab, 0xab, 0x2c, 0xcd, 0xc4, 0xa9, 0x84, 0x6e, 0x61, 0x92, 0x42,
+		0xda, 0x96, 0xad, 0x0f, 0x51, 0x3d, 0x30, 0x11, 0x35, 0x38, 0xed, 0x0c, 0x34, 0x4c, 0x07, 0x7a,
+		0x70, 0x87, 0x99, 0x76, 0x95, 0xac, 0x63, 0x90, 0x29, 0xd7, 0x6b, 0x9a, 0x6e, 0x29, 0xa6, 0xd5,
+		0xd2, 0xd4, 0x46, 0x4d, 0xaf, 0xd2, 0x3c, 0x1a, 0xcb, 0x47, 0x36, 0xd5, 0xba, 0xa9, 0xc9, 0x69,
+		0xa6, 0x5e, 0x13, 0x5a, 0x82, 0xa0, 0xc5, 0xa2, 0xe5, 0x42, 0x44, 0x3d, 0x08, 0xa6, 0xb6, 0x11,
+		0xb9, 0xff, 0x1d, 0x80, 0x84, 0xab, 0x3b, 0x93, 0x0e, 0x41, 0xf2, 0xa2, 0x7a, 0x59, 0x55, 0x44,
+		0xc7, 0xcd, 0x3c, 0x91, 0x20, 0xb2, 0x55, 0xde, 0x75, 0x1f, 0x83, 0x11, 0x6a, 0x82, 0x73, 0xc4,
+		0x1b, 0x95, 0xeb, 0xaa, 0x69, 0x52, 0xa7, 0xc5, 0xa8, 0xa9, 0x44, 0x74, 0x2b, 0x44, 0x35, 0x2b,
+		0x34, 0xd2, 0x34, 0x0c, 0x53, 0x44, 0x03, 0x13, 0x6f, 0xad, 0x59, 0xd7, 0x14, 0x72, 0x06, 0x30,
+		0x69, 0x3e, 0xb5, 0x47, 0x36, 0x44, 0x2c, 0x96, 0xb8, 0x01, 0x19, 0x91, 0x29, 0xcd, 0xc3, 0x1d,
+		0x14, 0x56, 0xd5, 0x74, 0xad, 0xa5, 0x5a, 0x9a, 0xa2, 0xfd, 0x46, 0x1b, 0x6d, 0x15, 0x55, 0xaf,
+		0x28, 0x5b, 0xaa, 0xb9, 0x95, 0x1d, 0x71, 0x13, 0x1c, 0x20, 0xb6, 0xf3, 0xdc, 0xb4, 0x48, 0x2d,
+		0x67, 0xf4, 0xca, 0x39, 0xb4, 0x93, 0xf2, 0xb0, 0x8f, 0x12, 0xa1, 0x53, 0x70, 0xce, 0x4a, 0x79,
+		0x4b, 0x2b, 0x5f, 0x52, 0xda, 0xd6, 0xe6, 0xe9, 0xec, 0x6d, 0x6e, 0x06, 0x3a, 0xc8, 0x35, 0x6a,
+		0x33, 0x4b, 0x4c, 0x4a, 0x68, 0x21, 0xad, 0x41, 0x92, 0xac, 0x47, 0xa3, 0xf6, 0x24, 0x0e, 0xdb,
+		0x68, 0xd1, 0x1a, 0x91, 0xea, 0xb1, 0xb9, 0x5d, 0x4e, 0x1c, 0x5f, 0xe1, 0x80, 0x25, 0xec, 0x4f,
+		0xf3, 0x91, 0xb5, 0xd5, 0x62, 0x71, 0x4e, 0x4e, 0x08, 0x96, 0xb3, 0x46, 0x8b, 0xc4, 0x54, 0xd5,
+		0xb0, 0x7d, 0x9c, 0x60, 0x31, 0x55, 0x35, 0x84, 0x87, 0xd1, 0x5f, 0xe5, 0x32, 0x9b, 0x36, 0x9e,
+		0x5d, 0x78, 0xb3, 0x6e, 0x66, 0x33, 0x1e, 0x7f, 0x95, 0xcb, 0xf3, 0xcc, 0x80, 0x87, 0xb9, 0x89,
+		0x5b, 0xe2, 0x56, 0xc7, 0x5f, 0x6e, 0xe0, 0x50, 0xd7, 0x2c, 0x3b, 0xa1, 0x78, 0xc7, 0xe6, 0x76,
+		0x37, 0x50, 0xf2, 0xdc, 0xb1, 0xb9, 0xdd, 0x09, 0xbb, 0x9b, 0x1e, 0xc0, 0x5a, 0x5a, 0x19, 0x5d,
+		0x5e, 0xc9, 0xee, 0x77, 0x5b, 0xbb, 0x14, 0xd2, 0x04, 0x06, 0x72, 0x59, 0xd1, 0x74, 0x75, 0x03,
+		0xd7, 0x5e, 0x6d, 0xe1, 0x17, 0x33, 0x3b, 0xe6, 0x36, 0x4e, 0x95, 0xcb, 0x45, 0xaa, 0x9d, 0xa1,
+		0x4a, 0xe9, 0x28, 0x0c, 0x19, 0x1b, 0x17, 0xcb, 0x2c, 0xb8, 0x14, 0xe4, 0xd9, 0xac, 0x5d, 0xcd,
+		0x1e, 0xa6, 0x6e, 0x4a, 0x13, 0x05, 0x0d, 0xad, 0x55, 0x2a, 0x96, 0xee, 0x43, 0x72, 0x73, 0x4b,
+		0x6d, 0x35, 0x69, 0x91, 0x36, 0xd1, 0xa9, 0x5a, 0xf6, 0x6e, 0x66, 0xca, 0xe4, 0xcb, 0x42, 0x2c,
+		0x15, 0x61, 0x8c, 0x4c, 0x5e, 0x57, 0x75, 0x43, 0x69, 0x9b, 0x9a, 0xe2, 0x0c, 0xd1, 0x5e, 0x8b,
+		0x7b, 0xc8, 0xb0, 0xe4, 0xdb, 0x85, 0x59, 0xc9, 0xc4, 0x64, 0x26, 0x8c, 0xc4, 0xf2, 0x5c, 0x80,
+		0x91, 0xb6, 0x5e, 0xd3, 0x31, 0xc4, 0x51, 0x43, 0xc0, 0x6c, 0xc3, 0x66, 0xbf, 0x3d, 0xb0, 0x43,
+		0xd3, 0x5d, 0x72, 0x5b, 0xb3, 0x20, 0x91, 0x87, 0xdb, 0xdd, 0xc2, 0x5c, 0x1e, 0x92, 0xee, 0xd8,
+		0x91, 0xe2, 0xc0, 0xa2, 0x07, 0xab, 0x1b, 0x56, 0xd4, 0xd9, 0x95, 0x39, 0x52, 0x0b, 0x9f, 0x28,
+		0x62, 0x61, 0xc3, 0x9a, 0xbc, 0xb8, 0xb0, 0x5e, 0x54, 0xe4, 0xd2, 0xf2, 0xfa, 0xc2, 0x52, 0x31,
+		0x13, 0x3a, 0x1a, 0x8f, 0x7d, 0x32, 0x90, 0x79, 0x0a, 0xff, 0x82, 0xb9, 0x77, 0x82, 0x90, 0xf2,
+		0xf6, 0xc1, 0xd2, 0xaf, 0xc0, 0x7e, 0x71, 0x68, 0x35, 0x35, 0x4b, 0xb9, 0x52, 0x6b, 0xd1, 0x70,
+		0x6e, 0xa8, 0xac, 0x93, 0xb4, 0x57, 0x62, 0x84, 0x5b, 0xe1, 0xf1, 0xfe, 0x31, 0xb4, 0x39, 0x4b,
+		0x4d, 0xa4, 0x45, 0x18, 0x43, 0x97, 0x61, 0xaf, 0xa9, 0x57, 0xd4, 0x56, 0x45, 0x71, 0x1e, 0x17,
+		0x28, 0x6a, 0x19, 0xe3, 0xc0, 0x34, 0x58, 0x25, 0xb1, 0x59, 0x6e, 0xd7, 0x8d, 0x35, 0x6e, 0xec,
+		0xa4, 0xd8, 0x19, 0x6e, 0xda, 0x11, 0x35, 0xa1, 0x9d, 0xa2, 0x06, 0x7b, 0xaf, 0x86, 0xda, 0xc4,
+		0xb0, 0xb1, 0x5a, 0xdb, 0xb4, 0x7b, 0x8b, 0xc9, 0x31, 0x14, 0x14, 0xc9, 0xf5, 0x57, 0xb7, 0x06,
+		0x6e, 0x3f, 0xbe, 0x1f, 0x82, 0xa4, 0xbb, 0x83, 0x23, 0x0d, 0x71, 0x99, 0xa6, 0xf9, 0x00, 0xcd,
+		0x02, 0x77, 0xed, 0xda, 0xef, 0x8d, 0xcf, 0x92, 0xfc, 0x9f, 0x8f, 0xb2, 0xbe, 0x4a, 0x66, 0x48,
+		0x52, 0x7b, 0x49, 0xac, 0x69, 0xac, 0x5b, 0x8f, 0xc9, 0xfc, 0x0a, 0x93, 0x5d, 0xf4, 0xa2, 0x49,
+		0xb9, 0xa3, 0x94, 0xfb, 0xf0, 0xee, 0xdc, 0xe7, 0xd7, 0x28, 0x79, 0xfc, 0xfc, 0x9a, 0xb2, 0xbc,
+		0x22, 0x2f, 0xcd, 0x2c, 0xca, 0x1c, 0x2e, 0x1d, 0x80, 0x70, 0x5d, 0x7d, 0x72, 0xdb, 0x5b, 0x29,
+		0xa8, 0xa8, 0x5f, 0xc7, 0x23, 0x03, 0x79, 0xe4, 0xe1, 0xcd, 0xcf, 0x54, 0xf4, 0x15, 0x86, 0xfe,
+		0x04, 0x44, 0xa8, 0xbf, 0x24, 0x00, 0xee, 0xb1, 0xcc, 0x2d, 0x52, 0x0c, 0xc2, 0xb3, 0x2b, 0x32,
+		0x09, 0x7f, 0x8c, 0x77, 0x26, 0x55, 0x56, 0x17, 0x8a, 0xb3, 0xb8, 0x03, 0x72, 0xd3, 0x10, 0x65,
+		0x4e, 0x20, 0x5b, 0xc3, 0x76, 0x03, 0x82, 0xd8, 0x25, 0xe7, 0x08, 0x08, 0x6d, 0x69, 0xa9, 0x50,
+		0x94, 0x33, 0x41, 0xf7, 0xf2, 0xfe, 0x5b, 0x00, 0x12, 0xae, 0x86, 0x8a, 0x94, 0x72, 0xb5, 0x5e,
+		0x37, 0xae, 0x28, 0x6a, 0xbd, 0x86, 0x19, 0x8a, 0xad, 0x0f, 0x50, 0xd1, 0x0c, 0x91, 0xf4, 0xeb,
+		0xbf, 0xaf, 0x25, 0x36, 0xaf, 0x05, 0x20, 0xd3, 0xd9, 0x8c, 0x75, 0x0c, 0x30, 0xf0, 0x8d, 0x0e,
+		0xf0, 0xa5, 0x00, 0xa4, 0xbc, 0x1d, 0x58, 0xc7, 0xf0, 0x0e, 0x7d, 0xa3, 0xc3, 0x7b, 0x31, 0x00,
+		0x83, 0x9e, 0xbe, 0xeb, 0x67, 0x6a, 0x74, 0x2f, 0x84, 0x60, 0xb8, 0x07, 0x0e, 0x13, 0x10, 0x6b,
+		0x50, 0x59, 0xcf, 0xfc, 0x60, 0x3f, 0xf7, 0x1a, 0x27, 0xf5, 0x6f, 0x55, 0x6d, 0x59, 0xbc, 0x9f,
+		0xc5, 0x7a, 0x59, 0xab, 0x60, 0x52, 0xad, 0x6d, 0xd6, 0xb0, 0x7d, 0x63, 0x27, 0x16, 0xd6, 0xb5,
+		0xa6, 0x1d, 0x39, 0x3b, 0x1e, 0x3f, 0x00, 0x52, 0xd3, 0x30, 0x6b, 0x56, 0xed, 0x32, 0x79, 0x3c,
+		0x27, 0x0e, 0xd2, 0xa4, 0x8b, 0x0d, 0xcb, 0x19, 0xa1, 0x59, 0xd0, 0x2d, 0xdb, 0x5a, 0xd7, 0xaa,
+		0x6a, 0x87, 0x35, 0x49, 0x43, 0x21, 0x39, 0x23, 0x34, 0xb6, 0x35, 0x36, 0x9a, 0x15, 0xa3, 0x4d,
+		0x1a, 0x02, 0x66, 0x47, 0xb2, 0x5e, 0x40, 0x4e, 0x30, 0x99, 0x6d, 0xc2, 0x3b, 0x36, 0xe7, 0x04,
+		0x9f, 0x94, 0x13, 0x4c, 0xc6, 0x4c, 0xee, 0x85, 0xb4, 0x5a, 0xad, 0xb6, 0x08, 0xb9, 0x20, 0x62,
+		0x6d, 0x68, 0xca, 0x16, 0x53, 0xc3, 0xd1, 0xf3, 0x10, 0x13, 0x7e, 0x20, 0x85, 0x85, 0x78, 0x02,
+		0x6b, 0x3e, 0x7d, 0x8e, 0x12, 0x24, 0x87, 0x7a, 0x5d, 0x28, 0xf1, 0xa6, 0x35, 0x53, 0x71, 0x1e,
+		0xe8, 0x05, 0x51, 0x1f, 0x93, 0x13, 0x35, 0xd3, 0x7e, 0x82, 0x93, 0x7b, 0x0d, 0xcb, 0xab, 0xf7,
+		0x81, 0xa4, 0x34, 0x07, 0xb1, 0xba, 0x81, 0xf1, 0x41, 0x10, 0xec, 0x69, 0xf8, 0x11, 0x9f, 0x67,
+		0x98, 0xe3, 0x8b, 0xdc, 0x5e, 0xb6, 0x91, 0xa3, 0xff, 0x1d, 0x80, 0x98, 0x10, 0x63, 0xa1, 0x08,
+		0x37, 0x55, 0x6b, 0x8b, 0xd2, 0x45, 0x0a, 0xc1, 0x4c, 0x40, 0xa6, 0xd7, 0x44, 0x8e, 0xdd, 0x8c,
+		0x4e, 0x43, 0x80, 0xcb, 0xc9, 0x35, 0x59, 0xd7, 0xba, 0xa6, 0x56, 0x68, 0x83, 0x6b, 0x34, 0x1a,
+		0xb8, 0x92, 0xa6, 0x58, 0x57, 0x2e, 0x9f, 0xe5, 0x62, 0xf2, 0x5c, 0xdc, 0x6a, 0xa9, 0xb5, 0xba,
+		0xc7, 0x36, 0x4c, 0x6d, 0x33, 0x42, 0x61, 0x1b, 0xe7, 0xe1, 0x80, 0xe0, 0xad, 0x68, 0x96, 0x8a,
+		0xcd, 0x73, 0xc5, 0x01, 0x45, 0xe9, 0xd3, 0xae, 0xfd, 0xdc, 0x60, 0x8e, 0xeb, 0x05, 0xb6, 0x70,
+		0x01, 0x1b, 0x59, 0xa3, 0xd1, 0xe9, 0x89, 0x42, 0xa6, 0xe3, 0xdc, 0x65, 0x9e, 0x0b, 0x3c, 0x01,
+		0x4e, 0x53, 0xf1, 0x6a, 0x30, 0x34, 0xbf, 0x5a, 0x78, 0x23, 0x38, 0x3a, 0xcf, 0x70, 0xab, 0xc2,
+		0x83, 0xb2, 0xb6, 0x59, 0xd7, 0xca, 0xc4, 0x3b, 0xf0, 0xd6, 0x61, 0x78, 0xb0, 0x5a, 0xb3, 0xb6,
+		0xda, 0x1b, 0xe3, 0x78, 0x87, 0x89, 0xaa, 0x51, 0x35, 0x9c, 0xd7, 0x19, 0xe4, 0x8a, 0x5e, 0xd0,
+		0x6f, 0xfc, 0x95, 0x46, 0xdc, 0x96, 0x8e, 0xfa, 0xbe, 0xff, 0xc8, 0x2f, 0xc3, 0x30, 0x37, 0x56,
+		0xe8, 0x33, 0x55, 0xd6, 0x82, 0x4a, 0xbb, 0x1e, 0xc8, 0xb3, 0x6f, 0x7d, 0x4c, 0x4b, 0x82, 0x3c,
+		0xc4, 0xa1, 0x44, 0xc7, 0x9a, 0xd4, 0xbc, 0x0c, 0xb7, 0x7a, 0xf8, 0x58, 0x0c, 0xe3, 0x91, 0x7b,
+		0x77, 0xc6, 0x77, 0x38, 0xe3, 0xb0, 0x8b, 0x71, 0x8d, 0x43, 0xf3, 0xb3, 0x30, 0xb8, 0x17, 0xae,
+		0xff, 0xe4, 0x5c, 0x49, 0xcd, 0x4d, 0x32, 0x0f, 0x69, 0x4a, 0x52, 0x6e, 0x9b, 0x96, 0xd1, 0xa0,
+		0x09, 0x62, 0x77, 0x9a, 0xff, 0xfa, 0x98, 0x05, 0x55, 0x8a, 0xc0, 0x66, 0x6d, 0x54, 0xfe, 0x51,
+		0x18, 0x21, 0x12, 0xba, 0x07, 0xdd, 0x6c, 0xfe, 0x8f, 0x10, 0xb2, 0xff, 0xf3, 0x34, 0x8b, 0xbd,
+		0x61, 0x9b, 0xc0, 0xc5, 0xeb, 0x5a, 0x89, 0xaa, 0x66, 0x61, 0x6e, 0xc3, 0xf3, 0x5f, 0xbd, 0x2e,
+		0xed, 0xfa, 0x8e, 0x21, 0xfb, 0xfc, 0x67, 0xde, 0x95, 0x98, 0x67, 0xc8, 0x99, 0x7a, 0x3d, 0x5f,
+		0x82, 0xfd, 0x3d, 0x56, 0xb6, 0x0f, 0xce, 0x17, 0x38, 0xe7, 0x48, 0xd7, 0xea, 0x12, 0xda, 0x55,
+		0x10, 0x72, 0x7b, 0x3d, 0xfa, 0xe0, 0x7c, 0x91, 0x73, 0x4a, 0x1c, 0x2b, 0x96, 0x85, 0x30, 0x9e,
+		0x87, 0x21, 0x3c, 0xa9, 0x6f, 0x18, 0x26, 0x3f, 0xf7, 0xf6, 0x41, 0xf7, 0x12, 0xa7, 0x4b, 0x73,
+		0x20, 0x3d, 0x05, 0x13, 0xae, 0x33, 0x10, 0xdb, 0xc4, 0x03, 0x50, 0x1f, 0x14, 0x2f, 0x73, 0x8a,
+		0x01, 0x62, 0x4f, 0xa0, 0x33, 0x90, 0xac, 0x1a, 0x3c, 0x0d, 0xfb, 0xc3, 0xaf, 0x71, 0x78, 0x42,
+		0x60, 0x38, 0x45, 0xd3, 0x68, 0xb6, 0xeb, 0x24, 0x47, 0xfb, 0x53, 0xfc, 0xb9, 0xa0, 0x10, 0x18,
+		0x4e, 0xb1, 0x07, 0xb7, 0xfe, 0x85, 0xa0, 0x30, 0x5d, 0xfe, 0x7c, 0x84, 0x3c, 0xeb, 0xad, 0x6f,
+		0x1b, 0x7a, 0x3f, 0x83, 0x78, 0x85, 0x33, 0x00, 0x87, 0x10, 0x82, 0x87, 0x20, 0xde, 0xef, 0x42,
+		0xfc, 0x25, 0x87, 0xc7, 0x34, 0xb1, 0x02, 0xb8, 0xcf, 0x44, 0x92, 0x21, 0xef, 0x56, 0xfc, 0x29,
+		0xfe, 0x8a, 0x53, 0xa4, 0x5c, 0x30, 0x3e, 0x0d, 0x4b, 0x33, 0x2d, 0x3c, 0xaa, 0xf7, 0x41, 0xf2,
+		0x9a, 0x98, 0x06, 0x87, 0x70, 0x57, 0x6e, 0x68, 0x7a, 0x79, 0xab, 0x3f, 0x86, 0xd7, 0x85, 0x2b,
+		0x05, 0x86, 0x50, 0x60, 0xe6, 0x69, 0xa8, 0x2d, 0x3c, 0x5c, 0xd7, 0xfb, 0x5a, 0x8e, 0xbf, 0xe6,
+		0x1c, 0x49, 0x1b, 0xc4, 0x3d, 0xd2, 0xd6, 0xf7, 0x42, 0xf3, 0x86, 0xf0, 0x88, 0x0b, 0xc6, 0xb7,
+		0x1e, 0x9e, 0x4c, 0x49, 0x27, 0xb1, 0x17, 0xb6, 0xbf, 0x11, 0x5b, 0x8f, 0x61, 0x97, 0xdc, 0x8c,
+		0xb8, 0xd2, 0x26, 0x1e, 0xc1, 0xfb, 0xa1, 0xf9, 0x5b, 0xb1, 0xd2, 0x14, 0x40, 0xc0, 0x8f, 0xc3,
+		0x81, 0x9e, 0xa9, 0xbe, 0x0f, 0xb2, 0xbf, 0xe3, 0x64, 0xfb, 0x7a, 0xa4, 0x7b, 0x9e, 0x12, 0xf6,
+		0x4a, 0xf9, 0xf7, 0x22, 0x25, 0x68, 0x1d, 0x5c, 0xab, 0xa4, 0x8d, 0x35, 0xd5, 0xcd, 0xbd, 0x79,
+		0xed, 0x1f, 0x84, 0xd7, 0x18, 0xd6, 0xe3, 0xb5, 0x75, 0xd8, 0xc7, 0x19, 0xf7, 0xb6, 0xae, 0x6f,
+		0x8a, 0xc4, 0xca, 0xd0, 0x25, 0xef, 0xea, 0xfe, 0x3a, 0x8c, 0xda, 0xee, 0x14, 0x1d, 0x98, 0xa9,
+		0x90, 0x07, 0x03, 0xfe, 0xcc, 0x6f, 0x71, 0x66, 0x91, 0xf1, 0xed, 0x16, 0xce, 0x5c, 0x52, 0x9b,
+		0x84, 0xfc, 0x02, 0x64, 0x05, 0x79, 0x5b, 0xc7, 0x06, 0xdf, 0xa8, 0xea, 0xb8, 0x8c, 0x95, 0x3e,
+		0xa8, 0xff, 0xb1, 0x63, 0xa9, 0x4a, 0x2e, 0x38, 0x61, 0x5e, 0x80, 0x8c, 0xdd, 0x6f, 0x28, 0xb5,
+		0x46, 0xd3, 0xc0, 0xd6, 0x72, 0x77, 0xc6, 0x7f, 0x12, 0x2b, 0x65, 0xe3, 0x16, 0x28, 0x2c, 0x5f,
+		0x84, 0x14, 0xbd, 0xec, 0x37, 0x24, 0xff, 0x99, 0x13, 0x0d, 0x3a, 0x28, 0x9e, 0x38, 0xb0, 0x53,
+		0xc2, 0x9e, 0xb7, 0x9f, 0xfc, 0xf7, 0x2f, 0x22, 0x71, 0x70, 0x08, 0x21, 0x38, 0x07, 0x99, 0x4a,
+		0x0d, 0x67, 0x69, 0x29, 0xec, 0x9d, 0x99, 0x3f, 0xcb, 0xdb, 0x76, 0x0e, 0xa3, 0x38, 0xfa, 0xd6,
+		0x85, 0xc5, 0x71, 0xba, 0xa3, 0xa6, 0x4b, 0x7e, 0x2f, 0x72, 0xb3, 0xbf, 0x79, 0x93, 0x73, 0x79,
+		0x4b, 0x7a, 0x7e, 0x91, 0x38, 0xda, 0x5b, 0x78, 0xfd, 0xc9, 0x9e, 0xbe, 0x69, 0xfb, 0xda, 0x53,
+		0x77, 0xf3, 0x67, 0x61, 0xd0, 0x53, 0x74, 0xfd, 0xa9, 0x7e, 0x8b, 0x53, 0x25, 0xdd, 0x35, 0x37,
+		0x3f, 0x0d, 0x61, 0x52, 0x40, 0xfd, 0xe1, 0xbf, 0xcd, 0xe1, 0xd4, 0x3c, 0xff, 0xab, 0x10, 0x13,
+		0x85, 0xd3, 0x1f, 0xfa, 0x3b, 0x1c, 0x6a, 0x43, 0x08, 0x5c, 0x14, 0x4d, 0x7f, 0xf8, 0xef, 0x0a,
+		0xb8, 0x80, 0x10, 0x78, 0xff, 0x2e, 0xfc, 0xf7, 0xdf, 0x0b, 0xf3, 0xc4, 0x27, 0x7c, 0x47, 0xde,
+		0x1e, 0xb1, 0x6a, 0xe9, 0x8f, 0x7e, 0x86, 0xdf, 0x5c, 0x20, 0xf2, 0xa7, 0x20, 0xd2, 0xa7, 0xc3,
+		0x7f, 0x9f, 0x43, 0x99, 0x3d, 0xd6, 0xa2, 0x84, 0xab, 0x42, 0xfa, 0xc3, 0xff, 0x80, 0xc3, 0xdd,
+		0x28, 0x32, 0x74, 0x5e, 0x21, 0xfd, 0x09, 0xfe, 0x50, 0x0c, 0x9d, 0x23, 0x88, 0xdb, 0x44, 0x71,
+		0xf4, 0x47, 0xff, 0x91, 0xf0, 0xba, 0x80, 0xe0, 0xbe, 0x8c, 0xdb, 0x09, 0xcf, 0x1f, 0xff, 0xc7,
+		0x1c, 0xef, 0x60, 0x88, 0x07, 0x5c, 0x09, 0xd7, 0x9f, 0xe2, 0x59, 0xe1, 0x01, 0x17, 0x8a, 0x6c,
+		0xa3, 0xce, 0x22, 0xea, 0xcf, 0xf4, 0x27, 0x62, 0x1b, 0x75, 0xd4, 0x50, 0xb2, 0x9a, 0x34, 0xef,
+		0xf8, 0x53, 0xfc, 0xa9, 0x58, 0x4d, 0x6a, 0x4f, 0x86, 0xd1, 0x59, 0x95, 0xfc, 0x39, 0xfe, 0x4c,
+		0x0c, 0xa3, 0xa3, 0x28, 0x61, 0x8d, 0x93, 0xba, 0x2b, 0x92, 0x3f, 0xdf, 0x73, 0x9c, 0x6f, 0xa8,
+		0xab, 0x20, 0xe5, 0x1f, 0x83, 0x7d, 0xbd, 0xab, 0x91, 0x3f, 0xeb, 0xf3, 0x37, 0x3b, 0xce, 0x0f,
+		0xee, 0x62, 0x84, 0xc5, 0x73, 0xa4, 0x57, 0x25, 0xf2, 0xa7, 0x7d, 0xe1, 0xa6, 0xf7, 0x88, 0xe8,
+		0x2e, 0x44, 0xd8, 0xeb, 0x81, 0x53, 0x04, 0xfc, 0xb9, 0x5e, 0xe2, 0x5c, 0x2e, 0x10, 0xd9, 0x1a,
+		0xbc, 0x06, 0xf8, 0xe3, 0x5f, 0x16, 0x5b, 0x83, 0x23, 0xf2, 0x73, 0x90, 0x74, 0x97, 0x0c, 0x7f,
+		0x86, 0x6b, 0xf6, 0xee, 0x74, 0x2a, 0x06, 0x0e, 0x21, 0xa6, 0xb7, 0xeb, 0x75, 0x12, 0x62, 0xd2,
+		0xee, 0x3f, 0xb1, 0xc8, 0x7e, 0xe7, 0x0b, 0xbe, 0xbd, 0x04, 0x00, 0x33, 0x71, 0x44, 0x6b, 0x6c,
+		0xa0, 0x27, 0x7d, 0x90, 0x9f, 0x7e, 0x21, 0xd2, 0x0a, 0xb1, 0xc6, 0x5d, 0x09, 0xec, 0x10, 0x4b,
+		0x9f, 0xa9, 0xfb, 0x60, 0xbf, 0xfb, 0x05, 0x7f, 0xed, 0xeb, 0x40, 0x1c, 0x02, 0xf6, 0x12, 0x79,
+		0x77, 0x82, 0xcf, 0xbc, 0x04, 0xf4, 0xe0, 0x7b, 0x06, 0x06, 0xc8, 0x2f, 0x4d, 0x2c, 0xb5, 0xea,
+		0x87, 0xfe, 0x1e, 0x47, 0x0b, 0x7b, 0xe2, 0xb0, 0x86, 0xd1, 0xd2, 0xf0, 0xab, 0xe9, 0x87, 0xfd,
+		0x3e, 0xc7, 0xda, 0x00, 0x02, 0x2e, 0xab, 0xa6, 0xd5, 0xcf, 0xbc, 0x7f, 0x20, 0xc0, 0x02, 0x40,
+		0x06, 0x4d, 0xbe, 0x5f, 0xd2, 0xb6, 0xfd, 0xb0, 0x37, 0xc4, 0xa0, 0xb9, 0x3d, 0xa6, 0xd1, 0x38,
+		0xf9, 0xca, 0x7e, 0x0a, 0xe1, 0x03, 0xfe, 0x21, 0x07, 0x3b, 0x88, 0xc2, 0xa1, 0xde, 0x8f, 0x9a,
+		0x60, 0xde, 0x98, 0x37, 0xd8, 0x43, 0x26, 0xf8, 0x24, 0x03, 0xb7, 0xa1, 0x0d, 0x56, 0xe9, 0x09,
+		0xb6, 0xb3, 0x37, 0x0c, 0x6b, 0x6b, 0x02, 0x23, 0x93, 0x3f, 0x21, 0x0a, 0xe1, 0xd7, 0xd1, 0xbd,
+		0x3d, 0x55, 0xca, 0x1d, 0x80, 0xc8, 0x5a, 0x7b, 0x63, 0x63, 0x9b, 0xfc, 0x04, 0xcb, 0x6c, 0x6f,
+		0xf0, 0xf7, 0xe5, 0xe4, 0x6b, 0xee, 0x7a, 0x08, 0x06, 0xb1, 0xdb, 0x21, 0xaf, 0x28, 0x4c, 0x0c,
+		0xe4, 0x95, 0x4d, 0x29, 0x0b, 0x51, 0x3a, 0x8d, 0xe3, 0xd4, 0x2c, 0x70, 0xee, 0x16, 0x39, 0x4a,
+		0x7f, 0x42, 0x78, 0xdc, 0xd6, 0x4c, 0xd2, 0xb7, 0x0e, 0x41, 0x5b, 0x33, 0x69, 0x6b, 0xa6, 0xd8,
+		0x6f, 0xb3, 0x6c, 0xcd, 0x94, 0xad, 0x39, 0x41, 0x1f, 0xdd, 0x85, 0x6c, 0xcd, 0x09, 0x5b, 0x33,
+		0x4d, 0x9f, 0xbe, 0x0e, 0xda, 0x9a, 0x69, 0x5b, 0x73, 0x92, 0x3e, 0x6f, 0x0d, 0xdb, 0x9a, 0x93,
+		0xb6, 0xe6, 0x14, 0x7d, 0xcc, 0x3a, 0x64, 0x6b, 0x4e, 0xd9, 0x9a, 0xd3, 0xf4, 0xd1, 0xaa, 0x64,
+		0x6b, 0x4e, 0xdb, 0x9a, 0x33, 0xf4, 0xad, 0xf8, 0x80, 0xad, 0x39, 0x23, 0x8d, 0xc2, 0x00, 0x9b,
+		0xe9, 0x31, 0xfa, 0x16, 0x29, 0x8d, 0xaa, 0x01, 0x36, 0xd5, 0x63, 0x8e, 0xee, 0x38, 0x7d, 0xf3,
+		0x1d, 0x75, 0x74, 0xc7, 0x1d, 0xdd, 0x24, 0xfd, 0x25, 0x67, 0xc6, 0xd1, 0x4d, 0x3a, 0xba, 0xa9,
+		0xec, 0x20, 0xd9, 0xaa, 0x8e, 0x6e, 0xca, 0xd1, 0x9d, 0xc8, 0xa6, 0xc8, 0x0a, 0x38, 0xba, 0x13,
+		0x8e, 0x6e, 0x3a, 0x9b, 0x26, 0x4f, 0x90, 0x1d, 0xdd, 0xb4, 0xf4, 0x20, 0x24, 0x70, 0xa9, 0x14,
+		0xfe, 0xd2, 0x93, 0xbe, 0x61, 0x4f, 0x4c, 0xc2, 0x38, 0x89, 0x09, 0xba, 0xac, 0x68, 0x0b, 0x68,
+		0xc0, 0xb3, 0x54, 0x21, 0x09, 0xf4, 0x24, 0xcd, 0xb2, 0x59, 0xee, 0xd3, 0x10, 0x0c, 0x7b, 0x16,
+		0x78, 0x8e, 0x26, 0xad, 0x5f, 0x2e, 0xf3, 0xcf, 0xf9, 0x32, 0xe7, 0xc3, 0x37, 0x5e, 0x19, 0x0b,
+		0x74, 0x2c, 0xf6, 0x7b, 0x01, 0x88, 0xaf, 0x5f, 0x31, 0x68, 0x45, 0x32, 0x7f, 0xca, 0x4b, 0x2c,
+		0x86, 0x3e, 0x75, 0x22, 0x9b, 0xa3, 0xd3, 0x0a, 0xf0, 0xa1, 0x4f, 0x39, 0xd3, 0x9a, 0x9a, 0xce,
+		0xde, 0x45, 0xa7, 0x65, 0xeb, 0xa6, 0xa5, 0x09, 0x48, 0xba, 0xa6, 0x35, 0x49, 0x7f, 0x21, 0xe1,
+		0x9d, 0x57, 0x40, 0x4e, 0x38, 0xf3, 0x9a, 0x2c, 0x44, 0x80, 0xe4, 0x38, 0xf2, 0xcf, 0xba, 0x62,
+		0xe4, 0xde, 0x0f, 0x40, 0xda, 0x9e, 0xd2, 0x57, 0x12, 0xbb, 0x5f, 0xd7, 0xc4, 0xf8, 0x8a, 0x79,
+		0xa7, 0xf7, 0x6c, 0x10, 0x12, 0xec, 0x41, 0x32, 0x9d, 0x21, 0xb9, 0x21, 0x3b, 0xe7, 0x6d, 0xf3,
+		0xc1, 0x60, 0x80, 0xb0, 0xc3, 0xcb, 0xb6, 0x24, 0x03, 0x30, 0x53, 0xb2, 0x99, 0xd9, 0x78, 0x0a,
+		0xc7, 0xfe, 0xff, 0xfa, 0xd8, 0x03, 0x3b, 0x56, 0x03, 0x12, 0x1a, 0x13, 0xac, 0x5c, 0x8f, 0x97,
+		0x6a, 0xba, 0x75, 0x7c, 0xf2, 0x34, 0x89, 0xa2, 0xb2, 0xcd, 0x22, 0x95, 0x20, 0x36, 0x8b, 0xe5,
+		0x89, 0x32, 0x92, 0x09, 0x84, 0x0b, 0xa7, 0x7e, 0x7c, 0x7d, 0x6c, 0xca, 0x87, 0x91, 0x57, 0xd2,
+		0xf1, 0xa5, 0x6d, 0xc2, 0x7a, 0xf2, 0x04, 0x81, 0x23, 0x31, 0x2d, 0xb1, 0x94, 0x76, 0x52, 0x0c,
+		0x95, 0xbc, 0xcf, 0xa2, 0xbf, 0x74, 0x09, 0x15, 0x32, 0x1f, 0x5d, 0x1f, 0x4b, 0x2e, 0x6d, 0x3b,
+		0x72, 0x67, 0x28, 0xe4, 0xaa, 0x10, 0x83, 0x28, 0xbb, 0xca, 0x5d, 0x0b, 0xc2, 0x90, 0xcb, 0x29,
+		0x7c, 0xd5, 0x7f, 0x71, 0x5d, 0xc3, 0x23, 0xc7, 0x76, 0x50, 0x61, 0xee, 0xdd, 0x0f, 0x0f, 0xde,
+		0xf2, 0x1e, 0x7e, 0xfe, 0x0f, 0x3f, 0x1f, 0x7c, 0x78, 0x30, 0x70, 0x03, 0x3f, 0x9f, 0xe3, 0xe7,
+		0xa9, 0x8f, 0x0e, 0x06, 0x5e, 0xc7, 0xcf, 0x9b, 0xf8, 0xf9, 0x57, 0xfc, 0xbc, 0xfb, 0x11, 0xda,
+		0xe1, 0xe7, 0x03, 0xfc, 0xfe, 0x09, 0xfe, 0xbf, 0x81, 0xff, 0x3f, 0xc7, 0xcf, 0x53, 0xdf, 0x3a,
+		0x18, 0xf8, 0x49, 0x00, 0x00, 0x00, 0xff, 0xff, 0x15, 0x39, 0x23, 0x2d, 0x65, 0x33, 0x00, 0x00,
 	}
 	r := bytes.NewReader(gzipped)
 	gzipr, err := compress_gzip.NewReader(r)
@@ -2360,6 +3250,790 @@ func (this *AllTypesOneOf_SubMessage) Equal(that interface{}) bool {
 	}
 	return true
 }
+func (this *AllTypesOneOfDirect) VerboseEqual(that interface{}) error {
+	if that == nil {
+		if this == nil {
+			return nil
+		}
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect")
+		}
+	}
+	if that1 == nil {
+		if this == nil {
+			return nil
+		}
+		return fmt.Errorf("that is type *AllTypesOneOfDirect but is nil && this != nil")
+	} else if this == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect but is not nil && this == nil")
+	}
+	if that1.TestOneof == nil {
+		if this.TestOneof != nil {
+			return fmt.Errorf("this.TestOneof != nil && that1.TestOneof == nil")
+		}
+	} else if this.TestOneof == nil {
+		return fmt.Errorf("this.TestOneof == nil && that1.TestOneof != nil")
+	} else if err := this.TestOneof.VerboseEqual(that1.TestOneof); err != nil {
+		return err
+	}
+	if !bytes.Equal(this.XXX_unrecognized, that1.XXX_unrecognized) {
+		return fmt.Errorf("XXX_unrecognized this(%v) Not Equal that(%v)", this.XXX_unrecognized, that1.XXX_unrecognized)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field1) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field1)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field1)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field1")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field1 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field1 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field2) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field2)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field2)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field2")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field2 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field2 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field3) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field3)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field3)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field3")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field3 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field3 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field4) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field4)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field4)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field4")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field4 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field4 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field5) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field5)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field5)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field5")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field5 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field5 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field6) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field6)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field6)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field6")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field6 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field6 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field7) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field7)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field7)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field7")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field7 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field7 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field8) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field8)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field8)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field8")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field8 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field8 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field9) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field9)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field9)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field9")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field9 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field9 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field10) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field10)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field10)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field10")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field10 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field10 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field11) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field11)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field11)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field11")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field11 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field11 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field12) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field12)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field12)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field12")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field12 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field12 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field13) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field13)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field13)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field13")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field13 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field13 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field14) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field14)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field14)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field14")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field14 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field14 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_Field15) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field15)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field15)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_Field15")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_Field15 but is nil && this != nil")
+	}
+	if !bytes.Equal(this, *that1) {
+		return fmt.Errorf("Field15 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this AllTypesOneOfDirect_SubMessage) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_SubMessage)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_SubMessage)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *AllTypesOneOfDirect_SubMessage")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *AllTypesOneOfDirect_SubMessage but is nil && this != nil")
+	}
+	this2 := Subby(this)
+	if !this2.Equal(Subby(*that1)) {
+		return fmt.Errorf("SubMessage this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this *AllTypesOneOfDirect) Equal(that interface{}) bool {
+	if that == nil {
+		if this == nil {
+			return true
+		}
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		if this == nil {
+			return true
+		}
+		return false
+	} else if this == nil {
+		return false
+	}
+	if that1.TestOneof == nil {
+		if this.TestOneof != nil {
+			return false
+		}
+	} else if this.TestOneof == nil {
+		return false
+	} else if !this.TestOneof.Equal(that1.TestOneof) {
+		return false
+	}
+	if !bytes.Equal(this.XXX_unrecognized, that1.XXX_unrecognized) {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field1) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field1)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field1)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field2) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field2)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field2)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field3) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field3)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field3)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field4) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field4)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field4)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field5) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field5)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field5)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field6) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field6)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field6)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field7) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field7)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field7)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field8) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field8)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field8)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field9) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field9)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field9)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field10) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field10)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field10)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field11) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field11)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field11)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field12) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field12)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field12)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field13) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field13)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field13)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field14) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field14)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field14)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_Field15) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_Field15)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_Field15)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if !bytes.Equal(this, *that1) {
+		return false
+	}
+	return true
+}
+func (this AllTypesOneOfDirect_SubMessage) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*AllTypesOneOfDirect_SubMessage)
+	if !ok {
+		that2, ok := that.(AllTypesOneOfDirect_SubMessage)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	this2 := Subby(this)
+	if !this2.Equal(Subby(*that1)) {
+		return false
+	}
+	return true
+}
 func (this *TwoOneofs) VerboseEqual(that interface{}) error {
 	if that == nil {
 		if this == nil {
@@ -2816,6 +4490,368 @@ func (this *TwoOneofs_SubMessage2) Equal(that interface{}) bool {
 	}
 	return true
 }
+func (this *TwoOneofsDirect) VerboseEqual(that interface{}) error {
+	if that == nil {
+		if this == nil {
+			return nil
+		}
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*TwoOneofsDirect)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *TwoOneofsDirect")
+		}
+	}
+	if that1 == nil {
+		if this == nil {
+			return nil
+		}
+		return fmt.Errorf("that is type *TwoOneofsDirect but is nil && this != nil")
+	} else if this == nil {
+		return fmt.Errorf("that is type *TwoOneofsDirect but is not nil && this == nil")
+	}
+	if that1.One == nil {
+		if this.One != nil {
+			return fmt.Errorf("this.One != nil && that1.One == nil")
+		}
+	} else if this.One == nil {
+		return fmt.Errorf("this.One == nil && that1.One != nil")
+	} else if err := this.One.VerboseEqual(that1.One); err != nil {
+		return err
+	}
+	if that1.Two == nil {
+		if this.Two != nil {
+			return fmt.Errorf("this.Two != nil && that1.Two == nil")
+		}
+	} else if this.Two == nil {
+		return fmt.Errorf("this.Two == nil && that1.Two != nil")
+	} else if err := this.Two.VerboseEqual(that1.Two); err != nil {
+		return err
+	}
+	if !bytes.Equal(this.XXX_unrecognized, that1.XXX_unrecognized) {
+		return fmt.Errorf("XXX_unrecognized this(%v) Not Equal that(%v)", this.XXX_unrecognized, that1.XXX_unrecognized)
+	}
+	return nil
+}
+func (this TwoOneofsDirect_Field1) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field1)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field1)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *TwoOneofsDirect_Field1")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *TwoOneofsDirect_Field1 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field1 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this TwoOneofsDirect_Field2) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field2)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field2)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *TwoOneofsDirect_Field2")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *TwoOneofsDirect_Field2 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field2 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this TwoOneofsDirect_Field3) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field3)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field3)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *TwoOneofsDirect_Field3")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *TwoOneofsDirect_Field3 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field3 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this TwoOneofsDirect_Field34) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field34)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field34)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *TwoOneofsDirect_Field34")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *TwoOneofsDirect_Field34 but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Field34 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this TwoOneofsDirect_Field35) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field35)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field35)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *TwoOneofsDirect_Field35")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *TwoOneofsDirect_Field35 but is nil && this != nil")
+	}
+	if !bytes.Equal(this, *that1) {
+		return fmt.Errorf("Field35 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this TwoOneofsDirect_SubMessage2) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_SubMessage2)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_SubMessage2)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *TwoOneofsDirect_SubMessage2")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *TwoOneofsDirect_SubMessage2 but is nil && this != nil")
+	}
+	this2 := Subby(this)
+	if !this2.Equal(Subby(*that1)) {
+		return fmt.Errorf("SubMessage2 this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this *TwoOneofsDirect) Equal(that interface{}) bool {
+	if that == nil {
+		if this == nil {
+			return true
+		}
+		return false
+	}
+
+	that1, ok := that.(*TwoOneofsDirect)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		if this == nil {
+			return true
+		}
+		return false
+	} else if this == nil {
+		return false
+	}
+	if that1.One == nil {
+		if this.One != nil {
+			return false
+		}
+	} else if this.One == nil {
+		return false
+	} else if !this.One.Equal(that1.One) {
+		return false
+	}
+	if that1.Two == nil {
+		if this.Two != nil {
+			return false
+		}
+	} else if this.Two == nil {
+		return false
+	} else if !this.Two.Equal(that1.Two) {
+		return false
+	}
+	if !bytes.Equal(this.XXX_unrecognized, that1.XXX_unrecognized) {
+		return false
+	}
+	return true
+}
+func (this TwoOneofsDirect_Field1) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field1)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field1)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this TwoOneofsDirect_Field2) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field2)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field2)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this TwoOneofsDirect_Field3) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field3)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field3)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this TwoOneofsDirect_Field34) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field34)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field34)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this TwoOneofsDirect_Field35) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_Field35)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_Field35)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if !bytes.Equal(this, *that1) {
+		return false
+	}
+	return true
+}
+func (this TwoOneofsDirect_SubMessage2) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*TwoOneofsDirect_SubMessage2)
+	if !ok {
+		that2, ok := that.(TwoOneofsDirect_SubMessage2)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	this2 := Subby(this)
+	if !this2.Equal(Subby(*that1)) {
+		return false
+	}
+	return true
+}
 func (this *CustomOneof) VerboseEqual(that interface{}) error {
 	if that == nil {
 		if this == nil {
@@ -3134,6 +5170,260 @@ func (this *CustomOneof_MyCustomName) Equal(that interface{}) bool {
 	}
 	return true
 }
+func (this *CustomOneofDirect) VerboseEqual(that interface{}) error {
+	if that == nil {
+		if this == nil {
+			return nil
+		}
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*CustomOneofDirect)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *CustomOneofDirect")
+		}
+	}
+	if that1 == nil {
+		if this == nil {
+			return nil
+		}
+		return fmt.Errorf("that is type *CustomOneofDirect but is nil && this != nil")
+	} else if this == nil {
+		return fmt.Errorf("that is type *CustomOneofDirect but is not nil && this == nil")
+	}
+	if that1.Custom == nil {
+		if this.Custom != nil {
+			return fmt.Errorf("this.Custom != nil && that1.Custom == nil")
+		}
+	} else if this.Custom == nil {
+		return fmt.Errorf("this.Custom == nil && that1.Custom != nil")
+	} else if err := this.Custom.VerboseEqual(that1.Custom); err != nil {
+		return err
+	}
+	if !bytes.Equal(this.XXX_unrecognized, that1.XXX_unrecognized) {
+		return fmt.Errorf("XXX_unrecognized this(%v) Not Equal that(%v)", this.XXX_unrecognized, that1.XXX_unrecognized)
+	}
+	return nil
+}
+func (this CustomOneofDirect_Stringy) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*CustomOneofDirect_Stringy)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect_Stringy)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *CustomOneofDirect_Stringy")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *CustomOneofDirect_Stringy but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("Stringy this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this CustomOneofDirect_CustomType) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*CustomOneofDirect_CustomType)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect_CustomType)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *CustomOneofDirect_CustomType")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *CustomOneofDirect_CustomType but is nil && this != nil")
+	}
+	if !this.Equal(that1) {
+		return fmt.Errorf("CustomType this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this CustomOneofDirect_CastType) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*CustomOneofDirect_CastType)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect_CastType)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *CustomOneofDirect_CastType")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *CustomOneofDirect_CastType but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("CastType this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this CustomOneofDirect_MyCustomName) VerboseEqual(that interface{}) error {
+	if that == nil {
+		return fmt.Errorf("that == nil && this != nil")
+	}
+
+	that1, ok := that.(*CustomOneofDirect_MyCustomName)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect_MyCustomName)
+		if ok {
+			that1 = &that2
+		} else {
+			return fmt.Errorf("that is not of type *CustomOneofDirect_MyCustomName")
+		}
+	}
+	if that1 == nil {
+		return fmt.Errorf("that is type *CustomOneofDirect_MyCustomName but is nil && this != nil")
+	}
+	if this != *that1 {
+		return fmt.Errorf("MyCustomName this(%v) Not Equal that(%v)", this, that1)
+	}
+	return nil
+}
+func (this *CustomOneofDirect) Equal(that interface{}) bool {
+	if that == nil {
+		if this == nil {
+			return true
+		}
+		return false
+	}
+
+	that1, ok := that.(*CustomOneofDirect)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		if this == nil {
+			return true
+		}
+		return false
+	} else if this == nil {
+		return false
+	}
+	if that1.Custom == nil {
+		if this.Custom != nil {
+			return false
+		}
+	} else if this.Custom == nil {
+		return false
+	} else if !this.Custom.Equal(that1.Custom) {
+		return false
+	}
+	if !bytes.Equal(this.XXX_unrecognized, that1.XXX_unrecognized) {
+		return false
+	}
+	return true
+}
+func (this CustomOneofDirect_Stringy) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*CustomOneofDirect_Stringy)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect_Stringy)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this CustomOneofDirect_CustomType) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*CustomOneofDirect_CustomType)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect_CustomType)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if !this.Equal(that1) {
+		return false
+	}
+	return true
+}
+func (this CustomOneofDirect_CastType) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*CustomOneofDirect_CastType)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect_CastType)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
+func (this CustomOneofDirect_MyCustomName) Equal(that interface{}) bool {
+	if that == nil {
+		return false
+	}
+
+	that1, ok := that.(*CustomOneofDirect_MyCustomName)
+	if !ok {
+		that2, ok := that.(CustomOneofDirect_MyCustomName)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return false
+	}
+	if this != *that1 {
+		return false
+	}
+	return true
+}
 func (this *Subby) GoString() string {
 	if this == nil {
 		return "nil"
@@ -3292,6 +5582,149 @@ func (this *AllTypesOneOf_SubMessage) GoString() string {
 		`SubMessage:` + fmt.Sprintf("%#v", this.SubMessage) + `}`}, ", ")
 	return s
 }
+func (this *AllTypesOneOfDirect) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := make([]string, 0, 20)
+	s = append(s, "&one.AllTypesOneOfDirect{")
+	if this.TestOneof != nil {
+		s = append(s, "TestOneof: "+fmt.Sprintf("%#v", this.TestOneof)+",\n")
+	}
+	if this.XXX_unrecognized != nil {
+		s = append(s, "XXX_unrecognized:"+fmt.Sprintf("%#v", this.XXX_unrecognized)+",\n")
+	}
+	s = append(s, "}")
+	return strings.Join(s, "")
+}
+func (this *AllTypesOneOfDirect_Field1) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field1{` +
+		`Field1:` + fmt.Sprintf("%#v", this.Field1) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field2) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field2{` +
+		`Field2:` + fmt.Sprintf("%#v", this.Field2) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field3) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field3{` +
+		`Field3:` + fmt.Sprintf("%#v", this.Field3) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field4) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field4{` +
+		`Field4:` + fmt.Sprintf("%#v", this.Field4) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field5) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field5{` +
+		`Field5:` + fmt.Sprintf("%#v", this.Field5) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field6) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field6{` +
+		`Field6:` + fmt.Sprintf("%#v", this.Field6) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field7) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field7{` +
+		`Field7:` + fmt.Sprintf("%#v", this.Field7) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field8) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field8{` +
+		`Field8:` + fmt.Sprintf("%#v", this.Field8) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field9) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field9{` +
+		`Field9:` + fmt.Sprintf("%#v", this.Field9) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field10) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field10{` +
+		`Field10:` + fmt.Sprintf("%#v", this.Field10) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field11) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field11{` +
+		`Field11:` + fmt.Sprintf("%#v", this.Field11) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field12) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field12{` +
+		`Field12:` + fmt.Sprintf("%#v", this.Field12) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field13) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field13{` +
+		`Field13:` + fmt.Sprintf("%#v", this.Field13) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field14) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field14{` +
+		`Field14:` + fmt.Sprintf("%#v", this.Field14) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field15) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_Field15{` +
+		`Field15:` + fmt.Sprintf("%#v", this.Field15) + `}`}, ", ")
+	return s
+}
+func (this *AllTypesOneOfDirect_SubMessage) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.AllTypesOneOfDirect_SubMessage{` +
+		`SubMessage:` + fmt.Sprintf("%#v", this.SubMessage) + `}`}, ", ")
+	return s
+}
 func (this *TwoOneofs) GoString() string {
 	if this == nil {
 		return "nil"
@@ -3358,6 +5791,72 @@ func (this *TwoOneofs_SubMessage2) GoString() string {
 		`SubMessage2:` + fmt.Sprintf("%#v", this.SubMessage2) + `}`}, ", ")
 	return s
 }
+func (this *TwoOneofsDirect) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := make([]string, 0, 10)
+	s = append(s, "&one.TwoOneofsDirect{")
+	if this.One != nil {
+		s = append(s, "One: "+fmt.Sprintf("%#v", this.One)+",\n")
+	}
+	if this.Two != nil {
+		s = append(s, "Two: "+fmt.Sprintf("%#v", this.Two)+",\n")
+	}
+	if this.XXX_unrecognized != nil {
+		s = append(s, "XXX_unrecognized:"+fmt.Sprintf("%#v", this.XXX_unrecognized)+",\n")
+	}
+	s = append(s, "}")
+	return strings.Join(s, "")
+}
+func (this *TwoOneofsDirect_Field1) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.TwoOneofsDirect_Field1{` +
+		`Field1:` + fmt.Sprintf("%#v", this.Field1) + `}`}, ", ")
+	return s
+}
+func (this *TwoOneofsDirect_Field2) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.TwoOneofsDirect_Field2{` +
+		`Field2:` + fmt.Sprintf("%#v", this.Field2) + `}`}, ", ")
+	return s
+}
+func (this *TwoOneofsDirect_Field3) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.TwoOneofsDirect_Field3{` +
+		`Field3:` + fmt.Sprintf("%#v", this.Field3) + `}`}, ", ")
+	return s
+}
+func (this *TwoOneofsDirect_Field34) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.TwoOneofsDirect_Field34{` +
+		`Field34:` + fmt.Sprintf("%#v", this.Field34) + `}`}, ", ")
+	return s
+}
+func (this *TwoOneofsDirect_Field35) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.TwoOneofsDirect_Field35{` +
+		`Field35:` + fmt.Sprintf("%#v", this.Field35) + `}`}, ", ")
+	return s
+}
+func (this *TwoOneofsDirect_SubMessage2) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.TwoOneofsDirect_SubMessage2{` +
+		`SubMessage2:` + fmt.Sprintf("%#v", this.SubMessage2) + `}`}, ", ")
+	return s
+}
 func (this *CustomOneof) GoString() string {
 	if this == nil {
 		return "nil"
@@ -3402,6 +5901,53 @@ func (this *CustomOneof_MyCustomName) GoString() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&one.CustomOneof_MyCustomName{` +
+		`MyCustomName:` + fmt.Sprintf("%#v", this.MyCustomName) + `}`}, ", ")
+	return s
+}
+func (this *CustomOneofDirect) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := make([]string, 0, 8)
+	s = append(s, "&one.CustomOneofDirect{")
+	if this.Custom != nil {
+		s = append(s, "Custom: "+fmt.Sprintf("%#v", this.Custom)+",\n")
+	}
+	if this.XXX_unrecognized != nil {
+		s = append(s, "XXX_unrecognized:"+fmt.Sprintf("%#v", this.XXX_unrecognized)+",\n")
+	}
+	s = append(s, "}")
+	return strings.Join(s, "")
+}
+func (this *CustomOneofDirect_Stringy) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.CustomOneofDirect_Stringy{` +
+		`Stringy:` + fmt.Sprintf("%#v", this.Stringy) + `}`}, ", ")
+	return s
+}
+func (this *CustomOneofDirect_CustomType) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.CustomOneofDirect_CustomType{` +
+		`CustomType:` + fmt.Sprintf("%#v", this.CustomType) + `}`}, ", ")
+	return s
+}
+func (this *CustomOneofDirect_CastType) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.CustomOneofDirect_CastType{` +
+		`CastType:` + fmt.Sprintf("%#v", this.CastType) + `}`}, ", ")
+	return s
+}
+func (this *CustomOneofDirect_MyCustomName) GoString() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&one.CustomOneofDirect_MyCustomName{` +
 		`MyCustomName:` + fmt.Sprintf("%#v", this.MyCustomName) + `}`}, ", ")
 	return s
 }
@@ -3594,6 +6140,158 @@ func NewPopulatedAllTypesOneOf_SubMessage(r randyOne, easy bool) *AllTypesOneOf_
 	this.SubMessage = NewPopulatedSubby(r, easy)
 	return this
 }
+func NewPopulatedAllTypesOneOfDirect(r randyOne, easy bool) *AllTypesOneOfDirect {
+	this := &AllTypesOneOfDirect{}
+	oneofNumber_TestOneof := []int32{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}[r.Intn(16)]
+	switch oneofNumber_TestOneof {
+	case 1:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field1(r, easy)
+	case 2:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field2(r, easy)
+	case 3:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field3(r, easy)
+	case 4:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field4(r, easy)
+	case 5:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field5(r, easy)
+	case 6:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field6(r, easy)
+	case 7:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field7(r, easy)
+	case 8:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field8(r, easy)
+	case 9:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field9(r, easy)
+	case 10:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field10(r, easy)
+	case 11:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field11(r, easy)
+	case 12:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field12(r, easy)
+	case 13:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field13(r, easy)
+	case 14:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field14(r, easy)
+	case 15:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_Field15(r, easy)
+	case 16:
+		this.TestOneof = NewPopulatedAllTypesOneOfDirect_SubMessage(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+		this.XXX_unrecognized = randUnrecognizedOne(r, 17)
+	}
+	return this
+}
+
+func NewPopulatedAllTypesOneOfDirect_Field1(r randyOne, easy bool) AllTypesOneOfDirect_Field1 {
+	var this float64
+	this = float64(r.Float64())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return AllTypesOneOfDirect_Field1(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field2(r randyOne, easy bool) AllTypesOneOfDirect_Field2 {
+	var this float32
+	this = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return AllTypesOneOfDirect_Field2(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field3(r randyOne, easy bool) AllTypesOneOfDirect_Field3 {
+	var this int32
+	this = int32(r.Int31())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return AllTypesOneOfDirect_Field3(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field4(r randyOne, easy bool) AllTypesOneOfDirect_Field4 {
+	var this int64
+	this = int64(r.Int63())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return AllTypesOneOfDirect_Field4(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field5(r randyOne, easy bool) AllTypesOneOfDirect_Field5 {
+	var this uint32
+	this = uint32(r.Uint32())
+	return AllTypesOneOfDirect_Field5(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field6(r randyOne, easy bool) AllTypesOneOfDirect_Field6 {
+	var this uint64
+	this = uint64(uint64(r.Uint32()))
+	return AllTypesOneOfDirect_Field6(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field7(r randyOne, easy bool) AllTypesOneOfDirect_Field7 {
+	var this int32
+	this = int32(r.Int31())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return AllTypesOneOfDirect_Field7(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field8(r randyOne, easy bool) AllTypesOneOfDirect_Field8 {
+	var this int64
+	this = int64(r.Int63())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return AllTypesOneOfDirect_Field8(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field9(r randyOne, easy bool) AllTypesOneOfDirect_Field9 {
+	var this uint32
+	this = uint32(r.Uint32())
+	return AllTypesOneOfDirect_Field9(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field10(r randyOne, easy bool) AllTypesOneOfDirect_Field10 {
+	var this int32
+	this = int32(r.Int31())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return AllTypesOneOfDirect_Field10(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field11(r randyOne, easy bool) AllTypesOneOfDirect_Field11 {
+	var this uint64
+	this = uint64(uint64(r.Uint32()))
+	return AllTypesOneOfDirect_Field11(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field12(r randyOne, easy bool) AllTypesOneOfDirect_Field12 {
+	var this int64
+	this = int64(r.Int63())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return AllTypesOneOfDirect_Field12(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field13(r randyOne, easy bool) AllTypesOneOfDirect_Field13 {
+	var this bool
+	this = bool(bool(r.Intn(2) == 0))
+	return AllTypesOneOfDirect_Field13(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field14(r randyOne, easy bool) AllTypesOneOfDirect_Field14 {
+	var this string
+	this = randStringOne(r)
+	return AllTypesOneOfDirect_Field14(this)
+}
+func NewPopulatedAllTypesOneOfDirect_Field15(r randyOne, easy bool) AllTypesOneOfDirect_Field15 {
+	var this []byte
+	v3 := r.Intn(100)
+	this = make([]byte, v3)
+	for i := 0; i < v3; i++ {
+		this[i] = byte(r.Intn(256))
+	}
+	return AllTypesOneOfDirect_Field15(this)
+}
+func NewPopulatedAllTypesOneOfDirect_SubMessage(r randyOne, easy bool) AllTypesOneOfDirect_SubMessage {
+	var this Subby
+	v4 := NewPopulatedSubby(r, easy)
+	this = *v4
+	return AllTypesOneOfDirect_SubMessage(this)
+}
 func NewPopulatedTwoOneofs(r randyOne, easy bool) *TwoOneofs {
 	this := &TwoOneofs{}
 	oneofNumber_One := []int32{1, 2, 3}[r.Intn(3)]
@@ -3651,9 +6349,9 @@ func NewPopulatedTwoOneofs_Field34(r randyOne, easy bool) *TwoOneofs_Field34 {
 }
 func NewPopulatedTwoOneofs_Field35(r randyOne, easy bool) *TwoOneofs_Field35 {
 	this := &TwoOneofs_Field35{}
-	v3 := r.Intn(100)
-	this.Field35 = make([]byte, v3)
-	for i := 0; i < v3; i++ {
+	v5 := r.Intn(100)
+	this.Field35 = make([]byte, v5)
+	for i := 0; i < v5; i++ {
 		this.Field35[i] = byte(r.Intn(256))
 	}
 	return this
@@ -3662,6 +6360,76 @@ func NewPopulatedTwoOneofs_SubMessage2(r randyOne, easy bool) *TwoOneofs_SubMess
 	this := &TwoOneofs_SubMessage2{}
 	this.SubMessage2 = NewPopulatedSubby(r, easy)
 	return this
+}
+func NewPopulatedTwoOneofsDirect(r randyOne, easy bool) *TwoOneofsDirect {
+	this := &TwoOneofsDirect{}
+	oneofNumber_One := []int32{1, 2, 3}[r.Intn(3)]
+	switch oneofNumber_One {
+	case 1:
+		this.One = NewPopulatedTwoOneofsDirect_Field1(r, easy)
+	case 2:
+		this.One = NewPopulatedTwoOneofsDirect_Field2(r, easy)
+	case 3:
+		this.One = NewPopulatedTwoOneofsDirect_Field3(r, easy)
+	}
+	oneofNumber_Two := []int32{34, 35, 36}[r.Intn(3)]
+	switch oneofNumber_Two {
+	case 34:
+		this.Two = NewPopulatedTwoOneofsDirect_Field34(r, easy)
+	case 35:
+		this.Two = NewPopulatedTwoOneofsDirect_Field35(r, easy)
+	case 36:
+		this.Two = NewPopulatedTwoOneofsDirect_SubMessage2(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+		this.XXX_unrecognized = randUnrecognizedOne(r, 37)
+	}
+	return this
+}
+
+func NewPopulatedTwoOneofsDirect_Field1(r randyOne, easy bool) TwoOneofsDirect_Field1 {
+	var this float64
+	this = float64(r.Float64())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return TwoOneofsDirect_Field1(this)
+}
+func NewPopulatedTwoOneofsDirect_Field2(r randyOne, easy bool) TwoOneofsDirect_Field2 {
+	var this float32
+	this = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return TwoOneofsDirect_Field2(this)
+}
+func NewPopulatedTwoOneofsDirect_Field3(r randyOne, easy bool) TwoOneofsDirect_Field3 {
+	var this int32
+	this = int32(r.Int31())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return TwoOneofsDirect_Field3(this)
+}
+func NewPopulatedTwoOneofsDirect_Field34(r randyOne, easy bool) TwoOneofsDirect_Field34 {
+	var this string
+	this = randStringOne(r)
+	return TwoOneofsDirect_Field34(this)
+}
+func NewPopulatedTwoOneofsDirect_Field35(r randyOne, easy bool) TwoOneofsDirect_Field35 {
+	var this []byte
+	v6 := r.Intn(100)
+	this = make([]byte, v6)
+	for i := 0; i < v6; i++ {
+		this[i] = byte(r.Intn(256))
+	}
+	return TwoOneofsDirect_Field35(this)
+}
+func NewPopulatedTwoOneofsDirect_SubMessage2(r randyOne, easy bool) TwoOneofsDirect_SubMessage2 {
+	var this Subby
+	v7 := NewPopulatedSubby(r, easy)
+	this = *v7
+	return TwoOneofsDirect_SubMessage2(this)
 }
 func NewPopulatedCustomOneof(r randyOne, easy bool) *CustomOneof {
 	this := &CustomOneof{}
@@ -3689,8 +6457,8 @@ func NewPopulatedCustomOneof_Stringy(r randyOne, easy bool) *CustomOneof_Stringy
 }
 func NewPopulatedCustomOneof_CustomType(r randyOne, easy bool) *CustomOneof_CustomType {
 	this := &CustomOneof_CustomType{}
-	v4 := github_com_gogo_protobuf_test_custom.NewPopulatedUint128(r)
-	this.CustomType = *v4
+	v8 := github_com_gogo_protobuf_test_custom.NewPopulatedUint128(r)
+	this.CustomType = *v8
 	return this
 }
 func NewPopulatedCustomOneof_CastType(r randyOne, easy bool) *CustomOneof_CastType {
@@ -3705,6 +6473,49 @@ func NewPopulatedCustomOneof_MyCustomName(r randyOne, easy bool) *CustomOneof_My
 		this.MyCustomName *= -1
 	}
 	return this
+}
+func NewPopulatedCustomOneofDirect(r randyOne, easy bool) *CustomOneofDirect {
+	this := &CustomOneofDirect{}
+	oneofNumber_Custom := []int32{34, 35, 36, 37}[r.Intn(4)]
+	switch oneofNumber_Custom {
+	case 34:
+		this.Custom = NewPopulatedCustomOneofDirect_Stringy(r, easy)
+	case 35:
+		this.Custom = NewPopulatedCustomOneofDirect_CustomType(r, easy)
+	case 36:
+		this.Custom = NewPopulatedCustomOneofDirect_CastType(r, easy)
+	case 37:
+		this.Custom = NewPopulatedCustomOneofDirect_MyCustomName(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+		this.XXX_unrecognized = randUnrecognizedOne(r, 38)
+	}
+	return this
+}
+
+func NewPopulatedCustomOneofDirect_Stringy(r randyOne, easy bool) CustomOneofDirect_Stringy {
+	var this string
+	this = randStringOne(r)
+	return CustomOneofDirect_Stringy(this)
+}
+func NewPopulatedCustomOneofDirect_CustomType(r randyOne, easy bool) CustomOneofDirect_CustomType {
+	var this github_com_gogo_protobuf_test_custom.Uint128
+	v9 := github_com_gogo_protobuf_test_custom.NewPopulatedUint128(r)
+	this = *v9
+	return CustomOneofDirect_CustomType(this)
+}
+func NewPopulatedCustomOneofDirect_CastType(r randyOne, easy bool) CustomOneofDirect_CastType {
+	var this github_com_gogo_protobuf_test_casttype.MyUint64Type
+	this = github_com_gogo_protobuf_test_casttype.MyUint64Type(uint64(r.Uint32()))
+	return CustomOneofDirect_CastType(this)
+}
+func NewPopulatedCustomOneofDirect_MyCustomName(r randyOne, easy bool) CustomOneofDirect_MyCustomName {
+	var this int64
+	this = int64(r.Int63())
+	if r.Intn(2) == 0 {
+		this *= -1
+	}
+	return CustomOneofDirect_MyCustomName(this)
 }
 
 type randyOne interface {
@@ -3726,9 +6537,9 @@ func randUTF8RuneOne(r randyOne) rune {
 	return rune(ru + 61)
 }
 func randStringOne(r randyOne) string {
-	v5 := r.Intn(100)
-	tmps := make([]rune, v5)
-	for i := 0; i < v5; i++ {
+	v10 := r.Intn(100)
+	tmps := make([]rune, v10)
+	for i := 0; i < v10; i++ {
 		tmps[i] = randUTF8RuneOne(r)
 	}
 	return string(tmps)
@@ -3750,11 +6561,11 @@ func randFieldOne(data []byte, r randyOne, fieldNumber int, wire int) []byte {
 	switch wire {
 	case 0:
 		data = encodeVarintPopulateOne(data, uint64(key))
-		v6 := r.Int63()
+		v11 := r.Int63()
 		if r.Intn(2) == 0 {
-			v6 *= -1
+			v11 *= -1
 		}
-		data = encodeVarintPopulateOne(data, uint64(v6))
+		data = encodeVarintPopulateOne(data, uint64(v11))
 	case 1:
 		data = encodeVarintPopulateOne(data, uint64(key))
 		data = append(data, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
@@ -3907,6 +6718,120 @@ func (m *AllTypesOneOf_SubMessage) Size() (n int) {
 	}
 	return n
 }
+func (m *AllTypesOneOfDirect) Size() (n int) {
+	var l int
+	_ = l
+	if m.TestOneof != nil {
+		n += m.TestOneof.Size()
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m AllTypesOneOfDirect_Field1) Size() (n int) {
+	var l int
+	_ = l
+	n += 9
+	return n
+}
+func (m AllTypesOneOfDirect_Field2) Size() (n int) {
+	var l int
+	_ = l
+	n += 5
+	return n
+}
+func (m AllTypesOneOfDirect_Field3) Size() (n int) {
+	var l int
+	_ = l
+	n += 1 + sovOne(uint64(m))
+	return n
+}
+func (m AllTypesOneOfDirect_Field4) Size() (n int) {
+	var l int
+	_ = l
+	n += 1 + sovOne(uint64(m))
+	return n
+}
+func (m AllTypesOneOfDirect_Field5) Size() (n int) {
+	var l int
+	_ = l
+	n += 1 + sovOne(uint64(m))
+	return n
+}
+func (m AllTypesOneOfDirect_Field6) Size() (n int) {
+	var l int
+	_ = l
+	n += 1 + sovOne(uint64(m))
+	return n
+}
+func (m AllTypesOneOfDirect_Field7) Size() (n int) {
+	var l int
+	_ = l
+	n += 1 + sozOne(uint64(m))
+	return n
+}
+func (m AllTypesOneOfDirect_Field8) Size() (n int) {
+	var l int
+	_ = l
+	n += 1 + sozOne(uint64(m))
+	return n
+}
+func (m AllTypesOneOfDirect_Field9) Size() (n int) {
+	var l int
+	_ = l
+	n += 5
+	return n
+}
+func (m AllTypesOneOfDirect_Field10) Size() (n int) {
+	var l int
+	_ = l
+	n += 5
+	return n
+}
+func (m AllTypesOneOfDirect_Field11) Size() (n int) {
+	var l int
+	_ = l
+	n += 9
+	return n
+}
+func (m AllTypesOneOfDirect_Field12) Size() (n int) {
+	var l int
+	_ = l
+	n += 9
+	return n
+}
+func (m AllTypesOneOfDirect_Field13) Size() (n int) {
+	var l int
+	_ = l
+	n += 2
+	return n
+}
+func (m AllTypesOneOfDirect_Field14) Size() (n int) {
+	var l int
+	_ = l
+	l = len(m)
+	n += 1 + l + sovOne(uint64(l))
+	return n
+}
+func (m AllTypesOneOfDirect_Field15) Size() (n int) {
+	var l int
+	_ = l
+	if m != nil {
+		l = len(m)
+		n += 1 + l + sovOne(uint64(l))
+	}
+	return n
+}
+func (m AllTypesOneOfDirect_SubMessage) Size() (n int) {
+	var l int
+	_ = l
+	m2 := Subby(m)
+	l = m2.Size()
+	n += 2 + l + sovOne(uint64(l))
+	return n
+}
 func (m *TwoOneofs) Size() (n int) {
 	var l int
 	_ = l
@@ -3965,6 +6890,63 @@ func (m *TwoOneofs_SubMessage2) Size() (n int) {
 	}
 	return n
 }
+func (m *TwoOneofsDirect) Size() (n int) {
+	var l int
+	_ = l
+	if m.One != nil {
+		n += m.One.Size()
+	}
+	if m.Two != nil {
+		n += m.Two.Size()
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m TwoOneofsDirect_Field1) Size() (n int) {
+	var l int
+	_ = l
+	n += 9
+	return n
+}
+func (m TwoOneofsDirect_Field2) Size() (n int) {
+	var l int
+	_ = l
+	n += 5
+	return n
+}
+func (m TwoOneofsDirect_Field3) Size() (n int) {
+	var l int
+	_ = l
+	n += 1 + sovOne(uint64(m))
+	return n
+}
+func (m TwoOneofsDirect_Field34) Size() (n int) {
+	var l int
+	_ = l
+	l = len(m)
+	n += 2 + l + sovOne(uint64(l))
+	return n
+}
+func (m TwoOneofsDirect_Field35) Size() (n int) {
+	var l int
+	_ = l
+	if m != nil {
+		l = len(m)
+		n += 2 + l + sovOne(uint64(l))
+	}
+	return n
+}
+func (m TwoOneofsDirect_SubMessage2) Size() (n int) {
+	var l int
+	_ = l
+	m2 := Subby(m)
+	l = m2.Size()
+	n += 2 + l + sovOne(uint64(l))
+	return n
+}
 func (m *CustomOneof) Size() (n int) {
 	var l int
 	_ = l
@@ -4001,6 +6983,44 @@ func (m *CustomOneof_MyCustomName) Size() (n int) {
 	var l int
 	_ = l
 	n += 2 + sovOne(uint64(m.MyCustomName))
+	return n
+}
+func (m *CustomOneofDirect) Size() (n int) {
+	var l int
+	_ = l
+	if m.Custom != nil {
+		n += m.Custom.Size()
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m CustomOneofDirect_Stringy) Size() (n int) {
+	var l int
+	_ = l
+	l = len(m)
+	n += 2 + l + sovOne(uint64(l))
+	return n
+}
+func (m CustomOneofDirect_CustomType) Size() (n int) {
+	var l int
+	_ = l
+	l = m.Size()
+	n += 2 + l + sovOne(uint64(l))
+	return n
+}
+func (m CustomOneofDirect_CastType) Size() (n int) {
+	var l int
+	_ = l
+	n += 2 + sovOne(uint64(m))
+	return n
+}
+func (m CustomOneofDirect_MyCustomName) Size() (n int) {
+	var l int
+	_ = l
+	n += 2 + sovOne(uint64(m))
 	return n
 }
 
@@ -4199,6 +7219,177 @@ func (this *AllTypesOneOf_SubMessage) String() string {
 	}, "")
 	return s
 }
+func (this *AllTypesOneOfDirect) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect{`,
+		`TestOneof:` + fmt.Sprintf("%v", this.TestOneof) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field1) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field1{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field2) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field2{`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field3) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field3{`,
+		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field4) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field4{`,
+		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field5) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field5{`,
+		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field6) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field6{`,
+		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field7) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field7{`,
+		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field8) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field8{`,
+		`Field8:` + fmt.Sprintf("%v", this.Field8) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field9) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field9{`,
+		`Field9:` + fmt.Sprintf("%v", this.Field9) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field10) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field10{`,
+		`Field10:` + fmt.Sprintf("%v", this.Field10) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field11) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field11{`,
+		`Field11:` + fmt.Sprintf("%v", this.Field11) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field12) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field12{`,
+		`Field12:` + fmt.Sprintf("%v", this.Field12) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field13) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field13{`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field14) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field14{`,
+		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_Field15) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_Field15{`,
+		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *AllTypesOneOfDirect_SubMessage) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&AllTypesOneOfDirect_SubMessage{`,
+		`SubMessage:` + strings.Replace(fmt.Sprintf("%v", this.SubMessage), "Subby", "Subby", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
 func (this *TwoOneofs) String() string {
 	if this == nil {
 		return "nil"
@@ -4271,6 +7462,78 @@ func (this *TwoOneofs_SubMessage2) String() string {
 	}, "")
 	return s
 }
+func (this *TwoOneofsDirect) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TwoOneofsDirect{`,
+		`One:` + fmt.Sprintf("%v", this.One) + `,`,
+		`Two:` + fmt.Sprintf("%v", this.Two) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *TwoOneofsDirect_Field1) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TwoOneofsDirect_Field1{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *TwoOneofsDirect_Field2) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TwoOneofsDirect_Field2{`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *TwoOneofsDirect_Field3) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TwoOneofsDirect_Field3{`,
+		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *TwoOneofsDirect_Field34) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TwoOneofsDirect_Field34{`,
+		`Field34:` + fmt.Sprintf("%v", this.Field34) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *TwoOneofsDirect_Field35) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TwoOneofsDirect_Field35{`,
+		`Field35:` + fmt.Sprintf("%v", this.Field35) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *TwoOneofsDirect_SubMessage2) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TwoOneofsDirect_SubMessage2{`,
+		`SubMessage2:` + strings.Replace(fmt.Sprintf("%v", this.SubMessage2), "Subby", "Subby", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
 func (this *CustomOneof) String() string {
 	if this == nil {
 		return "nil"
@@ -4317,6 +7580,57 @@ func (this *CustomOneof_MyCustomName) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&CustomOneof_MyCustomName{`,
+		`MyCustomName:` + fmt.Sprintf("%v", this.MyCustomName) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CustomOneofDirect) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&CustomOneofDirect{`,
+		`Custom:` + fmt.Sprintf("%v", this.Custom) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CustomOneofDirect_Stringy) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&CustomOneofDirect_Stringy{`,
+		`Stringy:` + fmt.Sprintf("%v", this.Stringy) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CustomOneofDirect_CustomType) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&CustomOneofDirect_CustomType{`,
+		`CustomType:` + fmt.Sprintf("%v", this.CustomType) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CustomOneofDirect_CastType) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&CustomOneofDirect_CastType{`,
+		`CastType:` + fmt.Sprintf("%v", this.CastType) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CustomOneofDirect_MyCustomName) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&CustomOneofDirect_MyCustomName{`,
 		`MyCustomName:` + fmt.Sprintf("%v", this.MyCustomName) + `,`,
 		`}`,
 	}, "")
@@ -4521,6 +7835,182 @@ func (m *AllTypesOneOf_SubMessage) MarshalTo(data []byte) (int, error) {
 	}
 	return i, nil
 }
+func (m *AllTypesOneOfDirect) Marshal() (data []byte, err error) {
+	size := m.Size()
+	data = make([]byte, size)
+	n, err := m.MarshalTo(data)
+	if err != nil {
+		return nil, err
+	}
+	return data[:n], nil
+}
+
+func (m *AllTypesOneOfDirect) MarshalTo(data []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if m.TestOneof != nil {
+		nn3, err := m.TestOneof.MarshalTo(data[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += nn3
+	}
+	if m.XXX_unrecognized != nil {
+		i += copy(data[i:], m.XXX_unrecognized)
+	}
+	return i, nil
+}
+
+func (m AllTypesOneOfDirect_Field1) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := float64(m)
+	data[i] = 0x9
+	i++
+	*(*float64)(unsafe.Pointer(&data[i])) = m2
+	i += 8
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field2) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := float32(m)
+	data[i] = 0x15
+	i++
+	*(*float32)(unsafe.Pointer(&data[i])) = m2
+	i += 4
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field3) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := int32(m)
+	data[i] = 0x18
+	i++
+	i = encodeVarintOne(data, i, uint64(m2))
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field4) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := int64(m)
+	data[i] = 0x20
+	i++
+	i = encodeVarintOne(data, i, uint64(m2))
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field5) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := uint32(m)
+	data[i] = 0x28
+	i++
+	i = encodeVarintOne(data, i, uint64(m2))
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field6) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := uint64(m)
+	data[i] = 0x30
+	i++
+	i = encodeVarintOne(data, i, uint64(m2))
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field7) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := int32(m)
+	data[i] = 0x38
+	i++
+	i = encodeVarintOne(data, i, uint64((uint32(m2)<<1)^uint32((m2>>31))))
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field8) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := int64(m)
+	data[i] = 0x40
+	i++
+	i = encodeVarintOne(data, i, uint64((uint64(m2)<<1)^uint64((m2>>63))))
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field9) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := uint32(m)
+	data[i] = 0x4d
+	i++
+	*(*uint32)(unsafe.Pointer(&data[i])) = m2
+	i += 4
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field10) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := int32(m)
+	data[i] = 0x55
+	i++
+	*(*int32)(unsafe.Pointer(&data[i])) = m2
+	i += 4
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field11) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := uint64(m)
+	data[i] = 0x59
+	i++
+	*(*uint64)(unsafe.Pointer(&data[i])) = m2
+	i += 8
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field12) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := int64(m)
+	data[i] = 0x61
+	i++
+	*(*int64)(unsafe.Pointer(&data[i])) = m2
+	i += 8
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field13) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := bool(m)
+	data[i] = 0x68
+	i++
+	if m2 {
+		data[i] = 1
+	} else {
+		data[i] = 0
+	}
+	i++
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field14) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := string(m)
+	data[i] = 0x72
+	i++
+	i = encodeVarintOne(data, i, uint64(len(m2)))
+	i += copy(data[i:], m2)
+	return i, nil
+}
+func (m AllTypesOneOfDirect_Field15) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := []byte(m)
+	data[i] = 0x7a
+	i++
+	i = encodeVarintOne(data, i, uint64(len(m2)))
+	i += copy(data[i:], m2)
+	return i, nil
+}
+func (m AllTypesOneOfDirect_SubMessage) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := Subby(m)
+	data[i] = 0x82
+	i++
+	data[i] = 0x1
+	i++
+	i = encodeVarintOne(data, i, uint64(m2.Size()))
+	n4, err := m2.MarshalTo(data[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n4
+	return i, nil
+}
 func (m *TwoOneofs) Marshal() (data []byte, err error) {
 	size := m.Size()
 	data = make([]byte, size)
@@ -4537,18 +8027,18 @@ func (m *TwoOneofs) MarshalTo(data []byte) (int, error) {
 	var l int
 	_ = l
 	if m.One != nil {
-		nn3, err := m.One.MarshalTo(data[i:])
+		nn5, err := m.One.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += nn3
+		i += nn5
 	}
 	if m.Two != nil {
-		nn4, err := m.Two.MarshalTo(data[i:])
+		nn6, err := m.Two.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += nn4
+		i += nn6
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(data[i:], m.XXX_unrecognized)
@@ -4609,12 +8099,110 @@ func (m *TwoOneofs_SubMessage2) MarshalTo(data []byte) (int, error) {
 		data[i] = 0x2
 		i++
 		i = encodeVarintOne(data, i, uint64(m.SubMessage2.Size()))
-		n5, err := m.SubMessage2.MarshalTo(data[i:])
+		n7, err := m.SubMessage2.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n5
+		i += n7
 	}
+	return i, nil
+}
+func (m *TwoOneofsDirect) Marshal() (data []byte, err error) {
+	size := m.Size()
+	data = make([]byte, size)
+	n, err := m.MarshalTo(data)
+	if err != nil {
+		return nil, err
+	}
+	return data[:n], nil
+}
+
+func (m *TwoOneofsDirect) MarshalTo(data []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if m.One != nil {
+		nn8, err := m.One.MarshalTo(data[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += nn8
+	}
+	if m.Two != nil {
+		nn9, err := m.Two.MarshalTo(data[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += nn9
+	}
+	if m.XXX_unrecognized != nil {
+		i += copy(data[i:], m.XXX_unrecognized)
+	}
+	return i, nil
+}
+
+func (m TwoOneofsDirect_Field1) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := float64(m)
+	data[i] = 0x9
+	i++
+	*(*float64)(unsafe.Pointer(&data[i])) = m2
+	i += 8
+	return i, nil
+}
+func (m TwoOneofsDirect_Field2) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := float32(m)
+	data[i] = 0x15
+	i++
+	*(*float32)(unsafe.Pointer(&data[i])) = m2
+	i += 4
+	return i, nil
+}
+func (m TwoOneofsDirect_Field3) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := int32(m)
+	data[i] = 0x18
+	i++
+	i = encodeVarintOne(data, i, uint64(m2))
+	return i, nil
+}
+func (m TwoOneofsDirect_Field34) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := string(m)
+	data[i] = 0x92
+	i++
+	data[i] = 0x2
+	i++
+	i = encodeVarintOne(data, i, uint64(len(m2)))
+	i += copy(data[i:], m2)
+	return i, nil
+}
+func (m TwoOneofsDirect_Field35) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := []byte(m)
+	data[i] = 0x9a
+	i++
+	data[i] = 0x2
+	i++
+	i = encodeVarintOne(data, i, uint64(len(m2)))
+	i += copy(data[i:], m2)
+	return i, nil
+}
+func (m TwoOneofsDirect_SubMessage2) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := Subby(m)
+	data[i] = 0xa2
+	i++
+	data[i] = 0x2
+	i++
+	i = encodeVarintOne(data, i, uint64(m2.Size()))
+	n10, err := m2.MarshalTo(data[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n10
 	return i, nil
 }
 func (m *CustomOneof) Marshal() (data []byte, err error) {
@@ -4633,11 +8221,11 @@ func (m *CustomOneof) MarshalTo(data []byte) (int, error) {
 	var l int
 	_ = l
 	if m.Custom != nil {
-		nn6, err := m.Custom.MarshalTo(data[i:])
+		nn11, err := m.Custom.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += nn6
+		i += nn11
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(data[i:], m.XXX_unrecognized)
@@ -4662,11 +8250,11 @@ func (m *CustomOneof_CustomType) MarshalTo(data []byte) (int, error) {
 	data[i] = 0x2
 	i++
 	i = encodeVarintOne(data, i, uint64(m.CustomType.Size()))
-	n7, err := m.CustomType.MarshalTo(data[i:])
+	n12, err := m.CustomType.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
 	}
-	i += n7
+	i += n12
 	return i, nil
 }
 func (m *CustomOneof_CastType) MarshalTo(data []byte) (int, error) {
@@ -4685,6 +8273,80 @@ func (m *CustomOneof_MyCustomName) MarshalTo(data []byte) (int, error) {
 	data[i] = 0x2
 	i++
 	i = encodeVarintOne(data, i, uint64(m.MyCustomName))
+	return i, nil
+}
+func (m *CustomOneofDirect) Marshal() (data []byte, err error) {
+	size := m.Size()
+	data = make([]byte, size)
+	n, err := m.MarshalTo(data)
+	if err != nil {
+		return nil, err
+	}
+	return data[:n], nil
+}
+
+func (m *CustomOneofDirect) MarshalTo(data []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if m.Custom != nil {
+		nn13, err := m.Custom.MarshalTo(data[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += nn13
+	}
+	if m.XXX_unrecognized != nil {
+		i += copy(data[i:], m.XXX_unrecognized)
+	}
+	return i, nil
+}
+
+func (m CustomOneofDirect_Stringy) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := string(m)
+	data[i] = 0x92
+	i++
+	data[i] = 0x2
+	i++
+	i = encodeVarintOne(data, i, uint64(len(m2)))
+	i += copy(data[i:], m2)
+	return i, nil
+}
+func (m CustomOneofDirect_CustomType) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := github_com_gogo_protobuf_test_custom.Uint128(m)
+	data[i] = 0x9a
+	i++
+	data[i] = 0x2
+	i++
+	i = encodeVarintOne(data, i, uint64(m2.Size()))
+	n14, err := m2.MarshalTo(data[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n14
+	return i, nil
+}
+func (m CustomOneofDirect_CastType) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := github_com_gogo_protobuf_test_casttype.MyUint64Type(m)
+	data[i] = 0xa0
+	i++
+	data[i] = 0x2
+	i++
+	i = encodeVarintOne(data, i, uint64(m2))
+	return i, nil
+}
+func (m CustomOneofDirect_MyCustomName) MarshalTo(data []byte) (int, error) {
+	i := 0
+	m2 := int64(m)
+	data[i] = 0xa8
+	i++
+	data[i] = 0x2
+	i++
+	i = encodeVarintOne(data, i, uint64(m2))
 	return i, nil
 }
 func encodeFixed64One(data []byte, offset int, v uint64) int {
@@ -5146,6 +8808,357 @@ func (m *AllTypesOneOf) Unmarshal(data []byte) error {
 	}
 	return nil
 }
+func (m *AllTypesOneOfDirect) Unmarshal(data []byte) error {
+	l := len(data)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowOneUnsafe
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := data[iNdEx]
+			iNdEx++
+			wire |= (uint64(b) & 0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: AllTypesOneOfDirect: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: AllTypesOneOfDirect: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field1", wireType)
+			}
+			var v float64
+			if iNdEx+8 > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = *(*float64)(unsafe.Pointer(&data[iNdEx]))
+			iNdEx += 8
+			m.TestOneof = AllTypesOneOfDirect_Field1(v)
+		case 2:
+			if wireType != 5 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field2", wireType)
+			}
+			var v float32
+			if iNdEx+4 > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = *(*float32)(unsafe.Pointer(&data[iNdEx]))
+			iNdEx += 4
+			m.TestOneof = AllTypesOneOfDirect_Field2(v)
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field3", wireType)
+			}
+			var v int32
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (int32(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.TestOneof = AllTypesOneOfDirect_Field3(v)
+		case 4:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field4", wireType)
+			}
+			var v int64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (int64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.TestOneof = AllTypesOneOfDirect_Field4(v)
+		case 5:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field5", wireType)
+			}
+			var v uint32
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (uint32(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.TestOneof = AllTypesOneOfDirect_Field5(v)
+		case 6:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field6", wireType)
+			}
+			var v uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.TestOneof = AllTypesOneOfDirect_Field6(v)
+		case 7:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field7", wireType)
+			}
+			var v int32
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (int32(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			v = int32((uint32(v) >> 1) ^ uint32(((v&1)<<31)>>31))
+			m.TestOneof = AllTypesOneOfDirect_Field7(v)
+		case 8:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field8", wireType)
+			}
+			var v uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			v = (v >> 1) ^ uint64((int64(v&1)<<63)>>63)
+			m.TestOneof = AllTypesOneOfDirect_Field8(int64(v))
+		case 9:
+			if wireType != 5 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field9", wireType)
+			}
+			var v uint32
+			if iNdEx+4 > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = *(*uint32)(unsafe.Pointer(&data[iNdEx]))
+			iNdEx += 4
+			m.TestOneof = AllTypesOneOfDirect_Field9(v)
+		case 10:
+			if wireType != 5 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field10", wireType)
+			}
+			var v int32
+			if iNdEx+4 > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = *(*int32)(unsafe.Pointer(&data[iNdEx]))
+			iNdEx += 4
+			m.TestOneof = AllTypesOneOfDirect_Field10(v)
+		case 11:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field11", wireType)
+			}
+			var v uint64
+			if iNdEx+8 > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = *(*uint64)(unsafe.Pointer(&data[iNdEx]))
+			iNdEx += 8
+			m.TestOneof = AllTypesOneOfDirect_Field11(v)
+		case 12:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field12", wireType)
+			}
+			var v int64
+			if iNdEx+8 > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = *(*int64)(unsafe.Pointer(&data[iNdEx]))
+			iNdEx += 8
+			m.TestOneof = &AllTypesOneOfDirect_Field12{v}
+		case 13:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field13", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			b := bool(v != 0)
+			m.TestOneof = AllTypesOneOfDirect_Field13(b)
+		case 14:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field14", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				stringLen |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.TestOneof = AllTypesOneOfDirect_Field14(string(data[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 15:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field15", wireType)
+			}
+			var byteLen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				byteLen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if byteLen < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			postIndex := iNdEx + byteLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			v := make([]byte, postIndex-iNdEx)
+			copy(v, data[iNdEx:postIndex])
+			m.TestOneof = AllTypesOneOfDirect_Field15(v)
+			iNdEx = postIndex
+		case 16:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SubMessage", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				msglen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			postIndex := iNdEx + msglen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			var v Subby
+			if err := v.Unmarshal(data[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			m.TestOneof = AllTypesOneOfDirect_SubMessage(v)
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipOneUnsafe(data[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, data[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
 func (m *TwoOneofs) Unmarshal(data []byte) error {
 	l := len(data)
 	iNdEx := 0
@@ -5330,6 +9343,190 @@ func (m *TwoOneofs) Unmarshal(data []byte) error {
 	}
 	return nil
 }
+func (m *TwoOneofsDirect) Unmarshal(data []byte) error {
+	l := len(data)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowOneUnsafe
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := data[iNdEx]
+			iNdEx++
+			wire |= (uint64(b) & 0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: TwoOneofsDirect: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: TwoOneofsDirect: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field1", wireType)
+			}
+			var v float64
+			if iNdEx+8 > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = *(*float64)(unsafe.Pointer(&data[iNdEx]))
+			iNdEx += 8
+			m.One = TwoOneofsDirect_Field1(v)
+		case 2:
+			if wireType != 5 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field2", wireType)
+			}
+			var v float32
+			if iNdEx+4 > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = *(*float32)(unsafe.Pointer(&data[iNdEx]))
+			iNdEx += 4
+			m.One = TwoOneofsDirect_Field2(v)
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field3", wireType)
+			}
+			var v int32
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (int32(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.One = TwoOneofsDirect_Field3(v)
+		case 34:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field34", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				stringLen |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Two = TwoOneofsDirect_Field34(string(data[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 35:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Field35", wireType)
+			}
+			var byteLen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				byteLen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if byteLen < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			postIndex := iNdEx + byteLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			v := make([]byte, postIndex-iNdEx)
+			copy(v, data[iNdEx:postIndex])
+			m.Two = TwoOneofsDirect_Field35(v)
+			iNdEx = postIndex
+		case 36:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SubMessage2", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				msglen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			postIndex := iNdEx + msglen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			var v Subby
+			if err := v.Unmarshal(data[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			m.Two = TwoOneofsDirect_SubMessage2(v)
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipOneUnsafe(data[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, data[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
 func (m *CustomOneof) Unmarshal(data []byte) error {
 	l := len(data)
 	iNdEx := 0
@@ -5483,6 +9680,159 @@ func (m *CustomOneof) Unmarshal(data []byte) error {
 	}
 	return nil
 }
+func (m *CustomOneofDirect) Unmarshal(data []byte) error {
+	l := len(data)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowOneUnsafe
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := data[iNdEx]
+			iNdEx++
+			wire |= (uint64(b) & 0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CustomOneofDirect: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CustomOneofDirect: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 34:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Stringy", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				stringLen |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Custom = CustomOneofDirect_Stringy(string(data[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 35:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CustomType", wireType)
+			}
+			var byteLen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				byteLen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if byteLen < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			postIndex := iNdEx + byteLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			var vv github_com_gogo_protobuf_test_custom.Uint128
+			v := &vv
+			if err := v.Unmarshal(data[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			m.Custom = CustomOneofDirect_CustomType(*v)
+			iNdEx = postIndex
+		case 36:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CastType", wireType)
+			}
+			var v github_com_gogo_protobuf_test_casttype.MyUint64Type
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (github_com_gogo_protobuf_test_casttype.MyUint64Type(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Custom = CustomOneofDirect_CastType(v)
+		case 37:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field MyCustomName", wireType)
+			}
+			var v int64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowOneUnsafe
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := data[iNdEx]
+				iNdEx++
+				v |= (int64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Custom = CustomOneofDirect_MyCustomName(v)
+		default:
+			iNdEx = preIndex
+			skippy, err := skipOneUnsafe(data[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthOneUnsafe
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, data[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
 func skipOneUnsafe(data []byte) (n int, err error) {
 	l := len(data)
 	iNdEx := 0
@@ -5591,41 +9941,46 @@ var (
 func init() { proto.RegisterFile("combos/unsafeboth/one.proto", fileDescriptorOne) }
 
 var fileDescriptorOne = []byte{
-	// 576 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xac, 0xd3, 0x3f, 0x6f, 0x1a, 0x31,
-	0x14, 0x00, 0xf0, 0x1c, 0xff, 0x31, 0xd0, 0xd0, 0x9b, 0x5e, 0x53, 0x09, 0x2a, 0xda, 0x4a, 0x1d,
-	0x1a, 0x0e, 0xee, 0x0f, 0x90, 0xb1, 0x97, 0xaa, 0xea, 0x42, 0x91, 0x48, 0x32, 0x47, 0x1c, 0x3d,
-	0x08, 0x12, 0xe0, 0x28, 0xf6, 0x29, 0xba, 0x2d, 0x9f, 0xa1, 0x9f, 0xa2, 0x63, 0xc7, 0x7e, 0x84,
-	0x8c, 0x19, 0xab, 0x0e, 0x28, 0xa1, 0x4b, 0xc7, 0x8c, 0x51, 0xa7, 0x3e, 0xfb, 0x88, 0x5d, 0xa9,
-	0xaa, 0xba, 0x64, 0x78, 0x3a, 0x9b, 0x9f, 0xfd, 0x78, 0xef, 0xec, 0x23, 0x4f, 0xc7, 0x74, 0x11,
-	0x50, 0x66, 0x45, 0x4b, 0x36, 0x9a, 0x84, 0x01, 0xe5, 0x27, 0x16, 0x5d, 0x86, 0xcd, 0xd3, 0x33,
-	0xca, 0xa9, 0x99, 0xc6, 0xe1, 0xce, 0xee, 0x74, 0xc6, 0x4f, 0xa2, 0xa0, 0x89, 0x0b, 0xad, 0x29,
-	0x9d, 0x52, 0x4b, 0x5a, 0x10, 0x4d, 0xe4, 0x4c, 0x4e, 0xe4, 0x28, 0xd9, 0xd3, 0x78, 0x42, 0xb2,
-	0x07, 0x51, 0x10, 0xc4, 0x66, 0x95, 0xa4, 0x59, 0x14, 0x80, 0xf1, 0xcc, 0x78, 0x55, 0x1c, 0x8a,
-	0x61, 0x63, 0x95, 0x26, 0x95, 0x37, 0xf3, 0xf9, 0x61, 0x7c, 0x1a, 0xb2, 0xc1, 0x32, 0x1c, 0x4c,
-	0x4c, 0x20, 0xb9, 0x77, 0xb3, 0x70, 0xfe, 0xb1, 0x2d, 0x97, 0x19, 0xef, 0xb7, 0x86, 0xb9, 0x89,
-	0x9c, 0x2b, 0xb1, 0x21, 0x85, 0x92, 0x52, 0x62, 0x2b, 0x71, 0x20, 0x8d, 0x92, 0x55, 0xe2, 0x28,
-	0x71, 0x21, 0x83, 0x92, 0x56, 0xe2, 0x2a, 0xf1, 0x20, 0x8b, 0x52, 0x51, 0xe2, 0x29, 0xe9, 0x40,
-	0x0e, 0x25, 0xa3, 0xa4, 0xa3, 0xa4, 0x0b, 0x79, 0x94, 0xc7, 0x4a, 0xba, 0x4a, 0x7a, 0x50, 0x40,
-	0x31, 0x95, 0xf4, 0x94, 0xec, 0x41, 0x11, 0x25, 0xaf, 0x64, 0xcf, 0xdc, 0x21, 0xf9, 0xa4, 0xd3,
-	0x16, 0x10, 0xa4, 0x6d, 0xa4, 0x7c, 0xd2, 0x6a, 0x4b, 0x5b, 0x1b, 0x4a, 0x68, 0x39, 0x6d, 0x6d,
-	0x6d, 0x36, 0x94, 0xd1, 0xaa, 0xda, 0x6c, 0x6d, 0x0e, 0x54, 0xd0, 0x0a, 0xda, 0x1c, 0x6d, 0x2e,
-	0x3c, 0x12, 0x27, 0xa0, 0xcd, 0xd5, 0xe6, 0xc1, 0x36, 0x5a, 0x59, 0x9b, 0x67, 0xee, 0x92, 0x12,
-	0x1e, 0xd5, 0xf1, 0x22, 0x64, 0x6c, 0x34, 0x0d, 0xa1, 0x8a, 0x5e, 0xb2, 0x49, 0x53, 0xdc, 0x09,
-	0x79, 0xac, 0xb8, 0x96, 0xe0, 0x82, 0x7e, 0xe2, 0x7e, 0x99, 0x10, 0x1e, 0x32, 0x7e, 0x8c, 0x4e,
-	0x27, 0x8d, 0x2b, 0x83, 0x14, 0x0f, 0xcf, 0xe9, 0x40, 0x4c, 0xd8, 0x03, 0x1f, 0xee, 0x7d, 0xd1,
-	0x8e, 0x0b, 0x0d, 0xd9, 0x90, 0xb1, 0x29, 0xda, 0xd1, 0x0d, 0x39, 0x1e, 0x3c, 0x97, 0x0d, 0x29,
-	0xf3, 0x4c, 0x8b, 0x94, 0xff, 0x68, 0xc8, 0x86, 0x17, 0x7f, 0x75, 0x64, 0x0c, 0x4b, 0xba, 0x23,
-	0xdb, 0xcf, 0x12, 0x71, 0xed, 0xc5, 0x83, 0x9f, 0xd3, 0xc6, 0xa7, 0x14, 0x29, 0xed, 0x47, 0x8c,
-	0xd3, 0x85, 0xec, 0x4a, 0xfc, 0xd5, 0x01, 0x3f, 0x9b, 0x2d, 0xa7, 0xf1, 0xa6, 0x0c, 0x7c, 0x77,
-	0x2c, 0xf9, 0xc1, 0x1c, 0x12, 0x92, 0x2c, 0x15, 0x37, 0x3c, 0xa9, 0xc4, 0x6f, 0x7d, 0x5f, 0xd5,
-	0x5f, 0xff, 0xf3, 0x0b, 0x12, 0xef, 0xce, 0x1a, 0xcb, 0x3d, 0xcd, 0xa3, 0xd9, 0x92, 0xb7, 0xed,
-	0x9e, 0x78, 0xc1, 0x63, 0x95, 0xc5, 0x3c, 0x22, 0x85, 0xfd, 0x11, 0xe3, 0x32, 0xa3, 0x28, 0x3d,
-	0xe3, 0x77, 0x7f, 0xad, 0xea, 0xce, 0x7f, 0x32, 0xe2, 0x0e, 0x8e, 0x3b, 0x9a, 0xfd, 0x58, 0x64,
-	0xed, 0xb8, 0x62, 0x3b, 0x26, 0x2e, 0x8c, 0x37, 0xa9, 0x4c, 0xfb, 0xbe, 0xd4, 0x0f, 0xa3, 0x45,
-	0x08, 0x2f, 0xc5, 0xe7, 0xe2, 0x57, 0xd7, 0xab, 0x7a, 0xb9, 0x1f, 0xeb, 0xdf, 0x75, 0x29, 0x62,
-	0xe6, 0x17, 0x48, 0x2e, 0x99, 0xf9, 0x6f, 0x2f, 0x6f, 0x6a, 0x5b, 0x57, 0x18, 0xdf, 0x30, 0xae,
-	0x6f, 0x6a, 0xc6, 0x2d, 0xc6, 0x1d, 0xc6, 0xc5, 0xba, 0x66, 0x7c, 0xc6, 0xf8, 0x82, 0xf1, 0x15,
-	0xe3, 0x72, 0x8d, 0xeb, 0x30, 0xae, 0x71, 0xfc, 0x13, 0x9f, 0xb7, 0xf8, 0xbc, 0xc3, 0xb8, 0xf8,
-	0x51, 0x33, 0x7e, 0x07, 0x00, 0x00, 0xff, 0xff, 0x68, 0x7e, 0x05, 0xec, 0x7b, 0x04, 0x00, 0x00,
+	// 646 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xec, 0x95, 0xbf, 0x6f, 0xd3, 0x40,
+	0x14, 0xc7, 0xeb, 0x38, 0xbf, 0x7a, 0x49, 0x69, 0x6a, 0x96, 0xa3, 0x48, 0x09, 0x32, 0x20, 0x31,
+	0xd0, 0x38, 0xf1, 0x8f, 0x24, 0x65, 0xc3, 0xad, 0x10, 0x4b, 0x88, 0x94, 0xb6, 0x73, 0x15, 0x07,
+	0x27, 0x8d, 0x94, 0xe4, 0xaa, 0xf8, 0xac, 0x2a, 0x5b, 0xff, 0x06, 0xfe, 0x00, 0x24, 0x36, 0x46,
+	0x46, 0xfe, 0x84, 0x8e, 0x1d, 0x11, 0x42, 0x51, 0x1b, 0x16, 0xc4, 0x94, 0xb1, 0x62, 0xe2, 0xdd,
+	0xd9, 0xbd, 0x6b, 0x41, 0x88, 0x05, 0x90, 0x10, 0x0c, 0x4f, 0x77, 0xcf, 0x9f, 0x77, 0x2f, 0xef,
+	0x7b, 0xef, 0xc5, 0x46, 0xb7, 0xbb, 0x64, 0xe4, 0x91, 0xc0, 0x08, 0xc7, 0x41, 0xa7, 0xe7, 0x7b,
+	0x84, 0x1e, 0x18, 0x64, 0xec, 0x97, 0x0f, 0x27, 0x84, 0x12, 0x4d, 0x85, 0xed, 0xfa, 0x46, 0x7f,
+	0x40, 0x0f, 0x42, 0xaf, 0x0c, 0x81, 0x46, 0x9f, 0xf4, 0x89, 0xc1, 0x99, 0x17, 0xf6, 0xb8, 0xc7,
+	0x1d, 0xbe, 0x8b, 0xce, 0xe8, 0xb7, 0x50, 0x6a, 0x27, 0xf4, 0xbc, 0xa9, 0x56, 0x40, 0x6a, 0x10,
+	0x7a, 0x58, 0xb9, 0xa3, 0x3c, 0x58, 0x6e, 0xb3, 0xad, 0x3e, 0x53, 0xd1, 0xca, 0xe3, 0xe1, 0x70,
+	0x77, 0x7a, 0xe8, 0x07, 0xad, 0xb1, 0xdf, 0xea, 0x69, 0x18, 0xa5, 0x9f, 0x0c, 0xfc, 0xe1, 0xf3,
+	0x2a, 0x0f, 0x53, 0x9e, 0x2e, 0xb5, 0xd3, 0x3d, 0xee, 0x0b, 0x62, 0xe2, 0x04, 0x90, 0x84, 0x20,
+	0xa6, 0x20, 0x16, 0x56, 0x81, 0xa4, 0x04, 0xb1, 0x04, 0xb1, 0x71, 0x12, 0x88, 0x2a, 0x88, 0x2d,
+	0x88, 0x83, 0x53, 0x40, 0x56, 0x04, 0x71, 0x04, 0xa9, 0xe1, 0x34, 0x90, 0xa4, 0x20, 0x35, 0x41,
+	0xea, 0x38, 0x03, 0x64, 0x4d, 0x90, 0xba, 0x20, 0x0d, 0x9c, 0x05, 0xa2, 0x09, 0xd2, 0x10, 0x64,
+	0x13, 0x2f, 0x03, 0xc9, 0x08, 0xb2, 0xa9, 0xad, 0xa3, 0x4c, 0xa4, 0xb4, 0x82, 0x11, 0xa0, 0x55,
+	0x40, 0x99, 0x48, 0x6a, 0x45, 0xb2, 0x2a, 0xce, 0x01, 0x4b, 0x4b, 0x56, 0x95, 0xcc, 0xc4, 0x79,
+	0x60, 0x05, 0xc9, 0x4c, 0xc9, 0x2c, 0xbc, 0x02, 0x2c, 0x2b, 0x99, 0x25, 0x99, 0x8d, 0x6f, 0xb0,
+	0x0e, 0x48, 0x66, 0x4b, 0xe6, 0xe0, 0x55, 0x60, 0x79, 0xc9, 0x1c, 0x6d, 0x03, 0xe5, 0xa0, 0x55,
+	0xfb, 0x23, 0x3f, 0x08, 0x3a, 0x7d, 0x1f, 0x17, 0x80, 0xe7, 0x4c, 0x54, 0x66, 0x33, 0xc1, 0xdb,
+	0x0a, 0xb1, 0x08, 0x02, 0x9a, 0x11, 0x77, 0xf3, 0x08, 0x51, 0x3f, 0xa0, 0xfb, 0xc0, 0x49, 0x4f,
+	0xff, 0xac, 0xa2, 0x9b, 0xd7, 0x1a, 0xbc, 0x3d, 0x98, 0xf8, 0x5d, 0xfa, 0xbf, 0xcd, 0x7f, 0x79,
+	0x9b, 0x1f, 0x25, 0x17, 0xaf, 0x4a, 0xca, 0x37, 0xcd, 0x3e, 0x55, 0xd0, 0xf2, 0xee, 0x11, 0x69,
+	0x31, 0x27, 0xf8, 0xc5, 0x2d, 0xbe, 0x2c, 0xdd, 0xb2, 0xb1, 0xce, 0x65, 0x29, 0x71, 0xe9, 0x96,
+	0x94, 0x65, 0x39, 0xf8, 0x2e, 0x97, 0x25, 0x98, 0xa3, 0x19, 0x28, 0x7f, 0x45, 0x96, 0x89, 0xef,
+	0x7d, 0xa7, 0x4b, 0x69, 0xe7, 0xa4, 0x2e, 0xd3, 0x4d, 0x21, 0xf6, 0x8e, 0x63, 0x0b, 0x3d, 0x22,
+	0xfa, 0x07, 0x05, 0xad, 0x0a, 0x49, 0xbf, 0x65, 0x76, 0xff, 0x94, 0xb0, 0xb8, 0x63, 0xd7, 0xe5,
+	0xbd, 0x48, 0xa0, 0xdc, 0x56, 0x18, 0x50, 0x32, 0xe2, 0x0a, 0xd9, 0x0f, 0xee, 0xd0, 0xc9, 0x60,
+	0xdc, 0x9f, 0xc6, 0xc5, 0xc0, 0x80, 0x04, 0xd1, 0x03, 0xad, 0x8d, 0x50, 0x14, 0xca, 0xfe, 0xcc,
+	0x51, 0x3d, 0x6e, 0xe5, 0xfd, 0xac, 0xf4, 0xf0, 0x87, 0x5f, 0x03, 0x36, 0x1a, 0x46, 0x97, 0x9f,
+	0x29, 0xef, 0x0d, 0xc6, 0xb4, 0x6a, 0x36, 0xd8, 0x14, 0x75, 0x45, 0x16, 0x6d, 0x0f, 0x65, 0xb7,
+	0x3a, 0x01, 0xe5, 0x19, 0x99, 0x80, 0xa4, 0x5b, 0xff, 0x32, 0x2b, 0x59, 0x3f, 0xc9, 0x08, 0x27,
+	0x28, 0x9c, 0x28, 0x37, 0xa7, 0x2c, 0x6b, 0xcd, 0x66, 0xc7, 0x21, 0x71, 0xb6, 0x1b, 0xa7, 0xd2,
+	0xcc, 0xcb, 0x52, 0x9f, 0x75, 0x46, 0x3e, 0xbe, 0xcf, 0xde, 0x09, 0x6e, 0x61, 0x3e, 0x2b, 0xe5,
+	0x9b, 0x53, 0xf9, 0x5c, 0x96, 0xc2, 0x3c, 0x37, 0x8b, 0xd2, 0x91, 0xa7, 0xbf, 0x4c, 0xa0, 0xb5,
+	0x2b, 0x97, 0x12, 0x77, 0xfd, 0xdf, 0xbd, 0x9a, 0x78, 0x72, 0xc4, 0x05, 0xb9, 0xdb, 0x27, 0xe7,
+	0xc5, 0xa5, 0x53, 0xb0, 0x77, 0x60, 0x67, 0xe7, 0x45, 0x65, 0x01, 0x76, 0x01, 0x76, 0x3c, 0x2f,
+	0x2a, 0xaf, 0xc1, 0xde, 0x80, 0xbd, 0x05, 0x3b, 0x99, 0x43, 0x1c, 0xd8, 0x19, 0xec, 0x3f, 0xc1,
+	0xba, 0x80, 0xf5, 0x02, 0xec, 0xf8, 0x63, 0x51, 0xf9, 0x1a, 0x00, 0x00, 0xff, 0xff, 0xf9, 0xf0,
+	0x18, 0xbf, 0x68, 0x08, 0x00, 0x00,
 }

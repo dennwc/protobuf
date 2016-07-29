@@ -220,6 +220,17 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 	goTyp, _ := p.GoType(message, field)
 	fieldname := p.GetOneOfFieldName(message, field)
 	goTypName := generator.GoTypeToName(goTyp)
+	varname := "this." + fieldname
+	oneof := field.OneofIndex != nil
+	oneofDirect := oneof && gogoproto.IsDirectOneof(file.FileDescriptorProto, message.DescriptorProto)
+	if oneofDirect {
+		typ := goTyp
+		if field.IsMessage() {
+			typ = goTyp[1:] // drop star
+		}
+		p.P(`var this `, typ)
+		varname = "this"
+	}
 	if p.IsMap(field) {
 		m := p.GoMapType(nil, field)
 		keygoTyp, _ := p.GoType(nil, m.KeyField)
@@ -236,7 +247,7 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 		nullable, valuegoTyp, valuegoAliasTyp := generator.GoMapValueTypes(field, m.ValueField, valuegoTyp, valuegoAliasTyp)
 
 		p.P(p.varGen.Next(), ` := r.Intn(10)`)
-		p.P(`this.`, fieldname, ` = make(`, m.GoType, `)`)
+		p.P(varname, ` = make(`, m.GoType, `)`)
 		p.P(`for i := 0; i < `, p.varGen.Current(), `; i++ {`)
 		p.In()
 		keyval := ""
@@ -249,7 +260,7 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 			keyval = keygoAliasTyp + `(` + keyval + `)`
 		}
 		if m.ValueField.IsMessage() || p.IsGroup(field) {
-			s := `this.` + fieldname + `[` + keyval + `] = `
+			s := varname + `[` + keyval + `] = `
 			goTypName = generator.GoTypeToName(valuegoTyp)
 			funcCall := getFuncCall(goTypName)
 			if !nullable {
@@ -261,28 +272,28 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 			s += funcCall
 			p.P(s)
 		} else if m.ValueField.IsEnum() {
-			s := `this.` + fieldname + `[` + keyval + `]` + ` = ` + p.getEnumVal(m.ValueField, valuegoTyp)
+			s := varname + `[` + keyval + `]` + ` = ` + p.getEnumVal(m.ValueField, valuegoTyp)
 			p.P(s)
 		} else if m.ValueField.IsBytes() {
 			count := p.varGen.Next()
 			p.P(count, ` := r.Intn(100)`)
 			p.P(p.varGen.Next(), ` := `, keyval)
-			p.P(`this.`, fieldname, `[`, p.varGen.Current(), `] = make(`, valuegoTyp, `, `, count, `)`)
+			p.P(varname, `[`, p.varGen.Current(), `] = make(`, valuegoTyp, `, `, count, `)`)
 			p.P(`for i := 0; i < `, count, `; i++ {`)
 			p.In()
-			p.P(`this.`, fieldname, `[`, p.varGen.Current(), `][i] = byte(r.Intn(256))`)
+			p.P(varname, `[`, p.varGen.Current(), `][i] = byte(r.Intn(256))`)
 			p.Out()
 			p.P(`}`)
 		} else if m.ValueField.IsString() {
-			s := `this.` + fieldname + `[` + keyval + `]` + ` = ` + fmt.Sprintf("randString%v(r)", p.localName)
+			s := varname + `[` + keyval + `]` + ` = ` + fmt.Sprintf("randString%v(r)", p.localName)
 			p.P(s)
 		} else {
 			p.P(p.varGen.Next(), ` := `, keyval)
-			p.P(`this.`, fieldname, `[`, p.varGen.Current(), `] = `, value(valuetypAliasName, m.ValueField.GetType()))
+			p.P(varname, `[`, p.varGen.Current(), `] = `, value(valuetypAliasName, m.ValueField.GetType()))
 			if negative(m.ValueField.GetType()) {
 				p.P(`if r.Intn(2) == 0 {`)
 				p.In()
-				p.P(`this.`, fieldname, `[`, p.varGen.Current(), `] *= -1`)
+				p.P(varname, `[`, p.varGen.Current(), `] *= -1`)
 				p.Out()
 				p.P(`}`)
 			}
@@ -293,23 +304,23 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 		funcCall := getFuncCall(goTypName)
 		if field.IsRepeated() {
 			p.P(p.varGen.Next(), ` := r.Intn(5)`)
-			p.P(`this.`, fieldname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
+			p.P(varname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
 			p.P(`for i := 0; i < `, p.varGen.Current(), `; i++ {`)
 			p.In()
 			if gogoproto.IsNullable(field) {
-				p.P(`this.`, fieldname, `[i] = `, funcCall)
+				p.P(varname, `[i] = `, funcCall)
 			} else {
 				p.P(p.varGen.Next(), `:= `, funcCall)
-				p.P(`this.`, fieldname, `[i] = *`, p.varGen.Current())
+				p.P(varname, `[i] = *`, p.varGen.Current())
 			}
 			p.Out()
 			p.P(`}`)
 		} else {
-			if gogoproto.IsNullable(field) {
-				p.P(`this.`, fieldname, ` = `, funcCall)
+			if gogoproto.IsNullable(field) && !oneofDirect {
+				p.P(varname, ` = `, funcCall)
 			} else {
 				p.P(p.varGen.Next(), `:= `, funcCall)
-				p.P(`this.`, fieldname, ` = *`, p.varGen.Current())
+				p.P(varname, ` = *`, p.varGen.Current())
 			}
 		}
 	} else {
@@ -317,56 +328,56 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 			val := p.getEnumVal(field, goTyp)
 			if field.IsRepeated() {
 				p.P(p.varGen.Next(), ` := r.Intn(10)`)
-				p.P(`this.`, fieldname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
+				p.P(varname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
 				p.P(`for i := 0; i < `, p.varGen.Current(), `; i++ {`)
 				p.In()
-				p.P(`this.`, fieldname, `[i] = `, val)
+				p.P(varname, `[i] = `, val)
 				p.Out()
 				p.P(`}`)
 			} else if !gogoproto.IsNullable(field) || proto3 {
-				p.P(`this.`, fieldname, ` = `, val)
+				p.P(varname, ` = `, val)
 			} else {
 				p.P(p.varGen.Next(), ` := `, val)
-				p.P(`this.`, fieldname, ` = &`, p.varGen.Current())
+				p.P(varname, ` = &`, p.varGen.Current())
 			}
 		} else if gogoproto.IsCustomType(field) {
 			funcCall := getCustomFuncCall(goTypName)
 			if field.IsRepeated() {
 				p.P(p.varGen.Next(), ` := r.Intn(10)`)
-				p.P(`this.`, fieldname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
+				p.P(varname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
 				p.P(`for i := 0; i < `, p.varGen.Current(), `; i++ {`)
 				p.In()
 				p.P(p.varGen.Next(), `:= `, funcCall)
-				p.P(`this.`, fieldname, `[i] = *`, p.varGen.Current())
+				p.P(varname, `[i] = *`, p.varGen.Current())
 				p.Out()
 				p.P(`}`)
 			} else if gogoproto.IsNullable(field) {
-				p.P(`this.`, fieldname, ` = `, funcCall)
+				p.P(varname, ` = `, funcCall)
 			} else {
 				p.P(p.varGen.Next(), `:= `, funcCall)
-				p.P(`this.`, fieldname, ` = *`, p.varGen.Current())
+				p.P(varname, ` = *`, p.varGen.Current())
 			}
 		} else if field.IsBytes() {
 			if field.IsRepeated() {
 				p.P(p.varGen.Next(), ` := r.Intn(10)`)
-				p.P(`this.`, fieldname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
+				p.P(varname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
 				p.P(`for i := 0; i < `, p.varGen.Current(), `; i++ {`)
 				p.In()
 				p.P(p.varGen.Next(), ` := r.Intn(100)`)
-				p.P(`this.`, fieldname, `[i] = make([]byte,`, p.varGen.Current(), `)`)
+				p.P(varname, `[i] = make([]byte,`, p.varGen.Current(), `)`)
 				p.P(`for j := 0; j < `, p.varGen.Current(), `; j++ {`)
 				p.In()
-				p.P(`this.`, fieldname, `[i][j] = byte(r.Intn(256))`)
+				p.P(varname, `[i][j] = byte(r.Intn(256))`)
 				p.Out()
 				p.P(`}`)
 				p.Out()
 				p.P(`}`)
 			} else {
 				p.P(p.varGen.Next(), ` := r.Intn(100)`)
-				p.P(`this.`, fieldname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
+				p.P(varname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
 				p.P(`for i := 0; i < `, p.varGen.Current(), `; i++ {`)
 				p.In()
-				p.P(`this.`, fieldname, `[i] = byte(r.Intn(256))`)
+				p.P(varname, `[i] = byte(r.Intn(256))`)
 				p.Out()
 				p.P(`}`)
 			}
@@ -374,41 +385,41 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 			val := fmt.Sprintf("randString%v(r)", p.localName)
 			if field.IsRepeated() {
 				p.P(p.varGen.Next(), ` := r.Intn(10)`)
-				p.P(`this.`, fieldname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
+				p.P(varname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
 				p.P(`for i := 0; i < `, p.varGen.Current(), `; i++ {`)
 				p.In()
-				p.P(`this.`, fieldname, `[i] = `, val)
+				p.P(varname, `[i] = `, val)
 				p.Out()
 				p.P(`}`)
 			} else if !gogoproto.IsNullable(field) || proto3 {
-				p.P(`this.`, fieldname, ` = `, val)
+				p.P(varname, ` = `, val)
 			} else {
 				p.P(p.varGen.Next(), `:= `, val)
-				p.P(`this.`, fieldname, ` = &`, p.varGen.Current())
+				p.P(varname, ` = &`, p.varGen.Current())
 			}
 		} else {
 			typName := generator.GoTypeToName(goTyp)
 			if field.IsRepeated() {
 				p.P(p.varGen.Next(), ` := r.Intn(10)`)
-				p.P(`this.`, fieldname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
+				p.P(varname, ` = make(`, goTyp, `, `, p.varGen.Current(), `)`)
 				p.P(`for i := 0; i < `, p.varGen.Current(), `; i++ {`)
 				p.In()
-				p.P(`this.`, fieldname, `[i] = `, value(typName, field.GetType()))
+				p.P(varname, `[i] = `, value(typName, field.GetType()))
 				if negative(field.GetType()) {
 					p.P(`if r.Intn(2) == 0 {`)
 					p.In()
-					p.P(`this.`, fieldname, `[i] *= -1`)
+					p.P(varname, `[i] *= -1`)
 					p.Out()
 					p.P(`}`)
 				}
 				p.Out()
 				p.P(`}`)
 			} else if !gogoproto.IsNullable(field) || proto3 {
-				p.P(`this.`, fieldname, ` = `, value(typName, field.GetType()))
+				p.P(varname, ` = `, value(typName, field.GetType()))
 				if negative(field.GetType()) {
 					p.P(`if r.Intn(2) == 0 {`)
 					p.In()
-					p.P(`this.`, fieldname, ` *= -1`)
+					p.P(varname, ` *= -1`)
 					p.Out()
 					p.P(`}`)
 				}
@@ -421,7 +432,7 @@ func (p *plugin) GenerateField(file *generator.FileDescriptor, message *generato
 					p.Out()
 					p.P(`}`)
 				}
-				p.P(`this.`, fieldname, ` = &`, p.varGen.Current())
+				p.P(varname, ` = &`, p.varGen.Current())
 			}
 		}
 	}
@@ -639,18 +650,29 @@ func (p *plugin) Generate(file *generator.FileDescriptor) {
 
 		//Generate NewPopulated functions for oneof fields
 		m := proto.Clone(message.DescriptorProto).(*descriptor.DescriptorProto)
+		oneofDirect := gogoproto.IsDirectOneof(file.FileDescriptorProto, message.DescriptorProto)
 		for _, f := range m.Field {
 			oneof := f.OneofIndex != nil
 			if !oneof {
 				continue
 			}
 			ccTypeName := p.OneOfTypeName(message, f)
-			p.P(`func NewPopulated`, ccTypeName, `(r randy`, p.localName, `, easy bool) *`, ccTypeName, ` {`)
+			star := "*"
+			if oneofDirect {
+				star = ""
+			}
+			p.P(`func NewPopulated`, ccTypeName, `(r randy`, p.localName, `, easy bool) `, star, ccTypeName, ` {`)
 			p.In()
-			p.P(`this := &`, ccTypeName, `{}`)
+			if !oneofDirect {
+				p.P(`this := &`, ccTypeName, `{}`)
+			}
 			vanity.TurnOffNullableForNativeTypesWithoutDefaultsOnly(f)
 			p.GenerateField(file, message, f)
-			p.P(`return this`)
+			if oneofDirect {
+				p.P(`return `, ccTypeName, `(this)`)
+			} else {
+				p.P(`return this`)
+			}
 			p.Out()
 			p.P(`}`)
 		}

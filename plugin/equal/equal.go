@@ -233,18 +233,20 @@ func (p *plugin) generateNullableField(fieldname string, verbose bool) {
 	p.P(`} else if that1.`, fieldname, ` != nil {`)
 }
 
-func (p *plugin) generateMsgNullAndTypeCheck(ccTypeName string, verbose bool) {
+func (p *plugin) generateMsgNullAndTypeCheck(ccTypeName string, verbose, nullable bool) {
 	p.P(`if that == nil {`)
 	p.In()
-	p.P(`if this == nil {`)
-	p.In()
-	if verbose {
-		p.P(`return nil`)
-	} else {
-		p.P(`return true`)
+	if nullable {
+		p.P(`if this == nil {`)
+		p.In()
+		if verbose {
+			p.P(`return nil`)
+		} else {
+			p.P(`return true`)
+		}
+		p.Out()
+		p.P(`}`)
 	}
-	p.Out()
-	p.P(`}`)
 	if verbose {
 		p.P(`return `, p.fmtPkg.Use(), `.Errorf("that == nil && this != nil")`)
 	} else {
@@ -274,30 +276,36 @@ func (p *plugin) generateMsgNullAndTypeCheck(ccTypeName string, verbose bool) {
 	p.P(`}`)
 	p.P(`if that1 == nil {`)
 	p.In()
-	p.P(`if this == nil {`)
-	p.In()
-	if verbose {
-		p.P(`return nil`)
-	} else {
-		p.P(`return true`)
+	if nullable {
+		p.P(`if this == nil {`)
+		p.In()
+		if verbose {
+			p.P(`return nil`)
+		} else {
+			p.P(`return true`)
+		}
+		p.Out()
+		p.P(`}`)
 	}
-	p.Out()
-	p.P(`}`)
 	if verbose {
 		p.P(`return `, p.fmtPkg.Use(), `.Errorf("that is type *`, ccTypeName, ` but is nil && this != nil")`)
 	} else {
 		p.P(`return false`)
 	}
 	p.Out()
-	p.P(`} else if this == nil {`)
-	p.In()
-	if verbose {
-		p.P(`return `, p.fmtPkg.Use(), `.Errorf("that is type *`, ccTypeName, ` but is not nil && this == nil")`)
+	if nullable {
+		p.P(`} else if this == nil {`)
+		p.In()
+		if verbose {
+			p.P(`return `, p.fmtPkg.Use(), `.Errorf("that is type *`, ccTypeName, ` but is not nil && this == nil")`)
+		} else {
+			p.P(`return false`)
+		}
+		p.Out()
+		p.P(`}`)
 	} else {
-		p.P(`return false`)
+		p.P(`}`)
 	}
-	p.Out()
-	p.P(`}`)
 }
 
 func (p *plugin) generateField(file *generator.FileDescriptor, message *generator.Descriptor, field *descriptor.FieldDescriptorProto, verbose bool) {
@@ -306,29 +314,36 @@ func (p *plugin) generateField(file *generator.FileDescriptor, message *generato
 	repeated := field.IsRepeated()
 	ctype := gogoproto.IsCustomType(field)
 	nullable := gogoproto.IsNullable(field)
-	// oneof := field.OneofIndex != nil
+	varthis := "this." + fieldname
+	varthat := "that1." + fieldname
+	oneof := field.OneofIndex != nil
+	oneofDirect := oneof && gogoproto.IsDirectOneof(file.FileDescriptorProto, message.DescriptorProto)
+	if oneofDirect {
+		varthis = "this"
+		varthat = "that1"
+	}
 	if !repeated {
 		if ctype {
 			if nullable {
-				p.P(`if that1.`, fieldname, ` == nil {`)
+				p.P(`if `, varthat, ` == nil {`)
 				p.In()
-				p.P(`if this.`, fieldname, ` != nil {`)
+				p.P(`if `, varthis, ` != nil {`)
 				p.In()
 				if verbose {
-					p.P(`return `, p.fmtPkg.Use(), `.Errorf("this.`, fieldname, ` != nil && that1.`, fieldname, ` == nil")`)
+					p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, varthis, ` != nil && `, varthat, ` == nil")`)
 				} else {
 					p.P(`return false`)
 				}
 				p.Out()
 				p.P(`}`)
 				p.Out()
-				p.P(`} else if !this.`, fieldname, `.Equal(*that1.`, fieldname, `) {`)
+				p.P(`} else if !`, varthis, `.Equal(*`, varthat, `) {`)
 			} else {
-				p.P(`if !this.`, fieldname, `.Equal(that1.`, fieldname, `) {`)
+				p.P(`if !`, varthis, `.Equal(`, varthat, `) {`)
 			}
 			p.In()
 			if verbose {
-				p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, fieldname, ` this(%v) Not Equal that(%v)", this.`, fieldname, `, that1.`, fieldname, `)`)
+				p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, fieldname, ` this(%v) Not Equal that(%v)", `, varthis, `, `, varthat, `)`)
 			} else {
 				p.P(`return false`)
 			}
@@ -336,29 +351,41 @@ func (p *plugin) generateField(file *generator.FileDescriptor, message *generato
 			p.P(`}`)
 		} else {
 			if field.IsMessage() || p.IsGroup(field) {
-				if nullable {
-					p.P(`if !this.`, fieldname, `.Equal(that1.`, fieldname, `) {`)
+				if oneofDirect {
+					typ, _ := p.GoType(message, field)
+					p.P(`this2 := `, typ[1:], `(`, varthis, `)`)
+					p.P(`if !this2.Equal(`, typ[1:], `(*`, varthat, `)) {`)
+				} else if nullable {
+					p.P(`if !`, varthis, `.Equal(`, varthat, `) {`)
 				} else {
-					p.P(`if !this.`, fieldname, `.Equal(&that1.`, fieldname, `) {`)
+					p.P(`if !`, varthis, `.Equal(&`, varthat, `) {`)
 				}
 			} else if field.IsBytes() {
-				p.P(`if !`, p.bytesPkg.Use(), `.Equal(this.`, fieldname, `, that1.`, fieldname, `) {`)
+				if oneofDirect {
+					p.P(`if !`, p.bytesPkg.Use(), `.Equal(`, varthis, `, *`, varthat, `) {`)
+				} else {
+					p.P(`if !`, p.bytesPkg.Use(), `.Equal(`, varthis, `, `, varthat, `) {`)
+				}
 			} else if field.IsString() {
 				if nullable && !proto3 {
 					p.generateNullableField(fieldname, verbose)
+				} else if oneofDirect {
+					p.P(`if `, varthis, ` != *`, varthat, `{`)
 				} else {
-					p.P(`if this.`, fieldname, ` != that1.`, fieldname, `{`)
+					p.P(`if `, varthis, ` != `, varthat, `{`)
 				}
 			} else {
 				if nullable && !proto3 {
 					p.generateNullableField(fieldname, verbose)
+				} else if oneofDirect {
+					p.P(`if `, varthis, ` != *`, varthat, `{`)
 				} else {
-					p.P(`if this.`, fieldname, ` != that1.`, fieldname, `{`)
+					p.P(`if `, varthis, ` != `, varthat, `{`)
 				}
 			}
 			p.In()
 			if verbose {
-				p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, fieldname, ` this(%v) Not Equal that(%v)", this.`, fieldname, `, that1.`, fieldname, `)`)
+				p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, fieldname, ` this(%v) Not Equal that(%v)", `, varthis, `, `, varthat, `)`)
 			} else {
 				p.P(`return false`)
 			}
@@ -366,19 +393,19 @@ func (p *plugin) generateField(file *generator.FileDescriptor, message *generato
 			p.P(`}`)
 		}
 	} else {
-		p.P(`if len(this.`, fieldname, `) != len(that1.`, fieldname, `) {`)
+		p.P(`if len(`, varthis, `) != len(`, varthat, `) {`)
 		p.In()
 		if verbose {
-			p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, fieldname, ` this(%v) Not Equal that(%v)", len(this.`, fieldname, `), len(that1.`, fieldname, `))`)
+			p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, fieldname, ` this(%v) Not Equal that(%v)", len(`, varthis, `), len(`, varthat, `))`)
 		} else {
 			p.P(`return false`)
 		}
 		p.Out()
 		p.P(`}`)
-		p.P(`for i := range this.`, fieldname, ` {`)
+		p.P(`for i := range `, varthis, ` {`)
 		p.In()
 		if ctype {
-			p.P(`if !this.`, fieldname, `[i].Equal(that1.`, fieldname, `[i]) {`)
+			p.P(`if !`, varthis, `[i].Equal(`, varthat, `[i]) {`)
 		} else {
 			if p.IsMap(field) {
 				m := p.GoMapType(nil, field)
@@ -389,11 +416,11 @@ func (p *plugin) generateField(file *generator.FileDescriptor, message *generato
 				mapValue := m.ValueAliasField
 				if mapValue.IsMessage() || p.IsGroup(mapValue) {
 					if nullable && valuegoTyp == valuegoAliasTyp {
-						p.P(`if !this.`, fieldname, `[i].Equal(that1.`, fieldname, `[i]) {`)
+						p.P(`if !`, varthis, `[i].Equal(`, varthat, `[i]) {`)
 					} else {
 						// Equal() has a pointer receiver, but map value is a value type
-						a := `this.` + fieldname + `[i]`
-						b := `that1.` + fieldname + `[i]`
+						a := varthis + `[i]`
+						b := varthat + `[i]`
 						if valuegoTyp != valuegoAliasTyp {
 							// cast back to the type that has the generated methods on it
 							a = `(` + valuegoTyp + `)(` + a + `)`
@@ -408,29 +435,29 @@ func (p *plugin) generateField(file *generator.FileDescriptor, message *generato
 						}
 					}
 				} else if mapValue.IsBytes() {
-					p.P(`if !`, p.bytesPkg.Use(), `.Equal(this.`, fieldname, `[i], that1.`, fieldname, `[i]) {`)
+					p.P(`if !`, p.bytesPkg.Use(), `.Equal(`, varthis, `[i], `, varthat, `[i]) {`)
 				} else if mapValue.IsString() {
-					p.P(`if this.`, fieldname, `[i] != that1.`, fieldname, `[i] {`)
+					p.P(`if `, varthis, `[i] != `, varthat, `[i] {`)
 				} else {
-					p.P(`if this.`, fieldname, `[i] != that1.`, fieldname, `[i] {`)
+					p.P(`if `, varthis, `[i] != `, varthat, `[i] {`)
 				}
 			} else if field.IsMessage() || p.IsGroup(field) {
 				if nullable {
-					p.P(`if !this.`, fieldname, `[i].Equal(that1.`, fieldname, `[i]) {`)
+					p.P(`if !`, varthis, `[i].Equal(`, varthat, `[i]) {`)
 				} else {
-					p.P(`if !this.`, fieldname, `[i].Equal(&that1.`, fieldname, `[i]) {`)
+					p.P(`if !`, varthis, `[i].Equal(&`, varthat, `[i]) {`)
 				}
 			} else if field.IsBytes() {
-				p.P(`if !`, p.bytesPkg.Use(), `.Equal(this.`, fieldname, `[i], that1.`, fieldname, `[i]) {`)
+				p.P(`if !`, p.bytesPkg.Use(), `.Equal(`, varthis, `[i], `, varthat, `[i]) {`)
 			} else if field.IsString() {
-				p.P(`if this.`, fieldname, `[i] != that1.`, fieldname, `[i] {`)
+				p.P(`if `, varthis, `[i] != `, varthat, `[i] {`)
 			} else {
-				p.P(`if this.`, fieldname, `[i] != that1.`, fieldname, `[i] {`)
+				p.P(`if `, varthis, `[i] != `, varthat, `[i] {`)
 			}
 		}
 		p.In()
 		if verbose {
-			p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, fieldname, ` this[%v](%v) Not Equal that[%v](%v)", i, this.`, fieldname, `[i], i, that1.`, fieldname, `[i])`)
+			p.P(`return `, p.fmtPkg.Use(), `.Errorf("`, fieldname, ` this[%v](%v) Not Equal that[%v](%v)", i, `, varthis, `[i], i, `, varthat, `[i])`)
 		} else {
 			p.P(`return false`)
 		}
@@ -449,8 +476,9 @@ func (p *plugin) generateMessage(file *generator.FileDescriptor, message *genera
 		p.P(`func (this *`, ccTypeName, `) Equal(that interface{}) bool {`)
 	}
 	p.In()
-	p.generateMsgNullAndTypeCheck(ccTypeName, verbose)
+	p.generateMsgNullAndTypeCheck(ccTypeName, verbose, true)
 	oneofs := make(map[string]struct{})
+	oneofDirect := gogoproto.IsDirectOneof(file.FileDescriptorProto, message.DescriptorProto)
 
 	for _, field := range message.Field {
 		oneof := field.OneofIndex != nil
@@ -583,14 +611,18 @@ func (p *plugin) generateMessage(file *generator.FileDescriptor, message *genera
 			continue
 		}
 		ccTypeName := p.OneOfTypeName(message, field)
+		star := "*"
+		if oneofDirect {
+			star = ""
+		}
 		if verbose {
-			p.P(`func (this *`, ccTypeName, `) VerboseEqual(that interface{}) error {`)
+			p.P(`func (this `, star, ccTypeName, `) VerboseEqual(that interface{}) error {`)
 		} else {
-			p.P(`func (this *`, ccTypeName, `) Equal(that interface{}) bool {`)
+			p.P(`func (this `, star, ccTypeName, `) Equal(that interface{}) bool {`)
 		}
 		p.In()
 
-		p.generateMsgNullAndTypeCheck(ccTypeName, verbose)
+		p.generateMsgNullAndTypeCheck(ccTypeName, verbose, !oneofDirect)
 		vanity.TurnOffNullableForNativeTypesWithoutDefaultsOnly(field)
 		p.generateField(file, message, field, verbose)
 

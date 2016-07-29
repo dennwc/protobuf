@@ -1995,6 +1995,7 @@ func (g *Generator) generateMessage(message *Descriptor) {
 	oneofDisc := make(map[int32]string)                                // name of discriminator method
 	oneofTypeName := make(map[*descriptor.FieldDescriptorProto]string) // without star
 	oneofInsertPoints := make(map[int32]int)                           // oneof_index => offset of g.Buffer
+	oneofDirect := gogoproto.IsDirectOneof(g.file.FileDescriptorProto, message.DescriptorProto)
 
 	g.PrintComments(message.path)
 	g.P("type ", ccTypeName, " struct {")
@@ -2150,7 +2151,11 @@ func (g *Generator) generateMessage(message *Descriptor) {
 			if field.OneofIndex == nil || *field.OneofIndex != oi {
 				continue
 			}
-			g.P("//\t*", oneofTypeName[field])
+			star := "*"
+			if oneofDirect {
+				star = ""
+			}
+			g.P("//\t", star, oneofTypeName[field])
 		}
 		g.Buffer.Write(rem)
 	}
@@ -2345,9 +2350,19 @@ func (g *Generator) generateMessage(message *Descriptor) {
 			if field.OneofIndex == nil {
 				continue
 			}
-			_, wiretype := g.GoType(message, field)
-			tag := "protobuf:" + g.goTag(message, field, wiretype)
-			g.P("type ", oneofTypeName[field], " struct{ ", fieldNames[field], " ", fieldTypes[field], " `", tag, "` }")
+			if oneofDirect {
+				switch *field.Type {
+				case descriptor.FieldDescriptorProto_TYPE_GROUP,
+					descriptor.FieldDescriptorProto_TYPE_MESSAGE:
+					g.P("type ", oneofTypeName[field], " ", fieldTypes[field][1:]) // drop star
+				default:
+					g.P("type ", oneofTypeName[field], " ", fieldTypes[field])
+				}
+			} else {
+				_, wiretype := g.GoType(message, field)
+				tag := "protobuf:" + g.goTag(message, field, wiretype)
+				g.P("type ", oneofTypeName[field], " struct{ ", fieldNames[field], " ", fieldTypes[field], " `", tag, "` }")
+			}
 			g.RecordTypeUse(field.GetTypeName())
 		}
 		g.P()
@@ -2355,7 +2370,11 @@ func (g *Generator) generateMessage(message *Descriptor) {
 			if field.OneofIndex == nil {
 				continue
 			}
-			g.P("func (*", oneofTypeName[field], ") ", oneofDisc[*field.OneofIndex], "() {}")
+			star := "*"
+			if oneofDirect {
+				star = ""
+			}
+			g.P("func (", star, oneofTypeName[field], ") ", oneofDisc[*field.OneofIndex], "() {}")
 		}
 		g.P()
 		for oi := range message.OneofDecl {
@@ -2469,8 +2488,20 @@ func (g *Generator) generateMessage(message *Descriptor) {
 		} else {
 			uname := oneofFieldName[*field.OneofIndex]
 			tname := oneofTypeName[field]
-			g.P("if x, ok := m.Get", uname, "().(*", tname, "); ok {")
-			g.P("return x.", fname)
+			if oneofDirect {
+				g.P("if x, ok := m.Get", uname, "().(", tname, "); ok {")
+				switch *field.Type {
+				case descriptor.FieldDescriptorProto_TYPE_GROUP,
+					descriptor.FieldDescriptorProto_TYPE_MESSAGE:
+					g.P("x2 := ", fieldTypes[field][1:], "(x)") // drop star
+					g.P("return &x2")
+				default:
+					g.P("return ", fieldTypes[field], "(x)")
+				}
+			} else {
+				g.P("if x, ok := m.Get", uname, "().(*", tname, "); ok {")
+				g.P("return x.", fname)
+			}
 			g.P("}")
 		}
 		if hasDef {
@@ -2584,10 +2615,23 @@ func (g *Generator) generateMessage(message *Descriptor) {
 				if field.OneofIndex == nil || int(*field.OneofIndex) != oi {
 					continue
 				}
-				g.P("case *", oneofTypeName[field], ":")
+				if oneofDirect {
+					g.P("case ", oneofTypeName[field], ":")
+				} else {
+					g.P("case *", oneofTypeName[field], ":")
+				}
 				var wire, pre, post string
 				val := "x." + fieldNames[field] // overridden for TYPE_BOOL
-				canFail := false                // only TYPE_MESSAGE and TYPE_GROUP can fail
+				if oneofDirect {
+					switch *field.Type {
+					case descriptor.FieldDescriptorProto_TYPE_GROUP,
+						descriptor.FieldDescriptorProto_TYPE_MESSAGE:
+						val = fieldTypes[field][1:] + "(x)" // drop star
+					default:
+						val = fieldTypes[field] + "(x)"
+					}
+				}
+				canFail := false // only TYPE_MESSAGE and TYPE_GROUP can fail
 				switch *field.Type {
 				case descriptor.FieldDescriptorProto_TYPE_DOUBLE:
 					wire = "WireFixed64"
@@ -2655,6 +2699,10 @@ func (g *Generator) generateMessage(message *Descriptor) {
 					g.P(`}`)
 					val = "data"
 				}
+				if oneofDirect && *field.Type == descriptor.FieldDescriptorProto_TYPE_MESSAGE {
+					g.P("x2 := ", val)
+					val = "&x2"
+				}
 				if !canFail {
 					g.P("_ = ", pre, val, post)
 				} else {
@@ -2717,9 +2765,14 @@ func (g *Generator) generateMessage(message *Descriptor) {
 				dec = "b.DecodeGroup(msg)"
 				// handled specially below
 			case descriptor.FieldDescriptorProto_TYPE_MESSAGE:
-				g.P("msg := new(", fieldTypes[field][1:], ")") // drop star
+				if oneofDirect {
+					g.P("var msg ", fieldTypes[field][1:]) // drop star
+					dec = "b.DecodeMessage(&msg)"
+				} else {
+					g.P("msg := new(", fieldTypes[field][1:], ")") // drop star
+					dec = "b.DecodeMessage(msg)"
+				}
 				lhs = "err"
-				dec = "b.DecodeMessage(msg)"
 				// handled specially below
 			case descriptor.FieldDescriptorProto_TYPE_BYTES:
 				dec = "b.DecodeRawBytes(true)"
@@ -2775,7 +2828,11 @@ func (g *Generator) generateMessage(message *Descriptor) {
 				}
 				val = typ + "(" + val + ")"
 			}
-			g.P("m.", oneofFieldName[*field.OneofIndex], " = &", oneofTypeName[field], "{", val, "}")
+			if oneofDirect {
+				g.P("m.", oneofFieldName[*field.OneofIndex], " = ", oneofTypeName[field], "(", val, ")")
+			} else {
+				g.P("m.", oneofFieldName[*field.OneofIndex], " = &", oneofTypeName[field], "{", val, "}")
+			}
 			g.P("return true, err")
 		}
 		g.P("default: return false, nil")
@@ -2794,8 +2851,23 @@ func (g *Generator) generateMessage(message *Descriptor) {
 				if field.OneofIndex == nil || int(*field.OneofIndex) != oi {
 					continue
 				}
-				g.P("case *", oneofTypeName[field], ":")
-				val := "x." + fieldNames[field]
+				if oneofDirect {
+					g.P("case ", oneofTypeName[field], ":")
+				} else {
+					g.P("case *", oneofTypeName[field], ":")
+				}
+				var val string
+				if oneofDirect {
+					switch *field.Type {
+					case descriptor.FieldDescriptorProto_TYPE_GROUP,
+						descriptor.FieldDescriptorProto_TYPE_MESSAGE:
+						val = fieldTypes[field][1:] + "(x)" // drop star
+					default:
+						val = fieldTypes[field] + "(x)"
+					}
+				} else {
+					val = "x." + fieldNames[field]
+				}
 				var wire, varint, fixed string
 				switch *field.Type {
 				case descriptor.FieldDescriptorProto_TYPE_DOUBLE:
@@ -2831,7 +2903,12 @@ func (g *Generator) generateMessage(message *Descriptor) {
 					fixed = g.Pkg["proto"] + ".Size(" + val + ")"
 				case descriptor.FieldDescriptorProto_TYPE_MESSAGE:
 					wire = "WireBytes"
-					g.P("s := ", g.Pkg["proto"], ".Size(", val, ")")
+					if oneofDirect {
+						g.P("x2 := ", val)
+						g.P("s := ", g.Pkg["proto"], ".Size(&x2)")
+					} else {
+						g.P("s := ", g.Pkg["proto"], ".Size(", val, ")")
+					}
 					fixed = "s"
 					varint = fixed
 				case descriptor.FieldDescriptorProto_TYPE_BYTES:
